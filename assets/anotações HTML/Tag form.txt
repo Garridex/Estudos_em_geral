@@ -1,0 +1,23 @@
+° Tag usada para definir um formulário.
+
+° Os formularios agrumpam campos de entrada de dados dos usuarios.
+
+° Possui todos os atributos do html5
+
+° Atributos especificos:
+*accept-charset -> define o encode usado ao enviar o formulário.   charset
+
+*action -> define para qual URl o formulário será enviado.  URL
+
+*autocomplete -> define se os campos terão a função auto complementar habilitados. on, off
+
+*enctype -> define qual codificação de formulário será usada. aplication/x-www-form-urlencoded,multipart/form-data, text/plain
+
+*method -> define qual será o metodo de envio do formulário.   get, post
+
+*name -> define qual será o nome do formulário.  texto
+
+*novalidate -> define se deve ser validado ao enviar.    novalidate
+
+*target -> define qual o alvo ao enviar o formulário. _blank, _self, _parent, _top
+----------------------------------------------------------------------------------

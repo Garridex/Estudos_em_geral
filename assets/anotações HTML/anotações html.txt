@@ -1,0 +1,63 @@
+a tag form serve para enviar coletar uma entrada de dados no formulário. A tag form é um container para diferentes tipos de dados dos usuarios.
+
+° Elemento input -> elemento mais utilizado na tag form, um input pode ser mostrado de diversas maneiras, dependendo do seu atributo.
+
+O elemento <label> -> essa tag define um rótulo para muitos elementos do formulario, O elemento é util para usuarios de leitores de tela, porque o leitor de tela lerá em voz alta o texto quando o usuario focar no elemento de entrada.
+O elemento <label> também ajuda os usuários que têm dificuldade em clicar em regiões muito pequenas (como botões de rádio ou caixas de seleção) - porque quando o usuário clica no texto dentro do elemento <label>, ele alterna o botão / caixa de seleção. 
+
+° O atributo for da tag <label> deve ser igual ao atributo id do elemento <input>
+para vincular ambos.
+
+O NOME DO ATRIBUTO NA TAG <INPUT>: Cada campo de entrada deve ter um atributo de nome a ser enviado, se o atributo name for omitido, valor do campo de entrada não será enviado
+----------------------------------------------------------------------------------
+ATRIBUTOS <form> -> <form action="/action_page.php"> O action define qual ação vai ser realizada no envio do formulário. Normalmente os dados do formulário são enviados para um arquivo no servidor quando o usuario clica no botão enviar.
+No exemplo a baixo, os dados são enviados para um arquivo denominado "action_page.php". Este arquivo contém um script do lado do servidor que lida com os dados do formulário.
+
+<form action="/action_page.php"></form>
+<label for="fname">primeiro nome: </label> 
+<input type="text" id="fname" name="fname" value="Vitor"><br>
+<label for="lnome">Segundo nome:</label>
+<input type="text" id="fname" name="fname" value="Grrido"><br>
+<input type="submit" value="submit">
+
+
+° Se o atributo de ação for omitido, a ação é definida para a página atual.
+
+ATRIBUTOS DE DESTINO: o atributo target especifica onde exibir a resposta recebida após o envio do formulário. O atributo target pode conter os seguintes valores:
+
+_blank -> a resposta é exibida em uma nova janela ou página
+
+_self -> a resposta é mostrada na janela atual
+
+_parente -> a resposta é mostrada no quadro principal
+
+_top -> a reposta é mostrada na pagina toda
+
+framename -> a resposta é mostrada no arquivo selecionado
+
+EXEMPLO: nesse exemplo o resultado enviado será mostrado em outra aba
+
+<form action="/action_page.php" target="_blank">
+----------------------------------------------------------------------------------
+ATRIBUIÇÃO DE METHOD -> o method especifica o metodo http que será usado para enviar os dados. Os dados podem ser enviados como variaveis de URL (com method="get") ou como transação http post (com o method="post").
+
+EXEMPLO: <form action="/action_page.php" method="get">
+
+EXEMPLO UTILIZANDO O METODO POST: <form action="/action_page.php" method="post">
+
+
+
+
+Notes on GET:
+
+Appends the form data to the URL, in name/value pairs
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+Notes on POST:
+
+Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+		

@@ -1,0 +1,122 @@
+° tag <a href=> -> serve para redirecionar quando clicar para outro endereço dentro daquele mesmo servidor ou pra outro site da internet. Por padrão a pagina linkada será exibida na janela do navegador atual, mas podemos mudar isso especificando da seguinte maneira: target="atributo" e os atributos são
+
+_self- Padrão. Abre o documento na mesma janela / guia em que foi clicado
+_blank - Abre o documento em uma nova janela ou guia
+_parent - Abre o documento no quadro pai
+_top - Abre o documento em todo o corpo da janela
+
+
+° <hr> -> uma linha que passa por toda a página
+
+° <pre> -> tag utilizada pro texto ser escrito da forma como está no documento
+
+°Algumas tags de formatação:
+<b> - Texto em negrito
+<strong> - texto importante
+<i> - texto em itálico
+<em> - Texto enfatizado
+<mark> - texto marcado
+<small> - Texto menor
+<del> - texto excluído
+<ins> - texto inserido
+<sub> - Texto subscrito
+<sup> - Texto sobrescrito
+
+° <table> -> cria uma tabela em html. cada linha da tabela é definida com <tr>, cada cabeçalho é definido <th> e cada dado é definido com uma tag <td>. 
+Dica -> pra fazer as bordas da tabela, no css nós definimos as tags da tabela, td e th com uma borda
+
+° <ul> -> lista não ordenada (sem os números na lista) e cada item da lista começa com <li>
+
+° <ol> -> lista ordenada e cada item da lista começa com <li>
+
+° <div> -> Ela é usada para criar divisões no documento html. Geralmente utilizada como container para outros elementos html. Muitas vezes a principal função da tag <div> é estilizar com CSS ou executar tarefas com javascript. <div> é um elemento em bloco que sempre começa em uma nova linha. Um elemento em bloco sempre ocupa toda a largura da página. 
+
+° <span> -> essa tag é um container embutido usado para marcar uma parte de um texto ou uma parte de um documento. <span> é um elemento inline, isso significa que ele não começa em uma nova linha e ocupa somente a largura necessaria
+
+° <class> -> podemos definir uma tag com classes multiplas, basta declararmos o nome das duas dentro da definição da classe.
+
+° <iframe> -> utilizado para exibir uma página web dentro de uma página web
+
+° Para selecionarmos um arquivo que está fora da nossa pasta atual, utilizamos a seguinte definição no source: ../local do arquivo
+
+° <base> -> esse elemento especifica a URL base e o destino para todas as urls relativas
+
+__________________________________________________________________________________
+			    ELEMENTOS DE LAYOUT HTML
+° <header> -> define um cabeçalho para um documento ou uma seção da página.
+
+° <nav> -> define um conjunto de links de navegação
+
+° <section> -> define uma seção em um documento
+
+° <article> -> define um conteudo independente e autocontido
+
+° <aside> -> define um conteudo além do conteudo (como uma barra lateral)
+
+° <footer> -> define um rodapé para o documento ou seção
+
+° <details> -> define detalhes adicionais que o usuario pode abrir e fechar sob demanda
+
+° <summary> -> Define um titulo para o <details>
+__________________________________________________________________________________
+
+° <kbd> -> essa tag altera é utilizada para definir a entrada do teclado, o conteudo passa a ser exibido na fonte monoespaçada
+
+° <samp> -> elemento utilizado para definir a saida da tela de um progama. o conteudo passar a ser exibido em fonte mono espaçado
+
+__________________________________________________________________________________
+				ELEMENTOS SEMANTICOS
+Em html, existem alguns elementos que podem ser usados para definir diferentes partes de uma página web. Diferente do <div> ou <span>, esses elementos possuem propriedades semanticas.
+
+° <article> -> O elemento article especifica um conteudo independete e autocontido. Um article (artigo) deve fazer sentido por si e deve ser possivel distribui-lo independente do resto do site. Alguns lugares que o article pode ser utilizado: psotagens em foruns, postagens em blogs, artigos de jornais.
+
+° <aside> -> O elemento aside define algum conteudo além do conteudo em que é colocado (como barra lateral). No asside o conteudo deve estar indiretamente relacionado ao conteudo circundante.
+
+° <details>
+
+° <figcaption> -> o elemento serve para marcar o cabeçalho ou a legenda para uma <figure>
+
+° <figure> -> esse elemento é feito para ser utilizado em conjunto com o elemento <figcaption>. Sua finalidade é para marcar diagramas, ilustrações, fotos, e fragmentos de código (entre outros conteudos). 
+
+° <footer> -> O elemento footer define um rodapé para um documento ou seção. o elemento footer geralmente contém: informações de autoria, informações sobre direitos autorais, informações de contato, mapa do site, voltar aos links principais, documentos relacionados.
+
+° <header> -> O elemento header representa um container para conteudo introdutorio ou um conjunto de links de navegação. um header normalmente contém: um ou mais elementos de titulos (h1-h6), logotipo ou icones, informações de autoria. Podemos ter mais de um header no nosso documento, porém o header não pode ser colocado dentro das tags (<footer>, <addres>, <header>). Você pode ter varios <footer> elementos em um documento 
+
+° <main> -> especifica o conteudo principal de um documento
+
+° <mark> -> define o texto marcado / destacado
+
+° <nav> -> O elemento <nav> define um conjunto de links de navegação. Observe que não é necessario todos os links de um documento estar dentro de um <nav>. O elemento se destina apenas ao bloco principal de links de navegação.
+
+° <section> -> esse elemento define uma seção em um documento, de acordo com a documentação do html, seção é um agrupamento temático de conteudo, normalmente contendo um titulo. uma página web normalmente pode ser divida em seções de introdução, conteudo e informações de contato.
+
+° <summary> -> define um titulo visivel para um elemento <details>
+
+° <time> -> define a data e a hora
+
+__________________________________________________________________________________
+			 	    FORMULÁRIOS
+° <form> -> A tag form é um elemento utilizado para criar um formulário HTML
+ para a entrada do usuario. O form é um elemento container para diferentes tipos de elementos de entrada, como: campos de texto, caixas de seleção, botões de opção, botões de envio, etc.
+
+° <input> -> O elemento input é o elemento de formulário mais utilizado, um input pode ser exibido de varias maneiras, dependendo do seu atributo.
+
+<input type = "text">	Exibe um campo de entrada de texto de linha única
+<input type = "radio">	Exibe um botão de opção (para selecionar uma das muitas opções)
+<input type = "checkbox">	Exibe uma caixa de seleção (para selecionar zero ou mais de muitas opções)
+<input type = "submit">	Exibe um botão de envio (para enviar o formulário)
+<input type = "button">	Exibe um botão clicável
+
+° <label> -> O label define um rotulo para muitos elementos do formulário. Representa uma legenda para algum item em uma interface de usuario. Ele pode ser associado com um elemento de controle, colocando este dentro do elemento label, ou usando o atributo for.
+
+A tag input tem que ter declarada nos seus atributos o name, se não utilizarmos essa atributo o formulário não enviara os nossos dados pra onde estivermos enviando para realizar a ação.
+
+__________________________________________________________________________________
+				ATRIBUTOS DO FORMULÁRIO
+° <form action=""> -> o action define a ação a ser executada quando o formulário é enviado. Normalmente, os dados do formulário são enviados para um arquivo no servidor quando o usuario clica no botão enviar.
+
+° <form action="" target=""> o atributo target especifica onde exibir a resposta recebida após o envio do formulário. o targe pode ter um dos seguintes valores:
+
+_blank -> a resposta é exibida em uma nova janela ou página
+
+_self -> a resposta é exibida na janela atual

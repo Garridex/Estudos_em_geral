@@ -1,0 +1,27 @@
+_________________________________________________________________________________
+			DEFINIÇÕES DE PROPRIEDADES
+Color -> define a cor do texto a ser utilizado 
+
+font-family -> define a fonte a ser utilizada
+
+font-size -> propriedade CSS que define o tamanho do texto a ser utilizado
+
+border -> propriedade do css que define uma borda ao redor do elemento HTML. Podemos definir uma borda para quase todos os elementos.
+
+padding -> propriedade que define um preenchimento (espaço) entre o texto e a borda.
+
+margin -> propriedade que define um espaço fora da borda.
+__________________________________________________________________________________
+			DEFINIÇÕES DE CLASSES
+Classes são estilizadas com um . e Ids são estilizados com # 
+
+
+
+
+
+
+
+__________________________________________________________________________________
+			DEFINIÇÕES DE TAMANHOS
+° vw -> vw significa laragura da janela de visualização, 1vw é equivalente a 1% da largura da janela de visualização. Se a janela tiver 50cm 1vw é equivalente a 0,5cm
+
