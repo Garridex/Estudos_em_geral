@@ -1,0 +1,63 @@
+DOM: document object model -> basicamente um conjunto de objetos dentro do navegador que nós da acesso a componentes internos do site. Só funciona dentro de um navegador.
+
+Arvore DOM: basicamente a arvore dom começa da raiz chamada de window (equivale a nossa janela ou tela que visualizamos ao abrir aquela aplicação no navegador), tudo dentro do javascript está localizado dentro desse objeto. Dentro do window temos varios outros objetos:
+
+°objeto location -> diz qual a localização do nosso site, nossa url, nossa página atual
+
+° objeto Document -> nosso documento atual
+
+° documento history -> vai guardando de onde vimos e pra onde vamos no site
+
+
+Dentro do objeto document se encontra o documento html, dentro dele temos dois filhos, head e body, head e body são filhos de html então são childs. quem está embaixo na arvore são childs e quem está em cima imediantamente é um parent, isso é uma arvore hierarquica.
+
+No caso do nosso documento, dentro da tag head os seus filhos são as tags metas e o title. Já dentro da nossa tag body, os filhos são o <h1>, dois <p> e uma <div>. Dentro de um dos <p> nós temos um filho, que é strong.	Essa é a arvore hierarquica do arquivo que acabamos de criar.
+
+Se utilizarmos em javascript o comando window.document (comando para acessar os objetos dentro do nosso documento window) podemos ver todas as possibilidades dentro de document, podemos navegar dentro da arvore utilizando o javascript.
+
+*** Elemento -> qualquer coisa dentro da arvore dom é um elemento ***
+
+Podemos selecionar os elementos para navegar dentro da arvore dom, nesta aula veremos cinco metodos: Por marca, Por ID, Por Nome, Por classe, Por Seletor.
+
+Veremos agora como selecionar por Marca (Ou por tag name)-> O comando é o seguinte: getElementsByTagName()
+A sintaxe é a seguinte: 
+
+var p1 = window.document.getElementsByTagName('p')[0]
+
+Esse colchete no final representa qual tag <p> nós pegaremos, por querermos a primeira devemos especificar como a tag 0, porém esse valor pode ser alterado.
+
+A sintaxe do nosso comando completo ficaria assim: var p1 = window.document.getElementsByTagName('p')[0]
+window.document.write(p1.innerText)
+
+O innerText é o texto que está dentro do primeiro paragrafo.
+Podemos por exemplo ao inves de escrever na tela o paragrago 1, podemos alterar a cor dele pra vermelho,exemplo:
+
+p1.style.color = 'red'
+
+Dessa forma o valor de p1 que é o nosso document.getElementsByTagName('p')[0]
+Vai ficar com a cor Vermelha.
+
+Isso significa que podemos atribuir a nossa window a váriaveis e estilizar suas cores com o css de seguinte maneira:
+
+var corpo = document.body (pegamos o body do nosso documento)
+
+corpo.style.background = 'black'
+__________________________________________________________________________________
+Qual a diferença de innerText e innerHTML? -> o innertext pega o texto sem as filhas, sem a formatação e o innerHTML pega o HTML inteiro inclusive com as tags filhas.
+
+
+° Conseguimos fazer o acesso a todos os componentes utilizando o getElementsByTagName, mas esse não é o unico metodo, podemos selecionar também por id, Posso identificar um paragrafo ou uma div por exemplo (getElementById() ). Também podemos utilizar o nome do objeto se tiver uma propriedade name (getElementsByName() ) por ele ter o S no plural, devemos utilizar o colchete no final quando temos mais de um objeto. Quando tenho mais de um objeto da mesma classe ou de mesmo nome vamos usar muito por marca e por nome, quando quisermos selecinar um elemento somente, vamos utilizar o ID. Também podemos utilizar o conjunto por classe getElementsByClassName().
+
+
+Todas as formas de acesso são do mesmo principio, depende somente da situação da página que estamos criando.
+
+Porém há uma forma nova de se fazer que é utilizando um seletor, essa forma é até recomendavel pela maioria dos manuais de progamação js.
+
+° querySelector() -> Utilizando o query selector, a sintaxe é a seguinte: var d = window.document.querySelector('div#msg')
+ 
+Como estamos usando id, então referenciamos no selector com div#msg, já se fosse uma classe seria #
+
+° querySelectorAll() -> a mesma seleção porém utilizando o plural
+
+***Toda Div é representa por uma # e toda classe é representada por um . ***
+
