@@ -120,3 +120,40 @@ ________________________________________________________________________________
 _blank -> a resposta é exibida em uma nova janela ou página
 
 _self -> a resposta é exibida na janela atual
+
+_parent -> a resposta é exibida no quadro principal
+
+_top -> a reposta é exibida no corpo todo da tela
+
+framename -> a reposta é exibida no frame nomeado
+
+° <form action="" method=""> -> O atributo method especifica o método http a ser usado para enviar os dados do formulário. Os dados do formulário podem ser enviados variaveis de URL (methodo GET) ou como transação HTTP POST (utilizando o metodo POST).
+
+° <form action="" autocomplete="on"> -> esse atributo especifica se um formulário deve ter preenchimento automatico ativado ou desativado. Quando está ativado o navegador completa automaticamente com base nos valores que o usuario inseriu anteriormente	
+
+__________________________________________________________________________________
+			ELEMENTOS DE FORMULÁRO
+Este capitula descreve todos os diferentes elementos de formulário HTML.
+Todas essa tags são utilizadas dentro da tag form  
+
+° O elemento <form> Pode conter um ou mais dos seguinte elementos
+<input>
+<label>
+<select>
+<textarea>
+<button>
+<fieldset>
+<legend>
+<datalist>
+<output>
+<option>
+<optgroup>
+
+° <select> -> O elemento select define uma lista suspensa
+	
+
+
+
+
+
+
