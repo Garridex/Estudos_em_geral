@@ -1,27 +1,154 @@
-__________________________________________________________________________________
+_________________________________________________________________________________
 			DEFINIÇÕES DE PROPRIEDADES
+---------------------------------------------------------------------------------
+		***CORES: As tag utilizadas para alterar as cores
+
 Color -> define a cor do texto a ser utilizado 
 
-font-family -> define a fonte a ser utilizada
+background-color -> define a cor de fundo do documento
+----------------------------------------------------------------------------------
+		***FUNDOS: As tags utilizada para alterar o fundo
 
-font-size -> propriedade CSS que define o tamanho do texto a ser utilizado
+background-color -> define a cor de fundo do documento
+	°Podemos definir a cor de fundo de qualquer elemento
 
-border -> propriedade do css que define uma borda ao redor do elemento HTML. Podemos definir uma borda para quase todos os elementos.
+opacity -> propriedade especifica para definir a transparencia do elemento
 
-padding -> propriedade que define um preenchimento (espaço) entre o texto e a borda.
+background-image -> a propriedade especifica uma imagem a ser usada como plano de fundo de um elemento. 
 
-margin -> propriedade que define um espaço fora da borda.
+	°Também podemos definir uma imagem de fundo para um elemento especifico, 		 tal como uma tag <p>
+
+background-repeat -> propiedade para definir a repetição da imagem de fundo
+
+background-position -> propriedade utilizada para especificar a posição da imagem de fundo
+
+background-attach -> propriedade especifica se a imagem de plano de fundo deve rolar ou ser corrigida (não rolar com o resto da pagina)
+
+	°fixed define que a imagem deve permanecer no mesmo lugar e somente 			 scrollar o texto.
+	°scroll define que a imagem pode ser deixada para trás junto com o texto
+
+----------------------------------------------------------------------------------
+		***BORDAS: Tags utilizada para definir e estilizar as bordas
+
+border-style-> propriedade que define que tipo de borda exbir
+	° dotted: define uma borda pontilhada
+	° dashed: define uma borda tracejada
+	° solid: define uma borda sólida
+	° double: define uma borda dupla
+	° groove: define uma borda com sulcos 3D
+	° ridge: define uma borda estriada 3D
+	° inset: define uma borda de inserção 3D
+	° outset: define uma borda de inicio 3D
+	° none: define como sem borda
+	° hidden: define uma borda oculta
+
+border-widht -> propriedade especifica para definir a largura dos quatros lados da borda. a largura pode ser definida como um tamanho especifico (em px, pt, cm, em, etc) Ou utilizando um dos tres valores predefinidos: thin, medium, or thick
+
+border-width -> a propriedade border-width pode ter de um a quatro valores (para a borda superior, borda direita,borda inferior e borda esquerda) As ordens da definição são: top, right, bottom e left
+
+border-color -> propriedade é usada para definir a cor das quatros bordas. A propriedade pode ter até 4 valores, e suas distribuições são feitas da seguinte maneira: top,right,bottom e left
+
+border-top -> afeta somente o topo da borda
+
+border-right -> afeta somente a direita da borda
+
+border-bottom -> afeta somente a parte inferior da borda
+
+border-left -> afeta somente a parte esquerda da borda	
+
+border-radius -> propriedade utilizada para definir bordas arredondas no elemento
+----------------------------------------------------------------------------------
+       ***MARGINS: As margens são usadas para criar espaços ao redor dos elementos e com css temos controle total sobre as margens, Existem propriedades para definir a margem de cada lado de um elemento (superior, direita, inferior e esquerda).
+
+margin-top -> define a margem superior
+
+margin-right -> define a margem da direita
+
+margin-bottom -> define a margem inferior
+
+margim-left -> define a margem esquerda
+
+	° Todas as propriedades de margem podem ter os seguintes valores:
+	 - auto -> o navegador calcula a margem da bordar
+	 - comprimento -> especifica uma margem em px, pt, cm, etc
+	 - % -> especifica uma margem em % da largura do elemento que o contém
+	 - herdar -> especifica que a margem deve ser herdada do elemento pai
+
+margin: auto -> podemos definir a propriedade margin em auto para centralizar horizontalmente o elemento no container (<div>)
+
+Valor herdado -> podemos definir a propriedade margin como inherit para ela herdar os valores do seu pai. para fazermos o uso do valor herdado, basta utilizarmos a seguinte sintaxe: 
+	° margin-left:inherit;
+----------------------------------------------------------------------------------
+			***PADDING: Preenchimento é usado para criar espaço ao redor do conteudo de um elemento, dentro de quisquer bordas definidas. Essa propriedades são usadas para gerar espaço ao redor do conteudo de um elemento, dentro de quisquer bordas definidas
+
+padding-top -> serve para definir o preenchimento superior
+
+padding-right -> serve para definir o preenchimento direito
+
+padding-bottom -> serve para definir o preenchimento inferior
+
+padding-left -> serve para definir o preenchimento esquerdo
+
+Todas as propriedades de preenchimento podem ter os seguintes valores:
+	° Comprimento -> especifica um preenchimento em px, pt, cm, etc
+	° % -> especifica um preenchimento em % da largura do elemento que o 	 contém
+	° inherit -> especifica que o preenchimento deve ser herdado do elemento 		  pai
+width -> especifica a largura da area de conteudo do elemento.
+
+box-sizing -> essa propriedade faz com que os elementos mantenham sua largura, se você aumentar o preenchimento, o espaço de conteúdo diminuira
+----------------------------------------------------------------------------------
+		***HEIGHT E WIDTH: são utilizada para definir altura e largura de um elemento. esse elementos não incluem o preenchimento, bordas ou margem, eles somente definem a altura
+
+max-width -> propriedade que define a largura maxima de um elemento. pode ser definido como px, cm, etc. também pode ser definido em porcentagem do bloco que o contém. ou definido como nenhum (esse é o padrão. Significa que não há largura máxima)
+
+As propriedades height e width podem ter os seguintes valores: 
+		°Auto -> este é o padrão, o navegador calcula a altura e largura
+		°lenght -> define a largura ou altura em px, cm e etc
+		°% -> define a altura e a largura em porcentagem do bloco que a 			  contém
+		°initial -> define a altura e a largura para seu valor padrão
+		°inherit -> herda o tamanho da sua classe pai	
+
 __________________________________________________________________________________
-			DEFINIÇÕES DE CLASSES
+			     SELETORES CSS
+----------------------------------------------------------------------------------		***DESCRIÇÃO: Os seletores são utilizados para encontrar os elementos HTML que você deseja estilizar. Podemos dividir os seletores em cinco categorias:
+
+° Seletores simples (seleciona os elementos com base no nome, id, classe)
+
+° Seletores combinadores (selecione os elementos com base em uma relação especifica entre eles)
+
+° Seletores pseudoclasse (selecione os elementos com base em um determinado estado)
+
+° Seletores de pseudoelementos (selecione e estilize uma parte de um elemento)
+
+° Seletores de atributos (selecione os elementos com base em um atributo ou valor de atributo)
+
+----------------------------------------------------------------------------------
+		     ***SIMPLES:Seletores simples
+
 Classes são estilizadas com um . e Ids são estilizados com # 
+ID
+° Para selecionar um elemento com um id especifico, utilizamos o (#) seguido pelo id do elemento
 
+CLASS
+° Para selecionar elementos com uma classe especifica, utilizamos um ponto (.), seguido da classe. Também podemos especificar que apenas um elementos especificos seja estilizados, para isso definimos com o nome da tag e a classe que desejamos. tambem podemos referenciar os elementos html a mais de uma classe
 
+UNIVERSAL
+° O seletor universal (*) seleciona todos os elementos HTML da página
 
-
-
-
-
+AGRUPAMENTO
+° O seletor de agrupamento funciona da seguinte forma: Ao inves de utilizarmos de mais de uma definição para fazermos a mesma estilização, definimos todos os elementos juntos: h1,h2,p {}
 __________________________________________________________________________________
 			DEFINIÇÕES DE TAMANHOS
+----------------------------------------------------------------------------------
 ° vw -> vw significa laragura da janela de visualização, 1vw é equivalente a 1% da largura da janela de visualização. Se a janela tiver 50cm 1vw é equivalente a 0,5cm
+
+
+
+
+
+
+
+
+
+__________________________________________________________________________________
 

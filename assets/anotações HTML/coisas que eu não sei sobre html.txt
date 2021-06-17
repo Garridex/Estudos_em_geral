@@ -149,11 +149,17 @@ Todas essa tags são utilizadas dentro da tag form
 <option>
 <optgroup>
 
-° <select> -> O elemento select define uma lista suspensa
+° <select> -> O elemento select define uma lista suspensa e os <options> definem uma opção que pode ser selecionada. Por padrão, o primeiro item da lista suspensa é selecionado.Para definir uma opção pré-selecionada, adicione o selectedatributo à opção
 	
 
+° <textarea> -> esse elemento define um campo de entrada multilinhas (uma area de texto). os rows são um atributo que especifica o numero visivel de linhas em uma area de texto. o cols especifica a largura visivel de uma area de texto.
 
+° <buttom> -> o elemento buton define um botão clicavel
 
+° <fieldset> -> o elemento fielset é usado para agrupar dados relacionais em um formulario.
 
+° <legend> -> define uma legenda para o <fieldset>
 
+° <datalist> -> o elemento datalist especifica uma lista de opções predefinidas para um input. Os usuarios verão uma lista suspensa das opções predefinidas á medida que inserem os dados. o list atributo do input elemento deve se referir ao id atributo do <datalist> elemento.
 
+° <output> -> esse elemento representa o resultado de um calculo (Como um excutado por um script)
