@@ -28,7 +28,7 @@ background-attach -> propriedade especifica se a imagem de plano de fundo deve r
 	°scroll define que a imagem pode ser deixada para trás junto com o texto
 
 ----------------------------------------------------------------------------------
-		***BORDAS: Tags utilizada para definir e estilizar as bordas
+		    ***BORDAS: Tags utilizada para definir e estilizar as bordas
 
 border-style-> propriedade que define que tipo de borda exbir
 	° dotted: define uma borda pontilhada
@@ -54,11 +54,11 @@ border-right -> afeta somente a direita da borda
 
 border-bottom -> afeta somente a parte inferior da borda
 
-border-left -> afeta somente a parte esquerda da borda	
+border-left -> afeta somente a parte esquerda da bordafffffffffffffff	
 
 border-radius -> propriedade utilizada para definir bordas arredondas no elemento
 ----------------------------------------------------------------------------------
-       ***MARGINS: As margens são usadas para criar espaços ao redor dos elementos e com css temos controle total sobre as margens, Existem propriedades para definir a margem de cada lado de um elemento (superior, direita, inferior e esquerda).
+                   ***MARGINS: As margens são usadas para criar espaços ao redor dos elementos e com css temos controle total sobre as margens, Existem propriedades para definir a margem de cada lado de um elemento (superior, direita, inferior e esquerda).
 
 margin-top -> define a margem superior
 
@@ -107,6 +107,125 @@ As propriedades height e width podem ter os seguintes valores:
 		°% -> define a altura e a largura em porcentagem do bloco que a 			  contém
 		°initial -> define a altura e a largura para seu valor padrão
 		°inherit -> herda o tamanho da sua classe pai	
+----------------------------------------------------------------------------------
+		    ***OUTLINE: Um contorno é uma linha desenhada em torno dos elementos, FORA das bordas, para fazer o elemento "se destacar". Um contorno é uma linha desenhada em torno dos elementos, fora das bordas, para fazer o elemento se destacar
+	
+	°outline-style -> propriedade especifica para definir o estilo de contorno
+	°outline-color -> propriedade especifica para definir a cor do contorno
+	°outline-width -> propriedade especifica para definir a largura do 	 contorno
+	°outline-offset -> propriedade para definir um espaço entre um contorno e 	 a borda. o espaço é transparente
+	°outline
+
+----------------------------------------------------------------------------------
+		   ***TEXTO: Css tem muitas propriedades para formtação de textos.
+
+color -> propriedade usada para definir a cor do texto. a cor de texto padrão de uma pagina é definida no body
+
+text-aling -> essa propriedade é usada para definir o alinhamento horizontal de um texto. um texto pode ser alinhado á esquerda, ou a direita, centralizado ou justify.
+	° quando a propriedade é definida como justify, cada linha é esticada para 	 que todas as linhas tenham a mesma largura e as margens esqueda e direita 	 sejam retas 
+
+direction - unicode-bidi-> ambas as propriedades servem para inverter a direção do texto de um elemento
+	°direction também serve para alterar a ordem do texto, como direita pra 	 esquerda e esquerda pra direita
+
+vertical-aling -> propriedade define o alinhamento vertical de um elemento. também utilizada para alinhar fotos dentro de textos
+
+text-decoration -> essa propriedade é utilizada para definir ou remover decorações de texto, o valor text-decoration none é frequentemente usado para remover sublinhados de links
+
+text-tranform -> essa propriedade é usada para especificar letra maiusculas e minusculas em um texto. ela pode ser usada para transformar tudo em letra maiusculas ou minusculas, colocar as primeiras letras de cada palavra em maiusc.
+
+text-indent -> propriedade é usada para especificar o recuo da primeira linha de um texto
+
+letter-spacing -> define um espaçamento entre os caracteres de um texto
+
+line-height -> propriedade usada para definir espaçamento entre as linhas
+
+word-spacing -> propriedade usada para definir o espaço entre as palavras em um texto.
+
+white-space -> propriedade especifica como o espaço em branco dentro do texto é tratado
+
+text-shadow -> propriedade que adiciona uma sombra ao texto. Em seu uso mais simples, você especifica apenas a sombra horizontal e a vertical
+----------------------------------------------------------------------------------
+			   ***FONT: é importante escolher a fonte certa para o seu site. A escolha da fonte certa tem um grande impacto na maneira como os leitores experimentam um site
+
+font-family -> propriedade utilizada para especificar fontes de um texto. A propriedade font-family conter varios nomes de fontes, como um sistema substituto, para garantir a compatibilidade máxima entre navegadores. Começamos com a fonte desejada e terminamos com uma familia generica
+
+font-style -> propriedade utilizada principalmente para especificar texto em italico
+
+font-weight -> propriedade especifica o peso de uma fonte, como negrito, italico e etc
+
+font-variant -> propriedade especifica se um texto deve ou não ser exibido em uma fonte versalete. em uma fonte versalete, todas as letras minusculas são convertidas em maiusculas. No entanto, as letras maiusculas convertidas aparecem em um tamanho de fonte menor do que as letras maiusculas originais do texto
+
+font-size -> propriedade utilizada para definir o tamanho do texto. Os valores para tamanhos de texto podem ser absolutos ou relativos 
+	
+	°Tamanhos absoluto: define o texto para um tamnho especificado
+	 não permite que um usuario altere o tamanho do texto em todos 	 os 	 navegadores 
+	
+	°Tamanho relativo: define um tamanho em relação aos elementos circundantes
+	 permite ao usuario alterar o tamanho do texto nos navegadores
+	
+	° Definir o tamanho da fonte como Em: para permitir que os usuarios redimensionem o texto (no menu navegador), muitos desenvolvedores usam em vez de pixels o em. 1em é igual ao tamanho da fonte atual, o tamanho de texto padrão dos navegadore é 16px, então 1em é igual a 16px
+----------------------------------------------------------------------------------
+			***DISPLAY: é a propriedade mais importante do css para controlar layout.
+
+display -> essa propriedade especifica como um elemento é exibido. cada elemento html tem um valor de exibição padrão ou dependendo de que tipo de elemento ele é. O valor de exibição para a maioria dos elementos é block ou inline
+
+	° block -> um elemento a nivel de bloco sempre começa em uma nova linha, e 	 ocupa toda a largura disponivel (se extende para a esquerda e para a 	 direita, tanto quanto pode).
+
+	°inline -> um elemento inline não começa em uma nova linha e só ocupa a 	 largura necessaria. 
+	
+ ° NOTA: definir a propriedade de exibição de um elemento altera apenas como o elemento é exibido, não que tipo de elemento ele é. Portanto, um elemento embutido com display:block, não pode ter outros elementos de bloco dentro dele.
+
+----------------------------------------------------------------------------------
+		***LAYOUT CSS: Largura e largura máxima
+Conforme mencionado anteriormente, um elemento a nivel de bloco sempre ocupa toda a largura disponivel (se estende para a esquerda e para a direita, tanto quanto pode) Definir o width de um elemento de nivel de block, impedirá que ele se estenda até as bordas do container. 
+
+O problema de fazer algo dessa forma é que quando redimensionamos a janela, para menor que a largura do elemento, o navegador então adiciona uma barra de rolagem horizontal a pagina
+
+Para resolvermos esse problema definimos o max-width como 500px, dessa forma a pagina irá redimensionar o elemento e tornando a pagina mais responsiva
+
+z-index -> o index Z é um elemento que especifica a ordem de pilha de um elemento (qual elemento deve ser colocado atrás ou na frente do outro) podendo ser valores positivos e negativos. Um elemento com um número maior estará na frente de um elemento com um número menor
+
+NOTA: se dois elementos posicionados se sobrepõe sem um z-index, o elemento posicionado por ultimo no código será mostrado na parte superior
+----------------------------------------------------------------------------------
+			***POSITION: A propriedade position é utilizada para manipular a localização e o comportamento de elementos em uma página. Ele pode receber diversos valores. 
+
+position->  a propriedade especifica o tipo de metodo de posicionamento usado para um elemento. existem cinco tipos de valores e posições diferentes:
+	
+	°static -> estático 
+	°relative -> relativo
+	°fixed -> fixo
+	°absolute -> absoluto
+	°sticky -> aderente
+
+° A propriedade position deve ser definida e conter também as propriedades de posicionamento do objeto: top, right, bottom e left.
+
+position:static -> Esse é o valor default de todo documento HTML, ou seja, ele vai seguir o fluxo comum da sua página
+
+position:relative -> Utilizando o position relative, o elemento passa a aceitar as propriedades Top, bottom, left e right. Com elas você pode alterar o posicionamento do elemento
+
+position:absolute -> é um grande quebra galho no CSS. Com ele podemos posicionar qualquer elemento de acordo com o elemento pai que tenha um position diferente de static
+
+position:fixed -> Se comporta de maneira semelhante ao absolute, deixando de fazer parte do fluxo comum da pagina porém a grande diferença dele é que ele passa a se referenciar ao window do seu navegador, ou seja, a aréa que aparece para o usuario independente de barra de rolagem.
+----------------------------------------------------------------------------------
+			   ***OVERFLOW: A propriedade CSS controla o que acontece com o conteudo que é muito grande para caber em uma area
+
+overflow -> a propriedade overflow especifica se deve cortar o conteudo ou adicionar barras de rolagem quando o conteudo de um elemento é muito grande para caber na area especificada
+	° visible -> padrão, O estouro não é cortado e o conteudo é rederizado 	 fora da caixa de elemento
+	° hidden -> O overflow é cortado e o resto do conteudo ficara visivel
+	° scroll -> O overflow é cortado e uma barra de rolagem é adicionada para 	 ver o resto do conteudo
+	° auto -> semelhante a scrool, mas adiciona barras de rolagem apenas 	 quando necessario
+
+overflow-x -> especifica o que fazer com as bordas esquerda e direita
+
+overflow-y -> especifica o que fazer com as bordas superior inferior do conteudo
+----------------------------------------------------------------------------------
+			***FLOAT E CLEAR: float essa propriedade CSS especifica como um elemento deve flutuar. clear essa propriedade CSS especifica quais elementos podem flutuar ao lado do elemento limpo e em que lado
+
+float -> a propriedade é usada para posicionar e formatar o conteudo, por exemplo, deixar uma imagem flutuar a esquerda do texto em um container.Em seu uso mais simples, a propriedade float pode ser usada para envolver o texto em imagens.float pode ter os seguintes valores
+	° left -> o elemento flutua a esquerda de seu container
+	° right -> o elemento flutua a direita de seu container
+	° none -> o elemento não flutua (será exibido apenas onde ocorre no texto) 	 este é o padrão
+	° inherit -> o elemento herda o valor flutuante de seu pai
 
 __________________________________________________________________________________
 			     SELETORES CSS
@@ -149,6 +268,16 @@ ________________________________________________________________________________
 
 
 
-
 __________________________________________________________________________________
+			***BOX MODEL: todos os elementos html podem ser consideradas caixas. em css o termo modelo de caixa é usado para falar sobre desing e layout. O modelo de caixa css é essencialmente uma caixa que envolve todos os elementos HTML. Consiste em: margens, bordas, preechimento e o conteudo real.
 
+	°Conteudo -> o conteudo da caixa é onde o texto e as imagens aparecem
+	°Preenchimento -> Limpa uma area ao redor do conteudo. O preenchimento é 
+	 transparente	
+	°Borda -> Uma borda que circunda o preenchimento e o conteudo
+	°Margem -> Limpa uma area fora da borda. A margem é transparente
+
+importante: o definir as propriedades de largura e altura de um elemento com CSS, basta definir a largura e a altura da área de conteudo. Para calcular o tamanho total de um elemento, você também deve adicionar preenchimento, bordas e margens.
+
+Aqui está o calculo: 320px (largura - width) + 20px (preenchimento padding esquerdo+direito) + 10px (borda esquerda + direita) + 0px (margin esquerda+ direita)
+__________________________________________________________________________________
