@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Dom</title>
+</head>
+<style>
+    body{
+        background-color: lightcoral;
+        color: black;
+        font: normal 18pt Arial;
+    }
+</style>
+<body>
+    <h1>aprendendo a usar o dom</h1>
+    <p>aqui vai o resultado</p>
+    <p>aprendendo a usar <strong>DOM</strong></p>
+    <div>clique em mim</div>
+    <br>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+        corpo.style.background = 'red'
+        
+    </script>
+</body>
+</html>

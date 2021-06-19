@@ -1,1 +1,22 @@
-Nessa aula iremos focar em eventos
+DOM ->  Document Object Model, é um facilitador que existe dentro do navegador e do HTML5 que serve para termos acesso aos elementos da página diretamente ao javascript
+
+A arvore DOM é montada através do fluxo da página, ou seja as tags tem a hierarquia de pai e filho.
+
+<div class="Essa tag é pai da Tag p"> 
+<p>Essa tag é filha da tag DIV</p>
+</div>
+
+° As tags que ficam dentro de outras tag são consideradas childs e as tags que são as que contém as tags são consideradas parents.
+
+
+
+ENVENTOS DOM: Evento é tudo aquilo que possa acontecer com o elemento, o mais comum são eventos de mouse, tais como ir com o mouse em cima, mover o mouse por cima e clicarmos e segurar, soltar o botão do mouse, clicar e soltar, mover o mouse para fora e etc...
+isso significa que só com o mouse temos uma infinidade de eventos, a documentação oficial do javascript lista mais uma infinidade de eventos que podem ser utiliados.
+
+Resumindo o que são os eventos -> eventos são coisas que podem ser feitos utilizando os elementos. Para tratar os eventos utilizamos funções com gatilhos nos eventos.
+
+Os eventos podem ser configurados tanto na parte de definição HTML quanto na parte de definição do javascript
+
+	° Definição no html -> suponhamos que o elemento é div e queremos definir ele para fazer uma função ao clicar, tal como alterar o conteudo de um paragrafo 
+
+	° Definição no javascript -> 

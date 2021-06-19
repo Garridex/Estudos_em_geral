@@ -186,6 +186,8 @@ Para resolvermos esse problema definimos o max-width como 500px, dessa forma a p
 z-index -> o index Z é um elemento que especifica a ordem de pilha de um elemento (qual elemento deve ser colocado atrás ou na frente do outro) podendo ser valores positivos e negativos. Um elemento com um número maior estará na frente de um elemento com um número menor
 
 NOTA: se dois elementos posicionados se sobrepõe sem um z-index, o elemento posicionado por ultimo no código será mostrado na parte superior
+
+display:inline-block -> Em comparação com o display:inline a principal diferença é que display:inline-block permite definir uma largura e altura no elemento
 ----------------------------------------------------------------------------------
 			***POSITION: A propriedade position é utilizada para manipular a localização e o comportamento de elementos em uma página. Ele pode receber diversos valores. 
 
@@ -210,10 +212,10 @@ position:fixed -> Se comporta de maneira semelhante ao absolute, deixando de faz
 			   ***OVERFLOW: A propriedade CSS controla o que acontece com o conteudo que é muito grande para caber em uma area
 
 overflow -> a propriedade overflow especifica se deve cortar o conteudo ou adicionar barras de rolagem quando o conteudo de um elemento é muito grande para caber na area especificada
-	° visible -> padrão, O estouro não é cortado e o conteudo é rederizado 	 fora da caixa de elemento
+	° visible -> padrão, O estouro não é cortado e o conteudo é rederizado 	 	 fora da caixa de elemento.
 	° hidden -> O overflow é cortado e o resto do conteudo ficara visivel
-	° scroll -> O overflow é cortado e uma barra de rolagem é adicionada para 	 ver o resto do conteudo
-	° auto -> semelhante a scrool, mas adiciona barras de rolagem apenas 	 quando necessario
+	° scroll -> O overflow é cortado e uma barra de rolagem é adicionada para 		  ver o resto do conteudo.
+	° auto -> semelhante a scrool, mas adiciona barras de rolagem apenas 	 	 quando necessario.
 
 overflow-x -> especifica o que fazer com as bordas esquerda e direita
 
@@ -221,12 +223,17 @@ overflow-y -> especifica o que fazer com as bordas superior inferior do conteudo
 ----------------------------------------------------------------------------------
 			***FLOAT E CLEAR: float essa propriedade CSS especifica como um elemento deve flutuar. clear essa propriedade CSS especifica quais elementos podem flutuar ao lado do elemento limpo e em que lado
 
-float -> a propriedade é usada para posicionar e formatar o conteudo, por exemplo, deixar uma imagem flutuar a esquerda do texto em um container.Em seu uso mais simples, a propriedade float pode ser usada para envolver o texto em imagens.float pode ter os seguintes valores
+float -> quando aplicamos a propriedade float, o elemento ganha um novo contexto, é posicionado nesse novo contexto o maximo que ele conseguir para o sentido que foi passado para a propriedade float. float pode ter os seguintes valores:
 	° left -> o elemento flutua a esquerda de seu container
 	° right -> o elemento flutua a direita de seu container
 	° none -> o elemento não flutua (será exibido apenas onde ocorre no texto) 	 este é o padrão
 	° inherit -> o elemento herda o valor flutuante de seu pai
 
+clear -> essa propriedade serve para deixar os elementos abaixo dos elentos que estão flutuando. A propriedade clear é utilizada para limpar o contexto caso tenha um elemento flutuando do lado esquerdo (left) ou direito (right) ou ambos os lados (both)
+
+°CONTEXTO: a partir do momento em que inserimos a propriedade float num elemento, ele deixa de fazer parte do contexto da tag pai (onde está inserida). Como fazer para que o pai enxergue os objetos definidos como float? utilizando a propriedade overflow:hidden, essa propriedade faz com que qualquer elemento filho que ultrapasse o tamanho do pai seja escondido, mas quando o pai não tem altura e nem largura ele utiliza o tamanho dos filhos como base
+
+box-sizing -> quando adicionamos algo que aumenta a largura de cada caixa (por exemplo, preenchimento ou bordas), o tamanho se altera e perdemos as nossas propriedades. A box sizing:border-box indica que o tamanho dos elementos agora levará em conta até a borda, ou seja o tamanho será a soma do conteudo com a borda e o padding
 __________________________________________________________________________________
 			     SELETORES CSS
 ----------------------------------------------------------------------------------		***DESCRIÇÃO: Os seletores são utilizados para encontrar os elementos HTML que você deseja estilizar. Podemos dividir os seletores em cinco categorias:
