@@ -1,16 +1,20 @@
 
 body{
- background-color: #d3d3d3
+ background-color: #d3d3d3;
+ box-sizing: border-box;
 }
 header{
-    margin-left: 35%;
-    width: 350px;
-    height: 50px;
+    margin:auto;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     line-height: 50px;
     text-align: center;
     padding: 20px;
     border: 1px solid black;
-    background: lightblue;
+    background: #8FBC8F;
     display: block;
 }
 header h1{
@@ -18,3 +22,12 @@ header h1{
     text-align: center;
 }
 
+div input[type='button']{
+    border: solid 1px blue;
+    background: #4169E1;
+    align-items: center;
+}
+header p {
+    align-items: center;
+    line-height: 35%;
+}
