@@ -16,7 +16,49 @@ isso significa que só com o mouse temos uma infinidade de eventos, a documenta�
 Resumindo o que são os eventos -> eventos são coisas que podem ser feitos utilizando os elementos. Para tratar os eventos utilizamos funções com gatilhos nos eventos.
 
 Os eventos podem ser configurados tanto na parte de definição HTML quanto na parte de definição do javascript
+__________________________________________________________________________________
+° disparando os enventos no html -> suponhamos que o elemento é div e queremos definir ele para fazer uma função ao clicar, tal como alterar o conteudo de um paragrafo, então a sintaxe da declaração da tag é a seguinte: 
 
-	° Definição no html -> suponhamos que o elemento é div e queremos definir ele para fazer uma função ao clicar, tal como alterar o conteudo de um paragrafo 
+ <div id="area" onclick="clicar()"> e 
+<script>
+var a = window.document.getElementByid('area')
+a.innerText = "teste"
+a.style.background = 'red'
+</script>
 
-	° Definição no javascript -> 
+Com esse script, ao clicarmos na nossa div, o texto dela será alterado para clicou e sua cor também será alterada.
+Com esse tipo de script passando funções podemos realizar diversas ações. Essa interatividade pode ser feita em qualquer elemento HTML.
+__________________________________________________________________________________
+° Disparando os eventos por javascript -> podemos inserir listeners que são ouvidores que ficam atentos ao que ocorre no nosso documento HTML.
+
+Para adicionarmos um listener, como já utilizamos a alteração da arvore dom atribuindo o elemento que queremos altererar a variaveis, também atribuimos o listener a uma váriavel:
+
+a.addEventListener('click', clicar) -> aqui nós definimos entre aspas o qual o evento que estamos querendo a após a virgula definimos qual função iremos executar. nesse caso ao clicar a função definida irá alterar o texto para clicou! e alterar a cor para vermelho.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

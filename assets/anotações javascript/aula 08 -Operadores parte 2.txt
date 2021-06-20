@@ -1,0 +1,9 @@
+Nessa aula veremos os operadores relacionais, lógicos, e ternários.
+
+Os operadores relacionais são igual a grande maioria das linguagens:
+> -> maior
+< -> menor
+>= -> maior ou igual a
+<= -> menor ou igual a 
+== -> igual a 
+!= -> diferente

@@ -1,0 +1,27 @@
+° O javascript possui várias familias de operadores, algumas delas são:
+aritmeticos
+atribuição
+relacionais
+lógicos
+ternário
+
+1° Aritmeticos: Os operadores aritmeticos do javascript, assim como outras linguagens de progação são:
+
++ -> soma
+- -> subtrai
+* -> multiplica
+/ -> divide
+% -> divisão inteira
+** -> exponenciação
+
+Todos os operadores acima são chamados de binários, pois necessitam de dois operandos para realizar as sua operações. 
+
+ATALHOS PARA ATRIBUIÇÃO DE VALOR:
+
++= -> Atribuição soma
+
+-= -> atribuição de Subtração
+
+*= -> atribuição de multiplicação 
+
+/= -> atribuição de divisão

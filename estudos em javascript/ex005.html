@@ -17,14 +17,14 @@
     <h1>aprendendo a usar o dom</h1>
     <p>aqui vai o resultado</p>
     <p>aprendendo a usar <strong>DOM</strong></p>
-    <div>clique em mim</div>
-    <br>
+    <div id="teste">clique em mim</div>
+    
     <script>
-        var corpo = window.document.body
-        var p1 = window.document.getElementsByTagName('p')[0]
-        p1.style.color = 'blue'
-        corpo.style.background = 'red'
+      var id = window.document.getElementById('teste')
+      id.innerText = "estou aguardando"
         
+        
+    
     </script>
 </body>
 </html>

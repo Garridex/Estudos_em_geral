@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,34 @@
     <title>tela de login</title>
 </head>
 <body>
+    
     <div class="tela-login">
         <h1>Login</h1>
         <input type="text" placeholder="Nome">
         <br><br>
         <input type="password" placeholder="Senha">
         <br><br>
-        <button>Enviar</button>
+        <button id="botao">Enviar</button>
     </div>
+<script>
+    a = window.document.getElementById('botao')
+    a.addEventListener('mouseover', teste)
+    a.addEventListener('mouseout', teste2)
+    a.addEventListener('click', click)
+    function click(){
+        a.style.background = 'blue'
+        a.style.color = 'white'
+    }
+
+    function teste(){
+           a.style.background = 'red'
+          
+           
+                    } 
+    function teste2(){
+        a.style.background = 'white' 
+        a.style.color = 'black'
+    }
+    </script>
 </body>
 </html>

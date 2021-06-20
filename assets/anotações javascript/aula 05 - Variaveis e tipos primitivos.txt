@@ -1,0 +1,49 @@
+ COMENTÁRIOS EM JAVASCRIPT: 
+ 	°no javascript comentarios podem ser feitos através de // (uma linha) e /* *\ (mais de uma linha)
+
+
+ VÁRIAVEIS E TIPOS PRIMITIVOS: 
+	Em javascript somente um sinal de igual é recebe (atribuição de valor da variavel). Para remover valores da variaveis, utilizamos a atribuição nula (null)
+a declaração se deve a palvra var (no javascript moderno, também podemos utilizar a palavra let).
+
+ EXEMPLO:
+ var n1 = 5
+ 
+ var n2 = 8.5
+
+ var n3 = 15	
+
+
+ ATRIBUIÇÃO DE STRINGS A VÁRIAVEIS:
+	Parea atribuir o valor de uma string a uma variavel, declaramos usando o var, nomeamos e após isso atribuimos o valor entre aspas duplas, aspas simples ou crase (tem diferenciação entre uma e outra na linguagem).
+	
+ EXEMPLO:
+var s1 = "javascript"
+
+var s2 = 'curso em vide'
+
+var s3 = `guanabara`
+
+
+ O NOME DAS VARIAVEIS SÃO CHAMADOS DE IDENTIFICADORES E TEM ALGUMAS REGRAS:
+	*podem começar com letras, $ ou _
+	
+	*não podem começar com numeros
+
+	*é possivel usar letras e numeros
+	
+	*é possivel usar acentos e simbolos
+ 	
+	*não podem conter espaços
+
+	*não podem ser palavras reservadas
+
+ DATA TYPES: 
+	* number = infinity e NaN (not and number)
+	* string
+	* boolean
+	* null
+	* undefined
+	* object = array
+	* function
+
