@@ -1,1 +1,2 @@
 Para pegarmos um valor de uma tag de entrada html (input) devemos colocar na atribuição da nossa variavel .value
+----------------------------------------------------------------------------------
