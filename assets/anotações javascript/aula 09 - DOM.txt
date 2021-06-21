@@ -55,7 +55,7 @@ Porém há uma forma nova de se fazer que é utilizando um seletor, essa forma �
 
 ° querySelector() -> Utilizando o query selector, a sintaxe é a seguinte: var d = window.document.querySelector('div#msg')
  
-Como estamos usando id, então referenciamos no selector com div#msg, já se fosse uma classe seria #
+Como estamos usando id, então referenciamos no selector com div#msg, já se fosse uma classe seria .
 
 ° querySelectorAll() -> a mesma seleção porém utilizando o plural
 

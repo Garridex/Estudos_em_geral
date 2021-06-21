@@ -10,7 +10,7 @@ A arvore DOM é montada através do fluxo da página, ou seja as tags tem a hier
 
 
 
-ENVENTOS DOM: Evento é tudo aquilo que possa acontecer com o elemento, o mais comum são eventos de mouse, tais como ir com o mouse em cima, mover o mouse por cima e clicarmos e segurar, soltar o botão do mouse, clicar e soltar, mover o mouse para fora e etc...
+ENVENTOS DOM: Evento é tudo aquilo que possa acontecer com o elemento, o mais comum são eventos de mouse, tais como ir com o mouse em cima, mover o mouse por cima e clicarmos e segurar, soltar o botão do mouse, clicar e soltar, mover o mouse para fora e etc... 	
 isso significa que só com o mouse temos uma infinidade de eventos, a documentação oficial do javascript lista mais uma infinidade de eventos que podem ser utiliados.
 
 Resumindo o que são os eventos -> eventos são coisas que podem ser feitos utilizando os elementos. Para tratar os eventos utilizamos funções com gatilhos nos eventos.

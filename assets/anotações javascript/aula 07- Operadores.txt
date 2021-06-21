@@ -18,7 +18,7 @@ Todos os operadores acima são chamados de binários, pois necessitam de dois op
 
 ATALHOS PARA ATRIBUIÇÃO DE VALOR:
 
-+= -> Atribuição soma
++= -> Atribuição soma, também serve para fazer a concatenação quando a variavel é string
 
 -= -> atribuição de Subtração
 

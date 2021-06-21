@@ -1,0 +1,42 @@
+° Site para baixar imagens é o pexels.
+----------------------------------------------------------------------------------
+No nosso exercicio, baixamos as imagens e tratamos elas no GIMP e alteramos os tamanhos. Agora o nosso código javascript está da seguinte forma:
+
+function carregar(){
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('img')
+    
+    var data = new Date()
+    var hora = data.getHours()
+    msg.innerText = `Agora são ${hora} horas.`
+  
+}
+----------------------------------------------------------------------------------
+° No corpo do nosso html, na definição da tag body, nós carregamos a função do javascript carregar(). Dessa forma ao carregarmos o formulário irá alterar diretamente graças a nossa função. A definição do <body> fica dessa forma:
+
+<body onload="carregar()">
+----------------------------------------------------------------------------------
+			ALTEREÇÃO DE IMAGENS DINAMICAMENTE
+° Para alterarmos a imagem, assim como a maioria das coisas que fazemos em javascript é utilizando o ID ou a CLASS da tag, atribuimos a tag que desejamos alterar a uma váriavel no js e dessa forma podemos alterar todos os atributos da tag utlizando a arvore DOM. O exemplo a baixo faz a alteração da imagem diretamente nas tags img do HTML, alterando o valor do seu src (source).
+
+function carregar() {
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('imagem')
+
+    var data = new Date()
+    var hora = data.getHours()
+
+    msg.innerText = `Agora são ${hora} horas.`
+    if (hora >= 0 && hora < 12) {
+        //BOM DIA
+        img.src = 'manhã.png'
+    } else if (hora >= 12 && hora < 18) {
+        //BOA TARDE
+        img.src = 'tarde.png'
+    } else {
+        //BOA NOITE
+        img.src = 'noite.png'
+    }
+}
+
+O script acima faz as alterações das imagens conforme a hora se passa

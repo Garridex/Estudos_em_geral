@@ -21,7 +21,7 @@
     <script>
         function somar(){
             
-        var nume1 = window.document.getElementById('number_id')
+        var nume1 = window.document.getElementById('number_id') 
         var nume2 = window.document.getElementById('number_id2')
         var resultado = window.document.getElementById('resul')
      
@@ -29,7 +29,7 @@
         var n2 = Number(nume2.value)
         var s = n1 + n2
         resultado.style.color = '#8B0000'
-        resultado.innerText = "A soma entre os números é " + s 
+        resultado.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}`
         
         
 }

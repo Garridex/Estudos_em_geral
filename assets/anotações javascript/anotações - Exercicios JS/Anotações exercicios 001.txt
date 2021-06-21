@@ -1,0 +1,67 @@
+Podemos utilizar o javascript de forma remota ao html da mesma forma que fazemos com o CSS, porém a sintaxe é um pouquinho diferente. Utilizamos uma tag script porém a tag com um endereçamento src, exemplo:
+
+<script src="script.js"></script> 
+
+-> com essa sintaxe estamos referenciando o javascript dessa pagina como o arquivo externo script.js
+
+Agora desenvoleremos nossos exercicios todos dessa maneira, utilizando CSS externo e javascript também
+
+O codigo CSS do nosso modelo é o seguinte: 
+
+body{
+    background-color: rgb(89, 89, 187);
+    font: normal, 15pt arial;
+}
+header{
+color: white;
+text-align: center;
+}
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px black;
+
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+e o código HTML é o seguinte:
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+    <link rel="stylesheet" href="estilos-exercicios/exerc002.css">
+</head>
+<body>
+    <header>
+    <h1>titulo</h1>
+    </header>
+
+    <section>
+    <div>
+    testando...
+    </div>
+
+    <div>
+
+    </div>
+
+    </section>
+
+    <footer>
+<p>&copy; Egos Soluções</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+Com essa base é que desenvolveremos os nossos exercicios
