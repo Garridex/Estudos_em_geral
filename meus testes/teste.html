@@ -11,13 +11,13 @@
     <header><h1>Você quer dunk?</h1></header>
     <section>
         <div>
-           <h2>Escolha o seu jogador</h2>
-           <img src="kobe.png" alt="" onclick="lebron()">
-           <img src="lebron.png" alt="" onclick="kobe()">
+           <h2 hidden>Escolha o seu jogador</h2>
+           <img src="kobe.png" alt="" onclick="lebron()" id="lebron" hidden>
+           <img src="lebron.png" alt="" onclick="kobe()" id="kobe" hidden>
         </div>
-
+        <input type="button" value="Quero Dunk" onclick="dunk()" id="dunk">
         <div>
-           <input type="button" value="Quero dunk" id="dunk">
+    
         </div>
     </section>
     <footer>&copy;Egos soluções</footer>
