@@ -34,7 +34,7 @@ img.setAttribute('id', 'foto') -> isso aqui informa ao documento html que querem
 
 ° Para atribuirmos a imagem de forma dinamica com o javascript, utilizamos a seguinte sintaxe: 
 
-img.setAttribute('src', 'bb homem.png')
+img.setAttribute('src', 'bb-homem.png')
 
 Aqui estamos setando um atributo a tag <img> e nesse caso é o atributo src e apontando qual a imagem que nós estamos querendo
 

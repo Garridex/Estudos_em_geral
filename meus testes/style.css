@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+}
+
+footer {
+    text-align: center;
+    color: blueviolet;
+    
+}
+
+header {
+  text-align: center;
+  color: white;
+  font-family:cursive;
+}
+section{
+    background-color: #A020F0;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    border: 3px solid #DAA520 ;
+    border-radius: 40px;
+    font-size: 25px;
+    height: 500px;
+}
+
+#jogador{
+    border-radius: 10px;
+    width: 200px;
+    background-color: orange;
+}
+#dunk{
+    border-radius: 10px;
+    background-color: orangered;
+}

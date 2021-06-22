@@ -5,14 +5,15 @@
     color: #FFF;
     text-transform: uppercase;
     text-align: center;
+    
   }
 .elementExample_first{
     background-color: red;
-    
+    float: right;
 }
 .elementExample_last{
     background-color: blue;
-    
+float: left;    
 }
 .wrap-element {
     background-color: green;
@@ -20,5 +21,5 @@
   
   }
 .elementParagraph{
-    clear:both;
+    clear: both;
 }
