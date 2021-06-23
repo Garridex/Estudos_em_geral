@@ -1,0 +1,27 @@
+Constantes são como váriaveis, exceto que quando definidas não podem ser alteradas 
+ou indefinidas.
+
+Uma constante é uma identificação para um valor simples. O valor não pode ser alterado durante o script. Um nome valido para um constante começa com uma letra ou sublinhado (sem $ antes do nome).
+
+° Para criarmos uma constante utilizamos a seguinte sintaxe: define (name,value,case-insentive).
+
+°parametros -> nome: Especifica o nome da constante, value: especifica o valor da constante, case-insensitive: especifica se o nome da constante deve ser case-sensitive ou não (valor padrão é falso)
+
+EXEMPLO DE CONSTANTE CASE-SENSITIVE:
+<?php
+define("teste", "Estou testando o php!");
+echo teste;
+?>
+
+CONSTANTS ARRAYS: Podemos criar um array com valor constante utilizando a função define(), exemplo:
+
+<?php
+define ("carros",[
+    "alfa romeo",
+    "BMW",
+    "Toyota"
+]);
+echo carros[1];
+?>
+
+CONSTANTES GLOBAIS: Podemos utilizar uma constante dentro de uma função, mesmo que seja definido fora da função:

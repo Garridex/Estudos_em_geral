@@ -1,0 +1,19 @@
+PHP  tem as seguintes constantes predefinidas para inteiros:
+PHP_INT_MAX - O maior inteiro suportado
+PHP_INT_MIN - O menor inteiro suportado
+PHP_INT_SIZE -  O tamanho do inteiro em bits
+
+PHP tem as seguintes funções para verificar se o tipo de uma variável é inteiro:
+is_int()
+is_integer() - alias of is_int()
+is_long() - alias of is_int()
+
+Exemplo:
+checa se a variavel é inteira:
+<?php
+$x = 5985;
+var_dump(is_int($x));
+
+$x = 59.85;
+var_dump(is_int($x));
+?>

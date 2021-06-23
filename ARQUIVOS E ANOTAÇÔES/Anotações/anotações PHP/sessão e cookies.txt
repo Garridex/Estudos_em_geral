@@ -1,0 +1,91 @@
+O http é um protocolo sem estado (stateles protocol), sendo assim, a comunicação entre a estação cliente e servidor web é realizada via requisições individuais. Não é possivel uma requisição armazenar o estado da requisição anterior. 
+Por exemplo, imagine uma página web de vendas de livros. Quando o usuario decide comprar um livro, ao enviar o pedido de compra do seu primeiro livro a pagina web, o HTTP tratrá esse pedido como uma requisição sem vinculo algum com qualquer outra requisição que tenha sido feita anteriormente. Nesse momento, o usuario decide comprar seu segundo livro. Assim, ao enviar o pedido de compra do seu segundo livro para a página web, o HTTP, por ser um protocolo sem estado, não saberá que o usuario já adicionou em seu carrinho de compras o primeiro livro, e entenderá que a requisição de compra do segundo livro, na realidade, é a primeira requisição de compra. A mesma ideia vale se o usuario tentar comprar o terceiro livro: As requisições anteriores (compra dos dois primeiros livros) serão descartadas.
+O php permite criar sessões, enviadas pelo usuario para a pagina web na forma de cookie, guardam o estado das requisições. Desse modo, o servidor web, recebendo o cookie de sessão de um usuario, consegue restaurar requisições antigas, recuperando informações que, se dependessem exclusivamente do HTTP, seriam descartadas.
+Supondo então que o usuario A ao logar na pagina web de venda de livros, resolvesse comprar um livro, graças aos cookies de sessão do php (cookie contendo o identificador PHPSESSID) o site consegue "memorizar" e saber que o usuario comprou seu primeiro livro. Caso o usuário resolva comprar
+o segundo livro, o HTTP entenderá que se trata de uma segunda compra, não
+descartando a compra do primeiro livro. A mesma ideia vale para a compra
+do terceiro livro: a compra dos dois primeiros é mantida. Supondo nesse
+momento que o usuário B também realize login na página web de venda de livros, por se tratar de outro usuário, o PHP atribui um cookie PHPSESSID
+para o usuário B com valor diferente do valor de PHPSESSID do usuário A.
+Dessa forma, os usuários A e B armazenam cookies de sessões distintos: o
+usuário A realiza a compra do livro que desejar sem afetar o usuário B e viceversa,
+ao mesmo tempo em que o HTTP vai armazenando as escolhas feitas
+por cada usuário em seus respectivos cookies de sessão.
+__________________________________________________________________________________
+A função setcookie() define um cookie, e para isso passamos alguns parametros por exemplo:
+° setcookie("nome_cookie", "valor", "tempo_expiração", "caminho", "dominio", SECURE, HTTPOnly)
+
+
+__________________________________________________________________________________
+SESSÃO: Uma sessão é uma forma de armazenar informações em variaveis para ser usada em multiplas páginas, diferente do cookie a informação não é armazenada no computador do usuario. Ao trabalhar com um aplicativo, você abre, faz algumas alterações e, em seguida, fecha. isso é muito parecido com uma sessão. O computador sabe quem você é. Ele sabe quando você inicia e quando você termina o aplicativo. Mas na internet há um problema: o servidor web não sabe quem você é ou  o que você faz, porque o endereço HTTP não mantém o seu estado. As váriaveis de sessão resolvem esse problema armazenando informações do usuario para serem usadas em várias paginas (por exemplo, nome de usuario, cor favorita etc.) Por padrão, as váriaveis de sessão duram até que o usuario feche o navegador. Então as variaveis de sessão contém informações sobre unico usuario e estão disponiveis para todas as paginas de um aplicativo.
+
+dica: se precisarmos de armazenar essa informações de forma permanente,devemos armazenar em um banco de dados.
+
+° Uma sessão é iniciada com a função session_start(). As váriavies de sessão estão definidas com a variavel global $_SESSION.
+
+NOTA: as variaveis de sessão precisam ser as primeiras coisas a serem declaradas no documento, antes de qualquer tag HTML.
+
+Abaixo temos um script que gera algumas váriaveis de sessão: 
+<?php
+session_start();
+?>
+<html>
+<body>
+<?php
+$_SESSION['cor'] = "preto";
+$_SESSION["nome"] = "Vitor";
+echo "as variveis de sessão estão declaradas";
+echo "<br>";
+?>
+</body>
+</html>
+
+° Retornando os valores dessas variaveis, criaremos um script para retorna os valores das váriaveis de sessão que foram definidos no scritp anterior. 
+
+As variaveis de sessão não são passdas individualmente para cada página, em vez disso, são recuperadas da sessão quando abrimos no inicio de cada página (session_start()).
+EXEMPLO:
+<?php
+session_start()
+?>
+<html>
+<body>
+<?php
+echo "meu nome é " . $_SESSION['nome'] . ", minha cor favorita é " .$_SESSION['cor'];   
+?>
+</body>
+</html>
+
+° Outra maneira de mostrar os valores das váriaveis de sessão para um usuario é executar o seguinte código:
+<?php
+session_start();
+?>
+<html>
+<body>
+<?php
+print_r($_SESSION);
+?>
+</body>
+</html>
+__________________________________________________________________________________
+Como isso funciona, como sabe que sou eu?
+A maioria das sessões define uma chave de usuário no computador do usuário que se parece com isto: 765487cf34ert8dede5a562e4f3a7e12. Em seguida, quando uma sessão é aberta em outra página, ela verifica o computador em busca de uma chave de usuário. Se houver correspondência, ele acessa aquela sessão, caso contrário, ele inicia uma nova sessão.
+__________________________________________________________________________________
+Modificando o valor de um sessão:
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// to change a session variable, just overwrite it
+$_SESSION["favcolor"] = "yellow";
+print_r($_SESSION);
+?>
+
+</body>
+</html>
+
+__________________________________________________________________________________
+Destruindo o valor de um sessão: para remover todas as variveis globais de sessão, e destruir a sessão, usamos session_unset() e session_destroy():

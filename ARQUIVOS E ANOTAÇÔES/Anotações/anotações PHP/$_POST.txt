@@ -1,0 +1,26 @@
+O $_POST é uma varivel super global php que é usada para coletar dados do formulário após o envio de uma formulário html com method="post". $_POST também é amplamente utilizado para passar as variaveis. 
+
+O exemplo abaixo mostra um formulário com um campo de entrada e um botão de envio. Quando um usuário envia os dados clicando em "Enviar", os dados do formulário são enviados para o arquivo especificado no atributo action da tag <form>. Neste exemplo, apontamos para o próprio arquivo para processar os dados do formulário. Se você deseja usar outro arquivo PHP para processar dados de formulário, substitua-o pelo nome de arquivo de sua escolha. Então, podemos usar a variável superglobal $ _POST para coletar o valor do campo de entrada:
+
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="nome">
+  <input type="submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+  $name = $_POST['nome'];
+  if (empty($name)) {
+    echo "Insira um nome";
+  } else {
+    echo $name;
+  }
+}
+?>
+
+</body>
+</html>

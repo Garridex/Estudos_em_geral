@@ -1,0 +1,97 @@
+Veremos como criar campos obrigatorios e mostrar mensagens de erro se necessario:
+criamos o seguinte código para testes:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Validando formulários em php</h1>
+<p>* Campo Obrigatorio</p>  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+NOME: <input type="text" name="nome" > *<br>
+<br>
+Email: <input type="text" name="email"><br>
+<br>
+website: <input type="text" name="website"><br>
+<br>
+cometario: <textarea name="comentario"  cols="40" rows="5"></textarea>
+<br>
+genero: 
+<input type="radio" value="homem" name="gen"> homem
+<input type="radio" value="mulher" name="gen"> mulher
+<input type="radio" value="outro" name="gen"> outro
+<br>
+<input type="submit">
+</form>
+<?php
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["nome"])){
+            $nameErr = "Nome está vazio";
+        }else{
+            $name = test_input($_POST["nome"]);
+                }
+                if(empty($_POST["email"])){
+                    $emailErr = "Email requirido";
+                }else{
+                    test_input($_POST["email"]);
+                }
+                        if(empty($_POST["website"])){
+                            $websiteErr = "";
+                        }else{
+                            $website = test_input($_POST["website"]);
+                        }
+                                if(empty($_POST["comment"])){
+                                    $comment = "";
+                                }else{
+                                    test_input($_POST["comment"]);
+                                }
+                                      if (empty($_POST["gen"])) {
+                                    $genderErr = "Genero é requerido";
+                                      } else {
+                                     $gender = test_input($_POST["gen"]);
+                                     } }
+
+?>
+
+° Após isso, iremos adicionar no HTML pequenas mudanças no script após cada campo obrigatorio, que gera as mensagens de erro que queremos se necessario:
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+NOME: <input type="text" name="nome" > 
+<span class="error">* <?php echo $nameErr?></span>
+<br><br>
+Email: <input type="text" name="email">
+<span class="error">* <?php echo $emailErr?></span>
+<br><br>
+website: <input type="text" name="website">
+<span class="error">* <?php echo $websiteErr?></span>
+<br><br>
+cometario: <textarea name="comentario"  cols="40" rows="5"></textarea>
+<br>
+genero: 
+<input type="radio" value="homem" name="gen"> homem
+<input type="radio" value="mulher" name="gen"> mulher
+<input type="radio" value="outro" name="gen"> outro
+<span class="error">*<?php echo $genderErr?></span>
+<br><br>
+<input type="submit">
+</form>

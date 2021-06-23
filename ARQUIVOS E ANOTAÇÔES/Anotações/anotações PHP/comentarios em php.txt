@@ -1,0 +1,14 @@
+Comentario de somente uma linha
+
+//isso não será interpretado pelo progama
+
+#isso também não será interpretado pelo progama
+
+Comentario de multiplas linhas
+
+/* isso não
+será
+interpretado
+pelo
+progama
+*/

@@ -1,0 +1,39 @@
+O $_GET é uma variavel super global também utilizada para coletar dados após o envio dos formularios com o method="get"
+Com o $_GET também podemos coletar dados enviados na url
+
+Os códigos abaixo usam um <a href=""> para referenciar uma página php e solicitar via $_GET os dados contidos na referencia da URL:
+
+CÓDIGO HTML 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>teste</h1>
+    <a href="teste43.php?sujeito=PHP&egos=empresa">Test $GET</a>
+    
+</body>
+</html>
+
+
+CÓDIGO PHP
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+echo "Estou estudando " . $_GET['sujeito'] . " na " . $_GET['egos'];
+?>
+</body>
+</html>

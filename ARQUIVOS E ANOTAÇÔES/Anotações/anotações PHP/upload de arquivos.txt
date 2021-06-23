@@ -1,0 +1,46 @@
+Com o php é muito facil fazer o upload de arquivos para o servidor, contudo, essa facilidade começa a ser perigosa então temos que ter cuidado ao fazer upload de arquivos. O seguinte código é um formulário padrão para uploads:
+
+<?php
+$arquivo = fopen("novo.txt", "w") or die ("não consegui abrir o arquivo");
+$txt = "Vitor lindo\n";
+fwrite($arquivo, $txt);
+$txt = "teste";
+fwrite($arquivo, $txt);
+fclose($arquivo);    
+?>
+
+° algumas regras necessárias
+tenha certeza que o metodo utilizado é post.
+O formulário também precisa do seguinte atributo: enctype = "multipart / form-data". Ele especifica qual tipo de conteúdo usar ao enviar o formulário.
+
+sem os requisitos acima, o upload não vai funcionar. O código de upload de arquivo é bem "complexo" e cheio de funções a serem estudadas.
+
+<!DOCTYPE html>
+<?php
+if (isset($_POST['enviar'])){
+    $formatos= array("jpg", "jpeg", "gif");
+$extensao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
+if (in_array($extensao, $formatos)){
+    $pasta = "arquivos/";
+    $temp = $_FILES['arquivo']['tmp_name'];
+    $novonome = uniqid().".$extensao";
+
+    if(move_uploaded_file($temp, $pasta.$novonome)){
+        $mensagem = "Upload feito com sucesso!";
+    } else{
+        $mensagem = "não foi possivel fazer o upload";
+    }
+}else{
+   $mensagem = "formato invalido";
+}
+}
+echo $mensagem
+?>
+<body>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
+    <input type="file" name="arquivo"> <br>
+    <input type="submit" name="enviar">
+
+    </form>
+</body>
+</html>

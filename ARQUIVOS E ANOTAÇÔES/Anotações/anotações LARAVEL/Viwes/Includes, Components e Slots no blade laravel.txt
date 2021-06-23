@@ -1,0 +1,11 @@
+O blade em si, é uma linguagem de progamação a parte do PHP e do resto das web. As instruções declaradas utilzando @ são nada mais que instruções do blade.
+
+Includes no blade: Dentro de admin, podemos ter recursos que usamos o tempo todo, por exemplo alertas de erros da nossa aplicação. Pra isso criamos uma nova pasta dentro de admin chamda alert, com um arquivo alert.blade.php e é onde ficará nossos avisos.
+
+Após isso, precisamos utilizar esse script, para isso, utilizamos o comando @include na página onde queremos utilizar aquele script. Exemplo:
+
+@include('admin.alert.alert')
+
+referenciamos a onde se encontra o script de alerta e ele executou a função que enviamos.
+
+° Também podemos enviar uma váriavel pra aquele scritp em especifico e utilizamos a seguinte sintaxe

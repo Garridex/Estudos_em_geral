@@ -1,0 +1,23 @@
+Middlewares são filtros utilizados para diferentes funções (veremos mais a frente).
+
+Para utilizarmos os middleswares nos controllers é muito simples, basta declararmos da seguinte maneira no controller que quisermos ->
+
+public function __contruct(request $request){
+$this->middleware('auth');
+}
+
+Dessa forma todos os controllers e rotas que utilizam esse metodo estarão barrados até o usuario realizar o login. Podemos fazer esse tipo de configuração para somente um controller utilizando a seguinte sintaxe:
+
+$this->middleware('auth')->only('create')
+
+Dessa forma somente a função(metodo) create será barrada pelo middlewarre auth.
+
+Podemos também passar um array para defir mais de uma rota:
+
+$this->middleware('auth')->only(['create', 'store']);
+
+Outra forma de fazermos esse filtro nos controllers com o middleware, é deixando somente uma execessão e a sintaxe é a seguinte:
+
+$this->middleware('auth')->except(['index']);
+
+Dessa forma será aplicado em todas as rotas e controllers menos na rota index. Assim todo o resto será barrado e exigira uma autenticação.

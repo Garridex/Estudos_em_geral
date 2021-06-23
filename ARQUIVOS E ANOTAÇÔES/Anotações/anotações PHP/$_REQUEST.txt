@@ -1,0 +1,29 @@
+$_REQUEST ->é uma variável superglobal do PHP que é usada para coletar dados após o envio de um formulário HTML.
+O requeste é um parametro de requisição para servidores, podemos coletar informações dos bancos de dados e dos servidores utilizando esse tipo de requisição.
+
+No php ele vem em forma de váriavel super global e pode ser utilizado com diversos parametros para especificar os dados a serem coletados.
+
+O exemplo abaixo nos mostra um código que faz a consulta no proprio documento em que estamos escrevendo e nos retorna o valor que inserimos utilizando o metodo POST
+
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // coleta valores dos campos de entrada
+  $name = $_REQUEST['fname'];
+  if (empty($name)) {
+    echo "Digite um nome";
+  } else {
+    echo $name;
+  }
+}
+?>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+° While
+<?php
+$x = 1;
+while($x <= 5){
+echo "o número é: ". $x ."<br>";
+++$x;
+}
+?>
+
+°do... while 
+
+<?php
+$x = 1;
+do {
+echo "O número é: " .$x ."<br>";
+$x++;
+} while ($x <= 5);
+?>
+Em um loop do ... while, a condição é testada APÓS a execução das instruções dentro do loop. Isso significa que o loop do ... while executará suas instruções pelo menos uma vez, mesmo se a condição for falsa. 
+
+° for
+<?php
+for ($x = 0; $x <= 10; $x++){
+   echo "O Número é: " . $x . "<br>";
+}
+
+?>
+
+° foreach
+<?php
+$cor = array("vermelhor", "verde", "azul", "preto");
+foreach ($cor as $value){
+    echo "$value <br>";
+}
+?>
+Para cada iteração de loop, o valor do elemento atual do array é atribuído a $ value e o ponteiro do array é movido por um, até atingir o último elemento do array.
+
+° Break: Podemos usar a instrução break para sair de um loop, este exemplo sai do loop quando x é igual a 4:
+
+<?php
+for ($x = 0; $x < 10; $x++) {
+  if ($x == 4) {
+    break;
+  }
+  echo "The number is: $x <br>";
+}
+?>
+
+° Continue: Essa instrução interrompe uma interação (no loop), se uma condição especificada ocorrer, e continua com a proxima interação no loop. Este exemplo pula o valor de 4:
+<?php
+for ($x = 0; $x < 10; $x++) {
+  if ($x == 4) {
+    continue;
+  }
+  echo "The number is: $x <br>";
+}
+?>

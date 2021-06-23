@@ -1,0 +1,18 @@
+Com o seguinte comando no terminal, podemos listar todas as nossas rotas do laravel: php artisan route:list
+
+A saida do comando é da seguinte forma:
+
++--------+----------+------------------+------------+--------------------------------------------------+------------+
+| Domain | Method   | URI              | Name       | Action                                           | Middleware |
++--------+----------+------------------+------------+--------------------------------------------------+------------+
+|        | GET|HEAD | admin/dashboard  | dashboard  | App\Http\Controllers\admin\testecontroller@teste | web        |
+|        | GET|HEAD | admin/financeiro | financeiro | App\Http\Controllers\admin\testecontroller@teste | web        |
+|        | GET|HEAD | admin/produto    | produto    | App\Http\Controllers\admin\testecontroller@teste | web        |
+|        | GET|HEAD | admin/redirect   | home       | Closure                                          | web        |
+|        | GET|HEAD | api/user         |            | Closure                                          | api        |
+|        |          |                  |            |                                                  | auth:api   |
+|        | GET|HEAD | login            | login      | Closure                                          | web        |
+|        | GET|HEAD | redirect         |            | Closure                                          | web        |
++--------+----------+------------------+------------+--------------------------------------------------+------------+
+
+Outra questão de rotas é que o laravel armazena algumas rotas em cache e podemos limpar elas com o seguinte comando: php artisan route:cache

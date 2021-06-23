@@ -1,0 +1,30 @@
+OPERADORES DE ATRIBUIÇÃO:
+x = y	x = y	        atribuição	
+x += y	x = x + y	adição
+x -= y	x = x - y	Subtração	
+x *= y	x = x * y	Multiplicação	
+x /= y	x = x / y	Divisão	
+x %= y	x = x % y	Modulo
+
+COMPARAÇÃO:
+== 			igualdade
+===			identico
+!=			diferente
+<>			diferente
+>			maior que
+<			menor que
+>=  			maior ou igual
+<=			menor ou igual
+
+INCREMENTO DECREMENTO:
+++$x	Pre-incremento	Incrementa $x em um e retorna $x	
+$x++	Pos-incremento	Retorna $x, a seguir incrementa $x em um	
+--$x	Pre-decremento	Decrementa $x em um, em seguida retorna $x	
+$x--	Pos-decremento	Retorna $x, então decrementa $x em um
+
+OPERADOR DE STRINGS:
+.			concatena
+
+.=			anexa
+
+  

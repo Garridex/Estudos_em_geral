@@ -1,0 +1,36 @@
+Outro assunto importante se trabalhando com o laravel é redirecionar as rotas, de uma para a outra. Podemos redirecionair por exemplo de uma rota da aplicação para outro pedaço dela. 
+Pra motivo de exemplo, criei duas rotas, o redirect 1 e o redirect 2, quero que ao acessar a rota 1, seja redirecionado a rota 2. 
+
+route::get('/redirect1', function(){
+    return 'Redirect 01';
+});
+
+route::get('/redirect2', function(){
+    return 'Redirect 02';
+});
+
+O redirecionamento pode ser feito de duas maneiras: a primeira maneira é utilizar uma função nativa do laravel que é o redirect. Essa função serve para redirecionar as rotas. Exemplo
+
+route::get('/redirect1', function(){
+return redirect('/redirect2');
+});
+
+Nesse exemplo, função redirect já vai me levar direto a rota redirect 2. O desse código seria esse: Redirect 02 (graças ao echo que demos no redirect2).
+
+° A segunda maneira de fazer o redirecionamento das rotas é a seguinte, ao inves de fazer a função de callback e passar por um controler (funções pré definidas do laravel) podemos criar uma rota redirect da seguinte forma:
+
+Route::redirect('/redirect1','/redirect2');
+
+Com o código acima, definimos uma rota como redirecionamento, isso significa que ao entrarmos na rota redirect1, automaticamente seramos redirecionados ao redirect2.
+
+__________________________________________________________________________________
+Outro ponto interessante de rotas é trabalharmos com view, por exemplo:
+
+route::get('/view', function () {
+    return view ('welcome');
+});
+Aqui a view retorna pra nós a tela de welcome do laravel. 
+
+° Podemos simplificar esse código acima da seguinte maneira
+
+route::view('/view', 'welcome'); -> esse código só dever ser usado se formos passar uma view muito simples e que seja estatica,sem alterações nenhum. se formos utilizar lógica esse padrão está incorreto.

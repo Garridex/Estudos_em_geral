@@ -1,0 +1,11 @@
+GET e POST criam uma matriz (por exemplo, matriz (chave1 => valor1, chave2 => valor2, chave3 => valor3, ...)). Essa matriz contém pares de chave / valor, em que as chaves são os nomes dos controles do formulário e os valores são os dados de entrada do usuário.
+Ambas GET e POST são superglobais o que significa que estão sempre acessiveis, independente do escopo - e você pode acessá-los de qualquer função, classe ou arquivo sem precisar fazer nada de especial.
+
+° $ _GET é um array de variáveis ​​passadas para o script atual por meio dos parâmetros de URL.
+
+°$ _POST é um array de variáveis ​​passadas para o script atual por meio do método HTTP POST.
+
+QUANDO USAR O GET? -> as informações enviadas de um formulário com o metodo GET são visiveis para todos (todos os nomes e valores das variaveis são exibidos na URL). O Get também tem suas limitações na quantidade de informação que se pode enviar, a limitação é de cerca de 2.000 caracteres.No entanto, como as variáveis ​​são exibidas na URL, é possível marcar a página. Isso pode ser útil em alguns casos. GET deve ser usado para enviar dados não sensiveis. Nunca utilize o get para enviar senhas, ou coisas desse tipo.
+
+
+QUANDO USAR O POST? -> As informações enviadas de um formulário com o método POST são invisíveis para outras pessoas (todos os nomes / valores são incorporados ao corpo da solicitação HTTP) e não tem limites na quantidade de informações a enviar.Além disso, o POST oferece suporte a funcionalidades avançadas, como suporte para entrada binária de várias partes durante o upload de arquivos para o servidor.No entanto, como as variáveis ​​não são exibidas na URL, não é possível marcar a página.

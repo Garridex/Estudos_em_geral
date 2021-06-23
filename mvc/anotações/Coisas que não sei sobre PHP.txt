@@ -1,0 +1,6 @@
+° NAMASPACE -> O namespace indica o escopo de uma classe/arquivo. Ele é util para evitar colisões de classes que tem o mesmo nome. O namespace facilita a inclusão de classes com mesmo nome, mas que estão em namespaces diferentes. É uma forma de organizar as classes de uma aplicação.
+Na realidade ele funciona como se fosse um sobrenome para os tipos, um sobrenome funciona como uma forma de nomear uma familia, assim podemos ter dois Ricardos no mesmo ambiente sem confusões por que um deles é oliveira e o outro é batista
+
+° USE -> indica que determinada classe vai ser importada e usada por um arquivo/script especifico.
+
+° REQUIRE,REQUIRE_ONCE, INCLUDE, INCLUDE_ONCE -> permite a inclusão de qualquer trecho de código presente em outro arquivo. 

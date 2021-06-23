@@ -1,0 +1,21 @@
+fopen() ->  também é usada para criar um arquivo. Talvez um pouco confuso, mas em PHP, um arquivo é criado usando a mesma função usada para abrir arquivos.Se você usar fopen () em um arquivo que não existe, ele o criará, desde que o arquivo seja aberto para gravação (w) ou anexação (a). O código abaixo é usado para criar um arquivo no mesmo diretorio do script:
+
+<?php
+$arq = fopen("teste01.txt", "w");
+?>
+-------------------------------------------------------------------
+fwrite() -> essa função é usada para escrever em um arquivo
+o primeiro parametro dessa função contém o nome do arquivo a ser escrito e o segundo é a string a ser escrita. O exemplo abaixo escreve um conjnto de nomes no novo arquivo chamado "novo.txt":
+
+<?php
+$arquivo = fopen("novo.txt", "w") or die ("não consegui abrir o arquivo");
+$txt = "Vitor lindo\n";
+fwrite($arquivo, $txt);
+$txt = "teste";
+fwrite($arquivo, $txt);
+fclose($arquivo);    
+?>
+
+Note que gravamos no arquuivo "novo.txt" duas vezes, cada vez que escreviamos no arquivo, enviamos a string $txt, primeiro continha uma coisa e depois alteramos seu conteudo e ela passou a escrever outra coisa.
+----------------------------------------------------------------------------------
+Agora o arquivo "novo.txt" está gravado com algumas palavras, podemos mostrar o que aconte se abrirmos um arquivo existente para escrever. Todos os dados contidos nele serão apagados e ele irá começar tudo do zero o texto como se fosse um arquivo vazio.

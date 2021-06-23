@@ -1,0 +1,22 @@
+° O que é o Git?
+
+	Um progama que rastreia alterações em arquivos, podemos voltar no tempo. O git faz isso através do repositorio, quando eu trago o git pra dentro do         projeto, ele cria uma pasta .git, se for apagada perdemos todo o projeto
+
+° Básico do git
+ *Para criar um repositorio, devemos criar ou entrar na pasta do projeto e utilizar o seguinte comando -> git init
+
+ *Para saber onde o git está atuando, devemos dar o comando -> git status
+
+ *O que é branch (ou snapshot) -> é uma criação de uma snapshot do nosso código, uma nova versão do codigo sem ser a que está rodando.
+
+ *Para adicionar um arquivo ao git, utilizamos o seguinte comando -> git add -nome do arquivo-
+
+ *Após as alterações no projeto, o comando para informar ao Git que ele pode criar a snapshot é o seguinte -> git commit -m "entre aspas fica a mensagem".
+  o git commit pega aquilo que está no staged, quando damos o git add, ele pega e adiciona nessa aréa de staged.
+
+ *Para vermos o historico do projeto, utilizamos o comando -> git log 
+
+ *Antes de fazermos o commit, devemos verificar se as alterações estão prontas pra ser commitadas, para deixarmos a alteração pronta utilizamos o git add
+
+ *Após as alterações no projeto no computador, podemos enviar o commit no repositorio remoto e utilizamos os seguinte comando -> git remote add -nome do repositorio- -url do repositorio-.
+

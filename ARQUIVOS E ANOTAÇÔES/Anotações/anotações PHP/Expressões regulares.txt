@@ -1,0 +1,51 @@
+Uma expressão regular é uma sequencia de caracteres que forma um padrão de pesquisa. Ao pesquisar dados em um texto, você pode usar esse padrão de pesquisa para descrever o que está procurando. Uma expressão regular pode ser um unico caractere ou um padrão mais complicado. As expressões regulares podem ser usadas para realizar todos os tipos de pesquisa de texto e operações de substituição de textos.
+
+SINTAXE: No php, as expressões regulares são strings compostas por delimitadores, um padrão e modificadores opcionais.
+
+EXEMPLO: $exp = "/w3schools/i"; -> nesse exemplo / é o delimitador, w3schools é o padrão que está sendo pesquisado e I é um modificador que torna a pesquisa case-sensitive.
+O delimitador pode ser qualquer caractere que não seja uma letra, número, barra invertida ou espaço. O delimitador mais comum é a barra (/), mas quando seu padrão contém barras, é conveniente escolher outros delimitadores, como # ou ~. 
+
+FUNÇÕES DE EXPRESSÃO REGULAR: 
+
+° preg_match() -> retorna 1 se o padrão foi encontrado na string e 0 se não
+
+° preg_match_all() -> retorna o número de vezes que o padrão foi encontrado na string, que também pode ser zero.
+
+°preg_replace() -> Retorna uma nova string onde os padrões correpondentes foram substituidos por outro string.
+
+USANDO preg_match() : essa função dirá se uma string contém correspondencias de um padrão
+exemplo:
+
+<?php
+$str = "Visit W3Schools";
+$pattern = "/w3schools/i";
+echo preg_match($pattern, $str); // retorno 1
+?>
+
+USANDO preg_match_all(): A função preg_match_all() dirá a você quantas correspondencias foram encontradas para um padrão em um string. Exemplo:
+
+<?php
+$str = "The rain in SPAIN falls mainly on the plains.";
+$pattern = "/ain/i";
+echo preg_match_all($pattern, $str); // saida será 4
+?>
+
+USANDO preg_replace() -> a função preg_replace() irá substituir todas as correspondencias do padrão em uma string por outra strig
+
+
+exemplo:
+o código abaixo usa uma expressão regular que não diferencia maiúsculas de minúsculas para substituir Microsoft por W3Schools em uma string:
+
+<?php
+$str = "Visit Microsoft!";
+$pattern = "/microsoft/i";
+echo preg_replace($pattern, "W3Schools", $str); // Outputs "Visit W3Schools!"
+?>
+
+MODIFICADORES DE REGULADORES DE EXPRESSÃO:
+
+° i -> Executa uma pesquisa que não diferencia maiúsculas de minúsculas
+
+° m -> Executa uma pesquisa em várias linhas (os padrões que procuram o início ou o fim de uma string irão corresponder ao início ou ao final de cada linha)
+
+° u -> Ativa a correspondência correta de padrões codificados em UTF-8

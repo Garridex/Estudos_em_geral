@@ -1,0 +1,23 @@
+---Php orientado a objetos
+
+classes, atributos e metodos -> para trabalharmos com objetos, precisamos definir a estrutura que é a nossa classe, após isso, precisamos definir os atributos das pessoas que se trata das suas caracteristicas. Por ultimo devemos fazer suas ações que são as funções (metodos).
+
+<?php
+class Pessoa  { 
+    public $nome;
+    public $idade;
+    
+    public function Falar(){
+        echo "Falou";
+    }
+}
+
+Essa é a estrutura da nossa classe. é a estrutura padrão de todas as classes, o que pode variar são somente as funções para realizar lógicas diferentes e os atributos.
+
+
+---instanciar:
+
+Para instanciar utilizamos a seguinte sintaxe:
+
+$vitor = new Pessoa();
+Definimos a nossa variavel Vitor como um novo objeto da classe pessoa. 

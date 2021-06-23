@@ -1,0 +1,50 @@
+° vendor -> esse diretorio é onde fica todos os pacotes de terceiros, todas as dependecias e pacotes ficam aqui. Quem controla é o proprio composer
+
+° tests: -> Esse diretorio é onde deixaremos todos os testes da aplicação em sim.
+
+° storage -> Aqui podemos armazenar arquivos que fizermos uploads da aplicação, armazenar arquivos em tempo de execução, os logs.
+
+° routes -> onde ficará toda a gestão de rodas da aplicação, todo o roteamento da aplicação ficará aqui dentro.
+
+° resources -> aqui fica a parte visual da aplicação em si, nosso recursos de views, os arquivos para serem processados e esse tipo de coisas. os arquivos dentro dessa pasta serão pré processados.
+
+° public -> Aqui é o document root da nossa aplicação laravel. aqui também tem uma questão de segurança por que quando trabalhamos com uma aplicação e o document root dela fica dentro de public ou qualquer outro diretorio que não seja a raiz do projeto, significa que via browser jamais será possivel acessar o arquivo server.php, o cliente não consegue voltar um nivel na aplicação. Aqui é o ponto de partida da aplicação que fica no arquivo index, ele é o start da aplicação.
+
+****document root -> O document root é o diretorio (pasta) que é armazenado no servidor do seu host e é designada para conter as paginas web. Quando outra pessoa acessar nosso site, esse será o local acessado.
+
+° database -> aqui em data base é onde fica toda a estrutura de gerenciamento de banco de dados. o laravel nos dá toda a estrutura para gerenciar os bancos por aqui através das migrations, ele criará todas as tabelas. Os seeders é uma area administrativa que só acessa se tiver logado, podemos definir um novo usuario na instalação da aplicação no servidor.
+em factories é mais voltado para teste, por exemplo quando trabalharemos com produtos em ambientes locais, criaremos as factories para criar esses produtos e conseguirmos fazer os testes.
+
+° config -> dentro de config outro diretorio bem importante fica todos os arquivos de configuração
+
+° bootstrap -> aqui é o ponto de partida da aplicação, é onde dá o start da aplicação em si, o ciclo de vida do laravel fica aqui. Também tem alguns arquivos de cache conforme formos trabalhando nele ele configura para ficar mais rapida a leitura.
+
+° app -> dentro de app é onde fica o trabalho em sim. o trabalho em si fica aqui. console é onde poderemos criar comandos para executar processos. podemos criar comandos para facilitar o desenvolvimento
+
+em execeptions é onde fazemos o tratamento de excessões.
+
+http é onde fica boa parte do trabalho, todos os controles do sistema ficaram dentro de controlers. em middleware são os filtros da aplicação, são para checar se determinada area do sistema você precisa ser autenticado, então criamos aqui dentro a autenticação. Outro exemplo queremos verificar se o usuario é maior de 18 então criaremos um middleware que realiza a verificação. Em kernel simplesmente para registrar os middlewares.
+
+models é onde ficam os modelos da aplicação.
+
+providers é onde iremos definir os provedores da aplicação.
+
+basicamente essa é a estrutura de pastas.
+__________________________________________________________________________________
+Estruturas de arquivos: 
+
+° .ENV -> Aqui dentro é onde fica todas as informações sensiveis da aplicação, senhas de bancos de dados e conexões. Esse arquivo é estratégico pois quando temos um arquivo .env em sistemas baseados em unix esse arquivo fica oculto. Fora que temos organizados dentro do mesmo lugar e de uma forma estruturada todas as senhas e tokens de acesso a serviços
+
+° .ENV_EXAMPLE -> a partir desse exemplo do .env que criamos o nosso .env, pois quando subimos o repositorio no github por exemplo, o .env com as senhas não pode ir, pois contém senhas e informações especiais. Nunca colocar as informações pessoas no example.
+
+***gitgnore: aqui é onde listamos o que o git não vai mandar para o repositorio
+
+° artisan -> esse arquivo é na realidade um cli (command line interface) que será muito utilizado nos densenvolvimentos em laravel, pois com ele podemos criar varios recursos e facilita muito o processo de aprendizado e produtividade.
+
+° composer.json -> nesse arquivo é onde definimos nome, descrição, palavras-chaves, dependencias dos projetos e etc.
+
+° package.json -> gerenciador de dependencias para javascript.
+
+° server.php -> contem algumas configurações basicas.
+
+° webpackmix.js -> esse arquivo serve para processar e compilar os assets, que ficam dentro de resources.

@@ -1,0 +1,58 @@
+As viwes são as partes de visualização da nossa aplicação, não significa ser somente html ou coisas do tipo, também pode ser javascript ou vuejs. Todas as partes visuais da nossa aplicação devem ficar dentro da pasta resources, qualquer lugar fora disso está errado.
+
+trabalharemos com o sistema de template do blade do laravel, um sistema padrão que facilita bastante trabalharmos com a parte visual da aplicação.
+
+As nossas views precisam terminar com .blade.php se não o sistem de template blade do laravel não consegue reconhecer essa view e gera uma exception.
+
+dentro desse arquivo que criamos, criamos o nosso html e o front end em geral.
+
+Para utilizarmos as viwes, podemos utilizar diretamente dentro das rotas e devemos também utilizar dentro dos controllers. No metodo index do controller, o ideal é nunca retornar um texto ou um string e sim passar uma view ou algum recurso para alimentar o front end.
+
+°Por estarmos utilizando o path padrão, que é resources, views, não precisamos passar a pasta onde se encontra nosso arquivo, somente o seu nome. Exemplo: 
+
+public function Index()
+{
+	return view('teste');
+}
+
+Quando acessarmos essa rota, ele já irá exibir essa view do nosso controler.
+
+°Algumas particularidades das views: Toda vez que virmos um @ significa que ela é uma diretiva. O blade tem várias diretivas, diretiva de autenticação, estruturas de controles e etc...
+
+Outro detalhe que devemos nos atentar é a abertura de tags php. Elas funcionam pois é um arquivo com extensão .php mas não é correto de se ter, quando fizermos essa abertura na view significa que aquele arquivo contém lógica e isso não pode ocorrer. Para se ter a lógica o controller deve importar de algum lugar e devolver para a view, A view deve simplesmente exibir o resultado esse é o papel da view dentro do mvc
+__________________________________________________________________________________Para passarmos uma variavel para dentro da nossa view, utilizamos a seguinte sintaxe no controller->  No nosso controller que é onde deve ser feita a execução da lógica, no metodo(função) que queremos que a váriavel seja passada, definimos e passamos o parametro dentro do return da váriavel. Exemplo
+
+public function Index(){
+	$teste = "vitor";
+	return view('teste', ['teste' => $teste
+		
+]);
+}
+Definimos dentro do array um indice para a nossa variavel e a esse indice atribuimos o valor da variavel $teste.
+
+Agora para atribuirmos esse valor na nossa view, devemos utilizar a seguinte sintaxe no nosso html:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minha View</title>
+</head>
+<body>
+    <h1>Estou testando Views</h1>
+    {{$teste}}
+</body>
+</html>
+
+Na linha que contém {{$teste}} estamos pegando o valor da variavel teste e imprimindo na tela da view
+
+Outra forma que também pode ser utilizada para passar os valores para as views é utilizando a função compact do php, exemplo:
+
+	Public function Index(){
+		$teste = "Vitor muy Lindo";
+		return view('teste', compact('teste'));
+}
+
+Essa função cria um array para que possamos passar os valores das variaveis. Dessa forma estamos enviando da mesma forma os valores para a nossa View. No nosso documento HTML não precisamos fazer nenhum tipo de alteração

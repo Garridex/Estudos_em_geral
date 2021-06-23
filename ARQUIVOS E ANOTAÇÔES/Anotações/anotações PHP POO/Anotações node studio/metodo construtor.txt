@@ -1,0 +1,20 @@
+O metodo construtor permite incializar as propriedades de um objeto na criação do objeto, se tivermos criado um metodo construtor, o php automaticamente vai chamar essa função quando criarmos um objeto de uma classe.
+
+O metodo construtor começa sempre com __
+No exemplo abaixo, utilizamos o metodo construtor para referenciar o nome da fruta na definição desse objeto:
+
+<?php
+class Fruta {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+
+$apple = new Fruit("Maçã");
+echo $apple->get_name();

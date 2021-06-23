@@ -1,0 +1,51 @@
+Podemos passar parametros na url, por exemplo, temos a seguinte aplicação que é uma loja virtual: egosloja.com/categorias/
+
+--- categorias é o nosso prefixo 
+
+--- já o proximo parametro após a / será dinamico
+
+O que significa ele ser dinamico? -> isso significa que ele pode variar conforme a nossa url varia, ou seja, se altera conforme nossa url. O script abaixo é o de declaração da rota: 
+
+route::get('/categorias/{flag}', function($flag){
+    return "Produtos da categoria {$flag}";
+});
+
+***não passamos em ('/categoria/{$flag}') o simbolo do dollar pois não estamos passando a variavel e sim sua indicação***
+
+***Nesse caso igual o acima, o nome da flag não precisa ser condizente com o nome da variavel da função***
+
+Se alterarmos a url http://curso-laravel-repositories.test/categorias/
+colocando http://curso-laravel-repositories.test/categorias/vitor
+
+O resultado será o seguinte texto na nossa página: Produtos da categoria vitor
+
+__________________________________________________________________________________
+A url também pode conter dois prefixos com um parametro dinamico entre eles, por exemplo a seguinte url:
+http://curso-laravel-repositories.test/categorias/~esse é o parametro dinamico~/posts. A sintaxe do código é a seguinte:
+
+ 
+route::get('/categorias/{flag}', function($flag){
+return "O post é sobre: {$flag};
+});
+
+*** Essa declaração exige que a variavel da função e o parametro da url sejam identicos /{$flag} e function ($flag)***
+
+Dessa forma temos o prefixo categorias, o parametro dinamico e o prefixo posts.
+
+__________________________________________________________________________________
+Outro padrão de rotas que nós temos também é passando parametros opcionais, por exemplo:
+
+route::get('/produtos/{idproduct}', function($idproduct){
+    return "produtos {$idproduct}";
+});
+
+Com o código acima, se quisermos por exemplo listar todos os produtos, na url não passando nenhum parametro http://curso-laravel-repositories.test/produtos 
+o servidor irá nos retornar o erro 404 (not a found) por que o parametro é obrigatorio. Para resolvermos é so definir o parametro como opcional e definir um valor default para a variavel da função:
+
+route::get('/produtos/{idproduct?}', function($idproduct = ''){
+    return "produtos {$idproduct}";
+});
+
+° Dessa maneira a flag passa a ser opcional e não dará erro pois a variavel da função está definida, então não precisamos passar um parametro especifico para o funcionamento. Dessa maneira também podemos especificar na função de callback e verificar na variavel se ela tiver valor igual ao valor default, pegamos todos os produtos, se a variavel tiver um valor especifico, pegamos somente o produto correspondente a aquele valor. Assim podemos listar tanto todos os produtos quanto especificando somente um.
+
+Dessa forma que trabalhamos com parametros nas rotas do laravel.

@@ -1,0 +1,16 @@
+Algumas váriaveis predefinidas no php são "Superglobais", o que significa que estão sempre acessiveis, indepedente de escopo e podemos acessa-las de qualquer função, classe ou arquivo sem ter que fazer nada especial. São elas:
+
+$GLOBALS ->é uma variável superglobal do PHP que é usada para acessar variáveis ​​globais de qualquer lugar no script PHP (também de funções ou métodos).
+
+$_SERVER ->é uma variável superglobal do PHP que contém informações sobre cabeçalhos, caminhos e locais de script. É utlizada para gerenciar dados dentro do servidor, tais como scripts e afins.
+
+$_REQUEST ->é uma variável superglobal do PHP que é usada para coletar dados após o envio de um formulário HTML.
+
+$_POST -> usado para coletar dados de formulário após o envio de um formulário HTML com method = "post". $ _POST também é amplamente usado para passar variáveis.
+
+
+$_GET
+$_FILES
+$_ENV
+$_COOKIE
+$_SESSION

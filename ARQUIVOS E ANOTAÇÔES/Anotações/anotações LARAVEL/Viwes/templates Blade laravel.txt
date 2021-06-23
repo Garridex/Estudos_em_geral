@@ -1,0 +1,132 @@
+Agora veremos como utilizar os templates do blade: 
+
+criamos dentro da pasta das viwes, uma pasta admin que ficará todos os nossos recursos administrativos do sistema. dentro dessa pasta teremos outros diretorios, um chamado layout que é onde ficará os templates da nossa aplicação e o outro chamado pages que é onde ficaria as nossas paginas da aplicação geral.
+
+Dentro dessa pasta pages, é onde vai ficar a nossa pasta chamada products, que é a pasta contendo o front end da nossa aplicação (nesse caso figurado da nossa loja). Após criarmos todas as nossas pastas, criaremos o arquivo index.blade.php dentro de resource->views->admin->pages->products
+
+Esse arquivo com o nome index será o chamado pela nossa rota localhost/products/ e a sua chamada será feita através do controller ProductsController pelo metodo(função) index.
+
+No nosso controller, a função index fica assim: 
+
+public function Index(){
+	$teste = "teste";
+	return view('admin.pages.products.index', compact('teste'));
+}
+
+Dessa forma o return está pegando a referencia de onde se encotra a view index e fazendo a função de enviar o valor da variavel teste pra lá.
+
+__________________________________________________________________________________
+
+Podemos criar uma estrutura html contendo toda a estrutura visual de admin dentro do index, porém teria que refazer em todo lugar que fosse reaproveitar. Pra isso podemos criar um template e reaproveitar essa parte do código e tudo que for ser utilizado. Para fazermos isso, utilizaremos no código pronto e que queremos que seja aproveitado a seguinte sintaxe:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>admin page</title>
+</head>
+<body>
+    @yield('content') 
+    <h1 id="classe">teste</h1>
+    <h2>Estou testando</h2>
+    {{$teste}}
+</body>
+</html>
+
+
+@yield -> aqui é onde declaramos que queremos tornar esse código um template, entre os () fica o nome dessa diretiva que depois utilizaremos para referenciar onde quisermos utilizar.
+
+° Como utilizar esse template?:
+utilizamos outra diretiva chamada @section(), essa diretiva nos diz que onde tiver o @yield() que definimos, será inserido aquele conteudo que colocamos dentro da section. Exemplo:
+
+
+@exetends('admin.layouts.app')
+
+@section('content')
+<h1>teste</h1>
+    {{$teste}}
+@endsection
+
+
+° Mas por que utilizar o section? Essa é a diferença de utilizar e de não utilizar:
+
+Sem o section: 
+
+<h1>teste</h1>
+vitor garrido muito lindo mesmo cara
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>admin page</title>
+</head>
+<body>
+    </body>
+</html>
+
+° O nosso código Html fica de fora do nosso template.
+
+Com o section: 
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>admin page</title>
+</head>
+<body>
+    <h1>teste</h1>
+vitor garrido muito lindo mesmo cara    
+</body>
+</html>
+
+° O nosso html é inserido exatamente onde está o @yield do template, isso quer dizer que o que formos colocar no template será inserido no lugar certo.
+
+Podemos também alterar o titulo de uma forma dinamica utilizando os templates, porm exemplo:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>página admin @yield('title') </title>
+</head>
+<body>
+    @yield('content')
+</body>
+</html>
+
+Nesse documento declaramos uma yield no title, e onde formos utilizar o template, basta fazermos da seguinte maneira:
+@extends('admin.layout.app')
+
+@section('title', 'Vitor')
+
+° title é o nome da yield, e vitor o texto que será substituido no nosso template.
+
+
+__________________________________________________________________________________
+
+A estrutura visual da nossa aplicação, todo o layout fica dentro do template, que ajuda na parte de reaproveitamento de código. Podendo assim utilizar alguns templates para todo o site.
+
+__________________________________________________________________________________
+Resumo:
+
+@yield -> é utilizada para exibir o conteudo de uma determinada seção, que é definido por @section.
+
+@section -> é responsavel em definir uma seção de conteudo. Um exemplo são os templates que servirão de base para várias páginas.
+
+Dentro do section é onde colocaremos o conteudo que será diferente para outras páginas. E o resto será o mesmo padrão do template.
+
+No nosso exemplo temos uma estrutura base para todas as páginas que vão utilizar template. e é com o section que definimos o que vai entrar de novo naquela estrutura e o yield é onde ele será inserido no template.

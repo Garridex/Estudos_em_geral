@@ -1,0 +1,5 @@
+Se utilizarmos {{$teste}} para passar o valor do nosso controller para a nossa view, não podemos utilizar as tags html para por exemplo fazer a formatação de texto de um blog, pois o laravel utiliza uma função de tratamento para evitar ataques XSS (cross-site scripting). Se quisermos passar uma variavel com tags html ou até mesmo código javascript, devemos fazer da seguinte maneira:
+
+Ao inves de utilizarmos {{$teste}} utilizamos {!!$teste!!}. Dessa forma a viwe passa a aceitar entradas de dados html não utilizando a função do php de tratamento de dados.
+
+Sempre atentar para cada caso de utilização.

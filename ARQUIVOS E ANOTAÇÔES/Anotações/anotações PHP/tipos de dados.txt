@@ -1,0 +1,50 @@
+Os tipos de dados em php são os seguintes:
+
+° String 
+° Integer
+° Float
+° Boolean
+° Array
+° Object
+° NULL
+° Resource
+
+String -> Sequencia de letras, pode ser entre "" ou ''
+
+Integer -> números inteiros
+
+Float -> Números com virgula
+
+Boolean -> verdadeiro ou falso (True or False)
+
+Array -> Variavel que aloca multiplos valores
+	Exemplo: (var_dump mostra o conteudo de uma váriavel)
+			<?php
+			$cars = array("Volvo","BMW","Toyota");
+			var_dump($cars);
+			?>
+
+Object -> Classes e Objetos são os dois aspectos principais da progamação orientada a objetos. Classes são templates para objetos, objeto são instancias de uma clase. Quando os objetos individuais são criados, eles herdam todas as propriedades e comportamentos da classe, mas cada objeto terá valores diferentes para as propriedades. Vamos supor que temos uma classe chamada Car. Um carro pode ter propriedades como modelo, cor, etc. Podemos definir variáveis como $modelo, $cor e assim por diante, para conter os valores dessas propriedades. Quando os objetos individuais (Volvo, BMW, Toyota, etc.) são criados, eles herdam todas as propriedades e comportamentos da classe, mas cada objeto terá valores diferentes para as propriedades. Se você criar uma função __construct (), o PHP irá automaticamente chamar esta função quando você criar um objeto de uma classe.
+Exemplo:
+
+<?php
+class Car {
+    public $colot;
+    public $model;
+    public function __construct($color, $model){
+        $this ->color = $color;
+        $this ->model = $model;
+
+    }
+    public function message()
+    {
+        return "Meu carro é ". $this->color . " " . $this-> model . "!";
+    }
+}
+$myCar = new Car ("preto", "Volvo");
+echo $myCar -> message();
+?>
+
+Null -> NULL é um tipo de dado especial que tem somente um valor: nulo, Uma váriavel do tipo nulo é uma váriavel que não possui valor nenhum atribuido a ela.
+
+Resource -> O tipo especial resource não é um tipo de dado real, É o armazenamento de uma referencia a função e recursos externos ao PHP. um exemplo comum de uso é uma chamada de banco de dados

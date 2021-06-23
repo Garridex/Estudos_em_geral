@@ -1,0 +1,65 @@
+O que são rotas? -> rotas são maneiras de acessar o sistema (aplicação). Por exemplo, temos o nosso dominio de teste, a aplicação hospedada, depois de fazer o deploy dela seria o dominio.
+
+Inicialmente temos o seguinte dominio (rota) -> app-laravel.test
+E suponhamos que temos no nosso dominio a rota teste, por exemplo app-laravel.test\teste.
+O laravel não funciona igual ao php que o endereço seria dessa forma app-laravel.test\teste.php, o laravel oculta esse ponto com o seu sistema de roteamento.
+__________________________________________________________________________________
+
+Como criar rotas? -> Os arquivos de rota do laravel ficam dentro da pasta routes, dentro do arquivo web.php que tem o seguinte conteudo:
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+---- Route: significa que iremos definir uma rota
+---- get: é o verbo http da rota
+---- '/' : essa é a rota especificada, que nesse caso signfica a raiz da aplicação em si, no nosso dominio é representada por pp-laravel.test\ <- essa barra.
+
+---- function (){return view ('welcome')}: essa é a função de call-back que nos passa uma view que fica dentro de resource e referencia o arquivo welcome.blade.php
+
+Podemos alterar e criar as novas rotas, como por exemplo essa: 
+
+route::get("/contato", function(){
+    return "Contato";
+}); 
+
+Que ao acessarmos o endereço http://curso-laravel-repositories.test/contato irá aparecer escrito na tela Contato.	
+
+° Quando tentarmos acessar uma rota que não existe, o proprio laravel tem um tratamento para retornar o erro 404 (not a found).
+
+
+Criei um arquivo dentro de resources, dentro de views chamado contact.blade.php e nele contém algumas tags simples html somente para testar a rota. Abaixo o código da rota seguido do código contact.blade.php
+
+ROTA
+° route::get("/contato", function(){
+    return view ("contact");
+}); 
+
+CONTACT.BLADE.PHP	
+° <h1>Página de contato</h1>
+  <p>Seja muito bem vindo</p>
+__________________________________________________________________________________
+Se o arquivo que estivermos acessando com utilizando a rota estiver dentro de uma pasta no view, o laravel exige a definição do nome da pasta e do arquivo, da seguinte forma:
+
+
+route::get("/contato", function(){
+    return view ("site.contact");
+}); 
+
+Temos que definir a pasta antes do nome do arquivo, adicionar um . e depois referenciar o nome do arquivo em questão. Se não o fizermos, o laravel nos retorna o seguinte erro: 
+
+nvalidArgumentException
+View [contact] not found.
+http://curso-laravel-repositories.test/contato
+
+° O laravel tem todo um sistema completo de debbug da aplicação, que já nos informa onde ocorreu o erro e uma dica para a correção.
+__________________________________________________________________________________
+Podemos utilizar vários tipos de verbos http para utilizar as rotas, tais como o verbo post:
+
+route::post("/register", function(){
+    return '';
+});
+
+° Não podemo testar essa rota com o verbo post pois não existe essa rota no nosso navegador.Estamos tentando acessar ela via GET e não via POST. O retorno dessa rota é a seguinte exception:
+
+The GET method is not supported for this route. Supported methods: POST.

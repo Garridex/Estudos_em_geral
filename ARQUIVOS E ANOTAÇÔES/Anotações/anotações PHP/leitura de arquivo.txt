@@ -1,0 +1,69 @@
+Manipulação de arquivos utilizando o PHP -> Essa é uma parte bem importante de qualquer aplicação web, muitas vezes vamos precisar processar um arquivo para diferentes tarefas. O php tem várias funções de manipulação de manipulação de arquivos, tais como criar, ler, alterar, e enviar.
+
+° readfile() -> essa função lê um arquivo e grava no buffer de saida. ess função é util caso só queiramos abrir e ler o arquivo.
+Exemplo
+<?php
+echo readfile("teste.txt");
+?>
+-------------------------------------------------------------------
+° fopen() -> o melhor jeito de se abrir um arquivo é utilizando essa função, essa função nos dá mais opções que a função readfile.
+O primeiro parametro do fopen contém o nome do arquivo a ser aberto e o segundo parametro especifica em qual modo o arquivo deve ser aberto. O exemplo a seguir também gera uma mensagem caso o fopen() não consiga abrir o arquivo:
+<?php
+$arquivo = fopen("teste.txt", "r") or die ("Não consegui abrir esse arquivo");
+echo fread($arquivo,filesize("teste.txt"));
+fclose($arquivo)
+?>
+*: As funções fread () e fclose () serão explicadas a seguir.*
+
+Nessa função, o arquivo pode ser aberto em um dos seguintes modos: 
+
+r -> Abra um arquivo somente para leitura. O ponteiro do arquivo começa no início do arquivo
+
+w -> Abra um arquivo apenas para gravação. Apaga o conteúdo do arquivo ou cria um novo arquivo se ele não existir. O ponteiro do arquivo começa no início do arquivo
+
+a -> 	Open a file for write only. The existing data in file is preserved. File pointer starts at the end of the file. Creates a new file if the file doesn't exist
+
+x -> Cria um novo arquivo somente para gravação. Retorna FALSE e um erro se o arquivo já existir
+
+r+ -> Abra um arquivo para leitura / gravação. O ponteiro do arquivo começa no início do arquivo
+
+w+ -> Abra um arquivo para leitura / gravação. Apaga o conteúdo do arquivo ou cria um novo arquivo se ele não existir. O ponteiro do arquivo começa no início do arquivo
+
+a+ -> Abra um arquivo para leitura / gravação. Os dados existentes no arquivo são preservados. O ponteiro do arquivo começa no final do arquivo. Cria um novo arquivo se o arquivo não existir
+
+x+ -> Cria um novo arquivo para leitura / gravação. Retorna FALSE e um erro se o arquivo já existir
+-------------------------------------------------------------------
+°fread() -> essa função lê de um arquivo já aberto, o primeiro parametro contém o nome do arquivo a ser lido e o segundo parametro
+especifica o número máximo de bytes a ler.
+o proximo código php lê o arquivo "teste.txt" até o final
+
+echo fread($arquivo,filesize("teste.txt"));
+-------------------------------------------------------------------
+° fclose() -> essa funcão é utilizada para fechar um aplicativos.
+É uma boa pratica da progamação fechar todos os arquivos depois de terminar. Não queremos um arquivo aberto rodando no nosso servidor e consumindo recursos.
+fclose() requer o nome do arquivo, (ou uma váriavel que
+contenha o nome do arquivo) que queremos fechar.
+
+Exemplo: 
+<?php
+$meuArquivo = fopen("teste.txt", "r");
+fclose($meuArquivo);
+?>
+-------------------------------------------------------------------
+° fgets() ->  é usada para ler uma única linha de um arquivo.O exemplo abaixo produz a primeira linha do arquivo:
+
+$meuArquivo = fopen("teste.txt", "r") or die ("não consegui abrir esse arquivo");
+echo fgets($meuArquivo);
+fclose($meuArquivo);
+
+Nota: Após uma chamada à função fgets (), o ponteiro do arquivo foi movido para a próxima linha.
+-------------------------------------------------------------------
+feof() -> ) verifica se o "fim do arquivo" (EOF End Of File) foi atingido. A função é útil para percorrer dados de comprimento desconhecido.O exemplo abaixo lê o arquivo "teste.txt" linha por linha, até que o final do arquivo seja alcançado:
+
+<?php
+$arquivo = fopen("teste.txt", "r") or die ("Não consegui abrir o arquivo");
+while(!feof($arquivo)){
+    echo fgets($arquivo) . "<br>";
+}
+fclose($arquivo);
+?>

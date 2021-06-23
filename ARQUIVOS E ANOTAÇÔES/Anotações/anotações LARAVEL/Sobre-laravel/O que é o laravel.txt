@@ -1,0 +1,2 @@
+Laravel nada mais é que um framework PHP que contém vários arquivos de códigos e uma estrutura de alto nivel para criar códigos elegantes e produtivos. O laravel é muito utilizado para criar APIs, e utilizar a partir de outras aplicações.
+O Laravel já tem toda uma instrutura para trabalhar com o VueJs. O Laravel é bem utilzado para apliçacões de grande.

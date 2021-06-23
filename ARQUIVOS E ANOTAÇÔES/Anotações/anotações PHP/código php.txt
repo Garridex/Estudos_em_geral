@@ -1,0 +1,5 @@
+O código php é escrito entre as tags php <?php?>, a extensão do arquivo é .php
+
+O PHP não é case sensitive, isso significa que a sintaxe pode ser escrita tanto em maiusculas como em minusculas. Porém, todos os nomes de váriaveis tem diferenciação de maisculas e minusculas.
+
+° Toda instrução php é finalizada por um ; 

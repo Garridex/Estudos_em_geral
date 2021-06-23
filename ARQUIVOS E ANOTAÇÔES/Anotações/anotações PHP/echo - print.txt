@@ -1,0 +1,30 @@
+No php temos duas maneiras básicas de obter a saida dos dados: echo e print.
+
+A diferença de ambos é pequena, Echo não retorna valor, enquanto print tem um valor de retorno 1, então pode ser usado em expressões. Echo pode ter vários parametros (embora esse uso seja raro), enquanto print pode ter um argumento. Echo é marginalmente mais rapido que print
+
+
+DEMONSTRAÇÃO ECHO:
+A instrução e echo pode ser usada com ou sem (), echo ou echo(). O exemplo a seguir mostra como retornar valores utilizando o comando echo (contem marcações html):
+
+<?php
+echo "<h2> PHP é divertido </h2>";
+echo "Hello, world! <br>";
+echo "isso ", "é ", "uma ", "string ", "com multiplos ", "parametros";
+?>
+
+° Para concatenarmos texto no Echo, utilizamos ".", por exemplo
+<?php
+$var = "teste";
+echo "isso é um" .$var;
+?>
+
+DEMONSTRAÇÃO PRINT:
+O print pode ser utilizado com ou sem (): print ou print()
+
+Os seguintes exemplos mostram como o comando print funciona:
+
+<?php
+print "<h2> PHP é divertido </h2>";
+print "Hello, world! <br>";
+print "Eu estou aprendendo php"
+?>

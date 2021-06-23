@@ -1,0 +1,55 @@
+O que é um cookie? -> Um cookie é freqüentemente usado para identificar um usuário. Um cookie é um pequeno arquivo que o servidor incorpora no computador do usuário. Cada vez que o mesmo computador solicita uma página com um navegador, ele também enviará o cookie. Com o PHP, você pode criar e recuperar valores de cookies.
+__________________________________________________________________________________Criando cookies com o php: Os cookies são criados com a função setcookie() e tem a seguinte sintaxe setcookie(nome,valor, expira, caminho, dominio, seguro, httponly);
+°Apenas o parametro de nome é obrigatorio, todos os outros são opcionais.
+__________________________________________________________________________________
+O exemplo seguinte cria um cookie chamado "usuario" com o valor "vitor garrido". Esse cookie vai expirar após 30 dias (86400 * 30).O "/" significa que o cookie está disponível em todo o site (caso contrário, selecione o diretório de sua preferência). Em seguida iremos recuperar o valor do cookie utilizando a váriavel global $_COOKIE. Também vamos usar a função isset() para descobrir se o cookie está definido.
+
+Nota: A função setcookie () deve aparecer ANTES da tag <html>.
+Nota: O valor do cookie é automaticamente codificado por URL ao enviar o cookie e automaticamente decodificado quando recebido (para evitar a codificação de URL, use setrawcookie () em vez disso).
+
+
+<?php
+//cookies
+$cookie_nome = "usuario";
+$cookie_valor = "Vitor garrido";
+setcookie($cookie_nome, $cookie_valor, time() + (86400 * 30), "/" ); // 86400 = 1 dia?>
+
+<html>
+<body>
+ <?php
+ if(!isset($_COOKIE[$cookie_nome])){
+     echo "nome do cookie é " . $cookie_nome . " não está setado";
+ }else{
+     echo "Cookie " . $cookie_nome . " está setado";
+     echo " o valor é " . $_COOKIE[$cookie_nome];
+}
+ 
+ ?>   
+
+
+</body>
+</html>
+__________________________________________________________________________________
+Para modificar o valor de um cookie, basta setarmos ele novamente.
+
+Para excluirmos o cookie, basta utilizarmos o set, com um valor de expiração negativo, por exemplo
+
+<?php
+setcookie("user", "", time() -3400);
+?>
+__________________________________________________________________________________
+checando se o cookie está ativo: O proximo exemplo cria um pequeno script que checa se os cookies estão ativados: 
+
+<?php
+setcookie("teste", "teste", time() + (1600), "/");
+?>
+<html>
+<?php
+if(count($_COOKIE) > 0){
+echo "Cookies estão setados";
+}else{
+    echo "Cookies não estão setados";
+}
+
+?>
+</html>

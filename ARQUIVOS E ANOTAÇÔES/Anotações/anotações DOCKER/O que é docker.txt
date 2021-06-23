@@ -1,0 +1,9 @@
+° É um software que oferece ambientes virtualizados que empacota todo o sistema operacional e suas aplicações pra dentro de um container, os containers são isolados uns dos outros, e agrumpam seus proprios softwares, bibliotecas e arquivos de configuração, tornando portavél para ser utilizado em outros computadores e servidores. O docker empacota todo o ecossistema do desenvolvimento, toda a infraestrutura, os servidores (ngnix, apache), os bancos de dados (mysql, postgree e etc...), os interpretadores das linguagens de progamação, as bibliotecas utilizadas no desenvolvimento e etc.
+
+° Com o docker, podemos rodar as aplicações com as mesmas versões de toda a infraestrutura do progama. Eliminamos o problema das dependencias do software, podendo ser utilzado em qualquer maquina. O docker virtualiza a sua aplicação, criando uma imagem que pode ser compartilhada e executada por outras pessoas dentro da maquina delas.
+
+° Todos que forem utilizar a imagem dentro do container, já terão todas as dependencias dela instaladas no container e prontas pra rodarem
+
+° Para não termos que criar toda a configuração da imagem do zero, podemos baixar um repositorio do docker com diversas imagens já prontas para utilizarmos. Encontramos diversas imagens especificas
+
+° Na pratica precisamos somente criar um arquivo docker e definirmos ele com uma imagem base, o sistema operacional e as dependecias, os arquivos, os comandos a serem executados e etc...
