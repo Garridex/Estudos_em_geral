@@ -43,3 +43,27 @@ Criamos também a nossa pasta APP e dentro dela contendo os seguinte diretorios,
 Criamos o nosso primeiro controller chamado de home.php e essa classe contida nesse arquivo vai gerenciar as requisições que vão chegar até a home do nosso site, as requisições da paginas inicial do nosso site.
 
 Criaremos dentro da classe home um metodo que irá nos retornar o conteudo dentro da home, o controlador irá receber uma ação de consulta, e irá executar o model para obter os dados necessarios para exibir pro usuario e passar para a view para a view ser reponsavel em imprimir os dados para o usuario.
+__________________________________________________________________________________
+			MVC NA PRATICA
+° Após a criação do nosso controller o arquivo ficou da seguinte maneira:
+
+<?php
+namespace app\controller\pages;
+
+class home{
+    /**
+ * metodo responsavel por retornar o conteudo de home
+ * @return string
+ */
+    public static function getHome(){
+        return 'olá mundo';
+    }
+} 
+
+?>
+
+Utilizamos o namespace para evitar um possivel conflito de classes.
+Criamos a classe home e dentro dela criamos o metodo (função) que nos retornará a nossa view, nesse momento só está retornando um Olá mundo para testes.
+
+°
+	
