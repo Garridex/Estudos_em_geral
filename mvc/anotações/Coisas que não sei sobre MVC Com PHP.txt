@@ -63,7 +63,8 @@ class home{
 ?>
 
 Utilizamos o namespace para evitar um possivel conflito de classes.
-Criamos a classe home e dentro dela criamos o metodo (função) que nos retornará a nossa view, nesse momento só está retornando um Olá mundo para testes.
+Criamos a classe home (dentro de app->controller->pages) e dentro dela criamos o metodo (função) que nos retornará a nossa view, nesse momento só está retornando um Olá mundo para testes.
 
-°
+° Agora criaremos a nossa view que é o documento HTML da nossa aplicação, e foi inserido dentro de uma nova pasta (resource->view->pages). Aqui ira conter os códigos html, css e javascript da nossa aplicação
 	
+° Agora iremos criar uma classe para gerenciar o acesso as Viwes para o conteudo ficar mais dinamico e criaremos ela dentro de uma pasta nova chamada utils (app->utils). Dentro da classe view iremos criar alguns metodos de renderização das viwes e do conteudo dinamico. 
