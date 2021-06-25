@@ -1,4 +1,118 @@
-o que é e como funciona ajax -> Ajax é um acronimo para Asynchronus javascript And XML e foi incialmente desenvolvida pelo estudioso jessé james garret e mais tarde por diversas associações. Ajax não é uma tecnologia, mas sim um conjunto de tecnologias. O conceito de AJAX se resume em conhecer bem javascript, trabalhando com DOM, CSS e XML.
+Ajax é sobre como atualizar partes de uma página web, sem recarregar a página inteira.
 
-° Como o AJAX funciona -> enquanto em uma aplicação web classica o  navegador tem que ir buscar as informações no servidor e retornar para o cliente, no Ajax ocorre de forma diferente. No carregamento da página, toda a logica de processamento de dados é passado ao cliente. Quando o usuario faz uma requisição, quem busca e trás essas informações é o javascript, de forma assincrona, não causando assim o chamado "reload" na tela. O tratamento dos dados, seu formato e exibição fica toda por conta do script que foi carregado inicialmente quando se acessou a pagina. O processo inicial de carregamento é mais lento que de uma aplicação comum, pois muitas informações são pré-carregadas. Mas depois, somente os dados são carregados, tornando assim o site mais rápido
+ AJAX -> javascript assincrono e XML. 
+
+AJAX é uma tecninca para criar páginas da web rápidas e dinâmicas. O ajax permite que as páginas da web sejam atualizadas de forma assincrona, trocando pequenas quantidades de dados com o servidor nos bastidores. Isso significa que é possivel atualizar as partes de uma página web, sem recarregar a página inteira.
+
+As páginas da Web classicas (que não usam Ajax) devem recarregar a página inteira se o conteudo mudar. Exemplos de aplicativos que usam Ajax: Guias do google Map, Gmail, YouTube e facebook.
+
+
+O ajax é baseado em padrões da internet e usa uma combinação de:
+
+° Objeto XMLHttpRequest (para trocar dados de forma assincrona com um servidor)
+
+° Javascript / DOM (Para exibir/interagir com as informações)
+
+° Css (para definir o estilo)
+
+° XML (frequentemente usado como formato para transferencia de dados)
+
+Os aplicativos ajax são independentes do navegador e da plataforma.
+
 __________________________________________________________________________________
+
+Exemplo simples de ajax->
+
+function ajax(){
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload= function(){
+        window.document.getElementById("teste").innerText = this.responseText;
+    }
+    xhttp.open("GET", "ajax_info.txt", true)
+    xhttp.send();
+}
+
+Com esse script acima estamos solicitando dados de um servidor WEB e alterando o nosso documento para o .txt que solicitamos.
+
+Primeiro criamos uma função chamada de ajax() e dentro dela criamos uma constante chamada xhttp e definimos ela como um novo objeto XMLHttpRequest(), Após isso utilizamos a propriedade onload (executa a ação quando o objeto é carregado) e definimos a nossa variavel xhttp como uma nova função e dentro dessa função é onde ocorre a mágica:  selecionamos nossa div com id teste e alteramos o seu texto (innerHTML) para uma propriedade do objeto XMLHtttpRequest (lembrando que this. é so uma forma de se referir ao valor da variavel dentro do objeto) Que é a respondeText que serve para executar retorna o texto recebido de um servidor após o envio de uma solicitação. Após isso fazemos a solicitação do nosso servidor usando o metodo open() que (falaremos mais a frente) e fechamos o script utilizando o metodo send() (também falaremos mais a frente).
+
+° XMLHttpRequest -> é um objeto integrado ao navegador (para solicitar dados de um servidor da WEB)
+__________________________________________________________________________________
+
+Ajax é um nome enganador. Os aplicativos AJAX podem usar XML para transportar os dados, mas é igualmente comum transportar dados como texto simples ou texto JSON.
+
+
+COMO FUNCIONA O AJAX -> 
+
+1° Um evento ocorre em uma pagina da web (a página é carregada, um botão é clicado)
+
+2° Um objeto XMLHttpRequest é criado por javascript
+
+3° O objeto XMLHttpRequest envia uma solicitação a um servidor web
+
+4° O servidor processa a solicitação
+
+5° O servidor envia uma reposta de volta a página da web
+
+6° A resposta é lida por javascript 
+
+7° Ação adequada (como atualizações de página) é realizada por Javascript
+
+__________________________________________________________________________________
+O objeto XMLHttpRequest: O objeto pode ser usado para trocas de dados com um servidor nos bastidores. Isso significa que é possivel atualizar partes de uma pagina da web, sem recarregar a página inteira.
+
+CRIAR UM OBJETO -> para criarmos esse tipo de objeto basta utilizarmos a seguinte sintaxe:
+
+variavel = new XMLHttpRequest()
+
+
+° Por razões de segurança, os navegadores modernos não permitem acesso entre os dominios. Isso significa que tanto a página da WEB quanto o arquivo XML que ela tenta carregar devem estar localizados no mesmo servidor. 
+----------------------------------------------------------------------------------
+Métodos do objeto XMLHttpRequest:
+
+° abort() -> cancela o request atual 
+
+° getAllResponseHeaders() -> Retorna as informações do cabeçalho
+
+° getResponseHeader() -> Retorna uma informação especifica do cabeçalho
+
+° open(method, url, async, user, psw)-> Especifica o método do Request: method (get ou post), url (localização do arquivo), async(verdadeiro(asynchronous) ou falso (synchronous)), user(usuario opcional), psw(senha opcional) 
+
+° send() -> envia o request pro servidor utilizado o metodo GET
+
+° send(string)-> envia um request pro servidor. usado para o metodo POST
+
+Propriedades do objeto XMLHttpRequest:
+
+° onreadystatechange -> define uma função a ser chamada quando a propriedade readyState muda.
+
+° readyState -> contém o status do XMLHttpRequest. (0 -> solicitação não inicializada, 1 -> conexão do servidor estabelecida, 2-> pedido recebido, 3 -> solicitação de processamento, 4-> pedido concluido e resposta pronta)
+
+° responseText -> Retorna os dados de resposta como uma string
+
+° responseXML -> Retorna os dados de resposta como um XML
+
+° status -> retorna o status da requisição (200: "OK", 403: "Forbidden", 404: "Not Found")
+
+° statusText -> Retorna o texto de status (por exemplo, "OK" ou "Não encontrado")
+
+__________________________________________________________________________________
+
+ENVIANDO UMA SOLICITAÇÃO AO SERVIDOR: para enviarmos uma solicitação ao servidor usamos o metodo open() e send() do objeto XMLHttpRequest
+
+GET:
+ var teste = new XMLHttpRequest()
+ teste.open("GET", "ajax_info.txt", true)
+ teste.send()	
+
+No código acima podemos obter um resultado armazenado em cache. Para evitar isso adicione um iD exclusivo a URL
+
+teste.open("GET", "demo_get.asp?t=" + Math.random(), true)
+teste.send()
+
+POST: 
+ var teste = new XMLHttpRequest()
+ teste.open("POST", "demo_post.asp", true)
+ teste.send()
+
+para fazermos o post de dados como um formulário HTML, adicionamos um cabeçalho HTTP com setRequestHeader(). Especificando os dados que queremos enviar no metodo send

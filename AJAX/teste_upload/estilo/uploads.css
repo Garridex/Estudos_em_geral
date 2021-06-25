@@ -1,0 +1,34 @@
+body {
+    /* background-color: #610606; */
+    background: white;
+}
+#container-upload{
+    text-align: center;
+    line-height: 125px;
+    color: black;
+    width: 500px;
+    padding: 10px;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+#container-upload h1 {
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    margin-top: 130px;
+}
+#botão {
+    width: 100px;
+    
+    color: black;
+    background: #9c1313;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    
+}
+
+#botão:hover{
+    background: black;
+    color:white;
+}
