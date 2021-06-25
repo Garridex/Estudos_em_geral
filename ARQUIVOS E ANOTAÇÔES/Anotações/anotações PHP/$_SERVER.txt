@@ -1,3 +1,6 @@
 $_SERVER ->é uma variável superglobal do PHP que contém informações sobre cabeçalhos, caminhos e locais de script. É utlizada para gerenciar dados dentro do servidor, tais como scripts e afins.
 
 Essa é uma superglobal cheia de parametros e que necessita de atenção, podemos utilizar para fazer diversos tipos de consultas nos servidores passando diversos parametros.
+
+
+https://www.w3schools.com/php/php_superglobals_server.asp

@@ -81,7 +81,7 @@ Métodos do objeto XMLHttpRequest:
 ° send() -> envia o request pro servidor utilizado o metodo GET
 
 ° send(string)-> envia um request pro servidor. usado para o metodo POST
-
+----------------------------------------------------------------------------------
 Propriedades do objeto XMLHttpRequest:
 
 ° onreadystatechange -> define uma função a ser chamada quando a propriedade readyState muda.
@@ -115,4 +115,56 @@ POST:
  teste.open("POST", "demo_post.asp", true)
  teste.send()
 
-para fazermos o post de dados como um formulário HTML, adicionamos um cabeçalho HTTP com setRequestHeader(). Especificando os dados que queremos enviar no metodo send
+para fazermos o post de dados como um formulário HTML, adicionamos um cabeçalho HTTP com setRequestHeader(). Especificando os dados que queremos enviar no metodo send()
+
+teste.open("POST", "demo_post2.asp", true)
+teste.setRequestheader("Content-type", "application/x-www-form-urlencoded")
+teste.send("fname=Henry&lname=Ford")
+
+° setRequestHeader(header, value) ->  adiciona cabeçalhos HTTP a solicitação. header: especifica o nome do cabeçalho
+value: especifica o valor do cabeçalho
+__________________________________________________________________________________
+URL -> Um arquivo em um servidor
+O parametro url do método open() é um endereço para um arquivo em um servidor
+
+ teste.open("GET", "formulário.php", true)
+
+O arquivo pode ser qualquer tipo de arquivo, como .txt e .xml, ou arquivos de script de servidor como .asp e .php (que podem realizar ações no servidor antes de enviar a resposta de volta)
+----------------------------------------------------------------------------------
+Assincrono - Verdadeiro ou Falso:
+
+ As solicitações do servidor devem ser enviadas de forma assincrona. O parametro async do método open() deve ser definido como verdadeiro:
+
+teste.open("GET", "ajax_test.asp", true)
+
+° Ao enviar de forma assicrona, o javascript não precisa esperar pela resposta do servidor, mas pode: 
+
+* executar outros scripts enquanto espera pela resposta do servidor
+* lidar com a reposta depois que ela estiver pronta.
+ 
+----------------------------------------------------------------------------------
+Propriedade onreadystatechange -> Com o objeto XMLHttpRequest você pode definir uma função a ser executada quando a solicitação receber uma resposta. A função é definida na propriedade onreadystatechange do objeto XMLHttpResponse:
+
+teste.onreadystatechange = function(){
+	if (this.readyState == 4 && this.status == 200){
+	 document.GetelementById("demo").innerHTML = this.responseText;
+}
+};
+xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();
+----------------------------------------------------------------------------------
+Pedido sincrono -> Para executar uma solicitação sincrona, altere o terceiro parametro no método open() para falso
+
+teste.open("GET", "ajax_info.txt", false)
+
+As vezes, async = false são usados para testes rapidos. você também encontrará solicitações sincronas em códigos javascript mais antigos.
+
+Como o codigo aguardara a conclusão do servidor, não há necessidades de uma função onreadystatechange
+__________________________________________________________________________________
+AJAX -> resposta do servidor:
+
+A propriedade readyState contém o status do XMLHttpRequest 
+
+A propriedade onreadystatechange define uma função a ser executada quando o readyState muda
+
+A propriedade status e a propriedade statusText contém o status do objeto XMLHttpRequest

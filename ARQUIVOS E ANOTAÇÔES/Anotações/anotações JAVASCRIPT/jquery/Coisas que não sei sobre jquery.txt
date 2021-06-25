@@ -1,0 +1,34 @@
+° jquery é um framework que serve para escrevermos menos e fazermos mais com o javascript. Nada mais é que um arquivo com várias funções que utilizamos para manipular os objetos HTML. Com o jquery diminuimos o tamanho dos comandos JS.
+
+O jquery serve para manipularmos  os componentes HTML, utilizamos as tags ids e classes, podemos também trabalhar com banco de dados utilizando ajax e etc.
+__________________________________________________________________________________
+Como o jquery é um arquivo javascript, basta linka-lo ao site onde serão aplicadas as alterações ou adicionados os elementos desejados: o site precisa chamar a biblioteca, sem que nenhuma instalação tenha quer ser realizada. Esse "chamado" pode ser feito de duas maneiras:
+
+ ° Por meio do link de um arquivo local -> Nesse modo, a biblioteca será adicionada ao HD do usuario ou ao servidor que hospeda o site. O endereço onde o jquery foi hospedado deve ser linkado a página.
+ 
+ ° Por meio do link para um arquivo via CDN (rede de entrega de conteudo) -> Uma rede de entrega de conteudo (CDN) é um sistema de vários servidores que entregam conteudo da web a um usuario com na localização geografica. Quando você vincula um arquivo jquery hospedado via CDN, ele potencialmente chega mais rápido e com mais eficiencia ao usuario do que se você hospeda em seu proprio servidor.
+O Google e a Microsoft mantêm em seus sites as diferentes versões da biblioteca para acesso público. Assim, a página pode ser linkada para o endereço de hospedagem da biblioteca.
+
+O código HTML ficará da seguinte forma:
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+__________________________________________________________________________________
+Para selecionarmos um elemento HTML para ser utilizado no jquery, devemos utilizar o seletor e passarmos o que queremos que aconteça. Exemplo:
+
+$('h1').fadeOut("2000").fadeIn("2000")
+
+No código acima selecionamos o elemento h1 e utilizamos as funções de desaparecer e aparacer com um intervalo de 2 segundos em cada
+
+O $ é utilizado para passarmos um seletor ou uma classe\id do HTML
+
+Podemos utilizar a sintaxe do javascript para definirmos funções e passarmos o que queremos que o jquery realize dentro delas. Exemplo:
+
+function botao (){
+ $('li').css({'color': 'red'})
+
+}
+
+A propriedade .css serve para alterarmos o estilo de um elemento HTML e a sintaxe para a utilizarmos e esta:
+
+.css({'color': 'red'})
+
+dentro das chaves passamos -> 'propriedade': 'valor'
