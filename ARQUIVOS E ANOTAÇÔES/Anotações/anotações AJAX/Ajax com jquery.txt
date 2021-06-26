@@ -1,0 +1,30 @@
+jquery fornece vários metodos para a funcionalidade AJAX. Com os metodos jquery ajax, você pode solicitar texto, HTML, XMl ou json de um servidor remoto usando HTTP Get ou Post. Você pode carregar os dados externos diretamente nos elementos HTML selecionados de sua página Web.
+
+__________________________________________________________________________________
+Metodos jquery mais importantes para ajax:
+
+° load() -> O metodo load é um metodo simples, mas podereso. O load() carrega dados de um servidor e coloca os dados retornados no elemento selecionado. Sintaxe
+
+$(seletor).load(URL, data, callback);
+
+O parametro de URL obrigatorio especifica o URL que você deseja carregar. O paremtro opcional data especifica um conjunto de pares chaves / valor querystring para enviar junto com a solicitação. o parametro opcional de retorno de chamada é o nome de uma função a ser executada após a conclusão do load().
+__________________________________________________________________________________
+
+O ajax se resume a tres passos: O primeiro passo define que dados vão ser enviados ao servidor, depois ele faz a requisição, após isso ele retorna a reposta do servidor.
+
+O código base do ajax para fazermos o envio dos dados é da seguinte maneira:
+
+$.ajax({})
+
+
+
+
+abrimos o seletor do jquery e chamamos a função ajax, e dentro dela iremos passar algumas propriedades:
+
+° a Url -> aqui é onde iremos indicar qual vai ser o processamento do nosso script, para onde ele será enviado. O código ou endereço que enviarmos será o responsavel por cuidar do processamento dos dados recebidos.
+
+° o method ->  Aqui selecionamos como queremos enviar os dados ao servidor, através do metodo get ou do metodo post.
+
+° o data-> os nossos dados em si que serão enviados
+
+°  
