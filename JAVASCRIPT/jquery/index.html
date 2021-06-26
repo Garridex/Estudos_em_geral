@@ -8,26 +8,17 @@
     <title>jquery</title>
 </head>
 <body>
-    <div><h1>Lista de nomes</h1></div>
-    <div>
-        <ul style="font-size: 35px;">
-        <li>João</li>
-        <li>Maria</li>
-        <li>Vitor</li>
-        <li>marcos</li>
-        <li>Bianca</li>
-        
-        </ul>
-    </div>
-    <div>
-        <button id="btn">Click aqui</button>
-    </div>
-    <script>
-        $('#btn').on("click",botao)
+<h1>Estou testando jquery</h1>
+<p>Esse é o meu teste do jquery</p>
+<h2 class="teste">Olha isso sumindo</h2>
+<h3 id="teste">também vai sumir</h3>
+<script>
 
-     function botao (){
-         $('li').css({'colorred'})
-     }   
-    </script>
+
+    $('p').hide()
+    $('.teste').hide()
+    $('#teste').hide()
+    $('h1').css({'color': 'red'})
+</script>
 </body>
 </html>

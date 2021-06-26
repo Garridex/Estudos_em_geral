@@ -32,3 +32,33 @@ A propriedade .css serve para alterarmos o estilo de um elemento HTML e a sintax
 .css({'color': 'red'})
 
 dentro das chaves passamos -> 'propriedade': 'valor'
+
+__________________________________________________________________________________
+SINTAXE JQUERY -> Com o jquery você seleciona, (consulta) elementos HTML e executa ações neles.
+
+° A sintaxe jquery é feita sobre medida para selecionar elementos HTML e executar alguma ação nos elementos.
+
+A sua sintaxe básica é: $(seletor).ação()
+
+- Um sinal $ para definir / acessar jquery
+- Um seletor para consultar (localizar) elementos HTML
+- Uma ação jquery () para ser realizada nos elementos
+
+ALGUNS EXEMPLOS -> 
+
+$(this).hide() -> oculta o elemento atual
+
+$("p").hide() -> Ocualta todos os elementos <p>
+
+$(".test").hide() -> Oculta todos os elementos com a classe ="test"
+
+$("$#test").hide() -> Oculta todos os elementos com id = "test"
+
+
+Uma boa pratica ao utilizar o jquery é coloca-lo numa função que espera o documento terminar de carregar para ser executado, dessa forma não irá acontecer as ações antes do documento terminar seu load. Exemplo da função: 
+
+$(document).ready(function(){
+
+	//códigos jquery
+
+});
