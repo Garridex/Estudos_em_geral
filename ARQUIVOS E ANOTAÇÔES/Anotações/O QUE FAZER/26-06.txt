@@ -1,7 +1,0 @@
-O que eu preciso estudar: 
-
-° Ajax com jquery
-
-° Ajax e PHP
-
-°  requisições ajax POST

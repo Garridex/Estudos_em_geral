@@ -1,0 +1,7 @@
+Para entendermos sobre URLs amigaveis, precisamos primeiro entender sobre query string. Uma query string é uma parte da url que contém dados sendo transmitidos, exemplo:
+
+http://meusite.com.br/produto?chave=valor&outraChave=outroValor
+
+Como podemos analisar para que possamos informar os valores desejados na URL iniciamos com o caractere ? seguido de chave e seu valor. Caso desejamos informar mais valores, basta inserir o caractere & e repetir o processo.
+
+Podemos informar quantos valores forem necessarios, normalmente essa passagem de parametros é comumente utilizada em requisições do tip GET, porém nada impede de ser utilizado em outros tipos de requisições (request).
