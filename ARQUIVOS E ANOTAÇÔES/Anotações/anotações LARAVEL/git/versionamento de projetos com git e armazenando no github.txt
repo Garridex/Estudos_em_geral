@@ -1,0 +1,1 @@
+Fiz o primeiro commit do projeto para estudos em laravel 6 para um repositorio que criei no github. Para quem quiser ver ou até mesmo alterar o projeto, pode baixar o repositorio no github e utilzar do composer (composer install) para instalar as dependencias do php para esse projeto. Após isso deve-se criar o .ENV

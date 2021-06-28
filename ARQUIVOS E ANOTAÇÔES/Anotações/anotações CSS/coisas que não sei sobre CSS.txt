@@ -1,0 +1,3 @@
+° box-shadow -> essa propriedade faz uma borda sombra involta do elemento que   estivermos aplicando, podemos escolher o tamanho e a cor da sombra 
+
+

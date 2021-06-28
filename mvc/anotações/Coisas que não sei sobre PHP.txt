@@ -1,0 +1,57 @@
+° NAMASPACE -> Ao definirmos uma classe com um nome e definirmos outra classe com o mesmo nome porém em outra pasta, e requirirmos ambos os arquivos e instanciarmos a classe de ambas que contém o mesmo nome, então o script nos retorna um erro por que a classe já está definida em um outro arquivo. Exemplo pratico:
+
+models->produtos.php:
+
+<?php
+class Produto{
+    public function mostrarDetalhes(){
+        echo "detalhes dos produtos pasta models";
+    }
+}
+----------------------------------------------------------------------------------
+classe-> produtos.php:
+<?php
+
+class Produto{
+    public function mostrarDetalhes(){
+        echo "detalhes dos produtos pasta classe";
+    }
+}
+----------------------------------------------------------------------------------
+
+° Como temos duas classes com o mesmo nome, devemos utilizar o namespace para as classes terem um "sobronome" assim o php não irá se confundir ao instanciarmos alguma dessas classes. 
+
+A sintaxe do namespace é a seguinte: 
+
+<?php
+namespace models;
+class Produto{
+    public function mostrarDetalhes(){
+        echo "detalhes dos produtos pasta models";
+    }
+}
+
+° Agora podemos instanciar os objetos com a seguinte sintaxe: 
+
+$produto = new \clase\Produto(); 
+
+No código acima, estamos declarando a classe produto mas com o namespace clase que foi definido em classe-> produtos.php:
+
+° Porém podemos utilizar também de outra forma, ao inves de declararmos direto na criação do objeto, podemos definir no script como um todo da seguinte  maneira:
+
+use clase\Produto;
+
+Com o codigo acima declaramos que vamos utilizar a classe Produto do namespace clase. 
+
+° Podemos também definir um apelido para a classe com a seguinte sintaxe: 
+
+	use clase\Produto as Productmodel;
+	$produto = new Productmodel();
+	$produto->mostrarDetalhes();
+dessa forma a nossa classe pode passar a ser referenciada como Productmodel.
+__________________________________________________________________________________
+° USE -> indica que determinada classe vai ser importada e usada por um arquivo/script especifico.
+
+° REQUIRE,REQUIRE_ONCE, INCLUDE, INCLUDE_ONCE -> permite a inclusão de qualquer trecho de código presente em outro arquivo. 
+
+° :: -> operador  de resolução de escopo, ou em termos mais simples, dois pontos duplos, é um simbolo que permite acesso a métodos ou propriedades estáticas, constantes, e sobrecarregadas de uma classe.

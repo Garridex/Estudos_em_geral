@@ -1,0 +1,13 @@
+Como trabalhar com rotas nomeadas e os beneficios. Um exemplo, temos uma rota criada chamada de nome-url, e queremos alterar a rota, mudar de nome-url para name-url. Para não termos que refatorar todo o codigo e fazer tudo de novo, podemos simplesmente atribuir a uma rota um nome, da seguinte maneira: 
+
+route::get('/name-url', function(){
+return "hey hey hey";
+})->name('nome.da.rota');
+
+Com essa definição name, atribuimos um nome a rota em si. Agora podemos fazer os redirecionamentos somente utilizando a referencia do nome da rota e não a rota em si, podendo agora altera-lá a qualquer momento.	Exemplo
+
+route::get('redirect3', function(){
+return redirect() ->route('nome.da.rota');
+});
+
+Mesmo que alteremos o diretorio ta rota que estamos redirecionando, não afetará a execução do script.

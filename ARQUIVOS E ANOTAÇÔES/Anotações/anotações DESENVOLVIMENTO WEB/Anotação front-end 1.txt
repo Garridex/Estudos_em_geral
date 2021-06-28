@@ -1,0 +1,3 @@
+Tag <main> -> A tag main tem uma unica função, definir o conteudo principal da página ou da aplicação. Ele representa o conteudo mais importante da página, que está diretamente realcionado ao tópico central do documento ou a funcionalidade principal de uma aplicação.
+
+Tag <a> -> define um link, que é usado para vincular de uma página a outra. O atributo mais importante do <a> é o href, que indica o destino do link

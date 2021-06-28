@@ -1,0 +1,9 @@
+Após a instalação do workspace, entraremos no workspace virtualizado para configurar o virtualhost. para isso usaremos o seguinte comando: 
+
+° docker-compose exec workspace bash
+Feito isso, criaremos uma pasta no diretorio que é representado pela pasta onde instalamos o arquivo, que no caso dessa maquina é C:\docker\laravel. Feito isso baixaremos utilizando o composer todas as dependencias do laravel dentro do workspace virtualizado do docker.
+
+feito isso configuramos dentro do nginx nos arquivos de config o diretorio do projeto:
+
+    server_name curso-laravel-repositores.test;
+    root /var/www/projects/laravel-repositores/public;

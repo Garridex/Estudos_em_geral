@@ -1,0 +1,4 @@
+ primeiros passos em javascript: 
+ * usaremos vscode
+ * google chrome
+ * nodejs 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: darkgray;
+        }
+
+        div.container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #708090;
+            height: 250px;
+            padding: 50px;
+            text-align: center;
+            color: black;
+        }
+
+        div input[type="button"] {
+            background-color: darkviolet;
+            border: 1px solid black;
+        }
+    </style>
+    <title>Sistema de mulatas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de multas do Dentram SP</h1>
+        Velocidade do carro:<input type="number" id="velo"> km/h
+        <input type="button" value="verificar" onclick="calcular()">
+        <br><br>
+        <div id="res">Resultado</div>
+        <script>
+
+            function calcular() {
+                var txt = window.document.querySelector('input#velo')
+                var vel = Number(txt.value)
+                var res = window.document.querySelector('div#res')
+                if(vel > 120){
+                    res.style.color = '#0000FF'
+                    res.innerHTML = `Você ultrapassou o limite de velocidade da rodovia e estava a <strong>${vel} km/h </strong>`
+                    
+                }
+                else{
+                    res.style.color = '#0000FF'
+                    res.innerHTML = "<p>Boa viagem</p>"
+                    }
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

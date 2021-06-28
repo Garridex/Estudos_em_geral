@@ -1,0 +1,60 @@
+as váriaveis superglobais $_GET e $_POST são usadas para coletar dados dos formulários.
+
+° PHP - Um simples formulário HTML
+O exemplo abaixo nos mostra um formulario simples com dois campos para envios de dados e um botão de enviar:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="teste46.php" method="post">
+        nome: <input type="text" name="nome"><br>
+        Email: <input type="text" name="email"> <br>
+        <input type="submit">
+    </form>
+  
+</body>
+</html>
+
+logo abaixo temos o script PHP que recebe e trata os dados enviados pelo formulário:
+
+Bem vindo: <?php echo $_POST["nome"]?><br>
+    Seu email é: <?php echo $_POST["email"]?>
+
+PODEMOS OBTER O MESMO RESULTADO UTILIZANDO O METODO GET:
+
+°HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <form action="teste48.php" method="GET">
+   NOME: <input type="text" name="nome"><br>
+   EMAIL: <input type="text" name="email"><br>
+    <input type="submit">
+    </form>
+</body>
+</html>
+
+
+° PHP
+<html>
+<body>
+
+Bem vindo <?php echo $_GET["nome"]; ?><br>
+Seu email é: <?php echo $_GET["email"]; ?>
+
+</body>
+</html>
+----------------------------------------------------------------------------------
+Ambos os códigos acima são bastante simples, No entanto falta o mais importante, Precisamos validar os dados do formulário para proteger o script de códigos maliciosos.

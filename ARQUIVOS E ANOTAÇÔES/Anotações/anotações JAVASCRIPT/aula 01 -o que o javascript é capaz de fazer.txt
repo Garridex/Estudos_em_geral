@@ -1,0 +1,9 @@
+* javascript funciona basicamente como client-side, feito parar fazer o front-end junto com as tecnologias: HTML,CSS E JAVASCRIPT
+*CONTEUDO: HTML
+*DESING: CSS
+*INTERAÇÕES: JAVASCRIPT
+Quem usa javascript:
+	Google
+	Youtube
+	Facebook
+	etc...

@@ -1,0 +1,83 @@
+ ° middleware('auth') exige autenticação pra ser acessado
+A descrição acima serve para autenticar o usuario para que ele não acesse diretorios não permitidos. O laravel faz de forma muito inteligente e simples esse tipo de verificação e retorna o usuario a tela de login imeadiatamente. Caso precisemos alterar na nossa aplicação o nome do middlware, teriamos que ir em rota por rota alterando, o que não seria muito viavel. Para isso podemos trabalhar com grupos de rotas, dessa forma onde um for alterado todos serão.
+
+Um exemplo de grupo de rotas é a do middleware: declarado da seguinte forma ->
+
+
+Route::middleware(['auth'])->group(function () {
+
+route::get('/admin/dashboard', function(){
+    return 'Home admin';
+});
+route::get('/admin/financeiro', function(){
+    return 'financeiro admin';
+});
+route::get('/admin/produtos', function(){
+    return 'produtos admin';
+});
+});
+
+Todas as rotas que ficarem aqui dentro serão afetadas com a middlaware, então todas elas estão agrupadas.
+
+Outro grupo de rotas é o de prefix, esse grupo passa um prefixo em todas as rotas que estiverem dentro dele, a sua sintaxe é:  
+
+route::prefix("admin") -> group(function () {
+
+route::get('/dashboard', function(){
+    return 'Home admin';
+});
+
+route::get('/financeiro', function(){
+    return 'financeiro admin';
+});
+
+route::get('/produtos', function(){
+    return 'produtos admin';
+});
+});
+
+Agora, todas as rotas dentro do grupo contém como prefixo admin antes do endereço passado dentro de cada route.	
+
+Criamos um controller (veremos mais pra frente) porém ele está dentro de outra pasta, para isso iremos atribuir a ele um namespace que referencia a pasta em si da seguinte forma:
+
+  route::namespace('admin')->group(function(){
+
+            route::get('/','testecontroller@teste');
+
+            route::get('/financeiro','testecontroller@teste');
+
+            route::get('/produto','testecontroller@teste');
+}); 
+
+Podemos fazer também um grupo para alterar o nome das rotas da seguinte maneira: 
+
+route::name('admin.')-> group(function (){
+
+  	    route::get('/','testecontroller@teste')->name('dashboard');
+
+            route::get('/financeiro','testecontroller@teste')->name('financeiro');
+
+            route::get('/produto','testecontroller@teste')->name('produto');
+});
+Todas as rotas que ficam dentro desse grupo, agora tem o nome de admin. e o resto da definicação na frente.
+
+Podemos também criar um array para passar e agrupar todos de uma vez por diferentes parametros, assim não teremos que declarar de um em um. Exemplo
+
+Route::group([
+    'middleware' => [],
+    'prefix' => 'admin',
+    'namespace' => 'admin',
+
+], function(){
+ route::get('/dashboard','testecontroller@teste')->name('dashboard');
+
+            route::get('/financeiro','testecontroller@teste')->name('financeiro');
+
+            route::get('/produto','testecontroller@teste')->name('produto');
+
+            route::get('/redirect', function () {
+                return redirect()->route('admin.dashboard');
+})->name('home ');            
+});
+
+__________________________________________________________________________________

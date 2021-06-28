@@ -1,0 +1,111 @@
+			CONDICIONAIS EM JAVASCRIPT: 
+
+	if(condição){
+
+
+	} else{
+
+
+}
+° Essa é a estrutura composta de condicional do javascript
+----------------------------------------------------------------------------------
+				EXEMPLO:
+
+var pais = 'Brasil'
+console.log(`Vivendo em ${pais}`)
+if (pais == "Brasil"){
+    console.log('Você é um brasileiro')
+}else{
+    console.log('Você é estrangeiro')
+}
+
+----------------------------------------------------------------------------------
+Utilizando promagação web, o mesmo script acima ficará da seguinte forma:
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de pais filhão</title>
+    <style>
+        body{
+            background-color: #2F4F4F	;
+            position:absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        div #resultado{
+            position: absolute;
+            left:36px;
+            top: 30%;
+            width: 200px;
+            outline: none;
+            border: none;
+            border-radius: 55px;
+            text-align: center;
+
+        }
+        div.pais{
+            position: absolute;
+            left: 10px;
+            width: 250px;
+            height: 300px;
+            padding: 20px;
+            background-color: #BFEFFF;
+        }
+        div input[type="button"]{
+            background-color: #FF00FF;
+            color: black;
+            border-radius: 100px;
+            border:1px solid #FF00FF;
+            position: absolute;
+            left: 95px;
+            top:71%;
+            width: 100px;
+        }
+        div input[type="text"]{
+            position: absolute;
+            left:36px;
+            width: 200px;
+            outline: none;
+            border: none;
+            border-radius: 55px;
+        }
+        p{
+            text-align: center;
+            font-size: 17px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de pais</h1>
+    <div class="pais">
+        <p>Insira o seu pais abaixo</p>
+        <input type="text" id="pais">
+        <p></p>
+       <div id="botao">
+           <input type="button" value="Enviar" onclick="consulta()">
+       <div id="resultado"><p>Resultado</p></div>
+    </div> 
+    </div>
+    <script>
+        function consulta(){
+            
+           var pais = window.document.querySelector('input#pais').value.toLowerCase()
+           
+            var resul = window.document.getElementById('resultado')
+           if(pais == 'brasil') {
+               resul.innerHTML = `Você mora no pais <strong>${pais}</strong>, Então você é brasileiro`
+
+           }else{
+               resul.innerHTML = `Você mora no pais <strong>${pais}</strong>, Então você é estrangeiro`
+           }
+        }
+    </script>
+</body>
+</html>
+__________________________________________________________________________________
+As estruturas condicionais em javascript são muito parecidas com as outras estruturas condicionais que encontramos nas outras linguagens de progamação, dessa forma não é dificil a sua assimilação.

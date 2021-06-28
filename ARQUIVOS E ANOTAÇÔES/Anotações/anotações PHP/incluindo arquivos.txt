@@ -1,0 +1,84 @@
+A instrução include (ou require) pega todo texto, código, marcação existente no arquivo especificado e o copia para o arquivo que usa a instrução include. Essa manipulação é muito util quando queremos incluir o mesmo arquivo php, html ou de texto em várias páginas de um site.
+É possivel inserirmos o conteudo de um arquivo php em outro arquivo php (antes que o servidor o execute), com a instrução include ou require.
+
+°Ambas as instruções são identicas, exceto em caso de falha: 
+
+require -> irá reproduzir um erro fatal (E_COMPILER_ERROR) e irá para o script.
+
+include -> irá produzir somente um aviso (E_WARNING) e o script irá continuar
+
+Portanto se quisermos que a execução continue e mostre aos usuarios a saida, mesmo com os arquivos incluidos faltanto, devemos utilizar o include. por outro lado, em caso de um framework, ou um código php complexo, sempre use require para incluir um arquivo-chave para o fluxo de execução do progama. isso vai ajudar a evitar o comprometimento da segurança e integridade do aplicativo, caso um arquivo-chave seja acidentalmente perdido.
+
+Incluir arquivos economiza muito trabalho. Isso significa que você pode criar um cabeçalho, rodapé ou arquivo de menu padrão para todas as suas páginas da web. Então, quando o cabeçalho precisar ser atualizado, você só poderá atualizar o arquivo de inclusão do cabeçalho.
+
+SINTAXE: 
+
+include 'nome_do_arquivo';
+
+				OU
+require 'nome_do_arquivo';
+
+exemplo de inclusão de arquivos: 
+suponhamos que temos um arquivo fonte php com o seguinte conteudo
+
+<?php
+echo "<p> Copyright &copy; 1999-". date("Y") . "Egos soluções </p>";
+?>
+
+No nosso código fonte html, utilizaremos a seguinte sintaxe para utilizar esse arquivo:
+<html>
+<h1>Algum texto legal</h1>
+<p>olha esse texto mega legal</p>
+<p>outro texto legal</p>
+<?php include 'teste53.php'?>
+</html>
+
+exemplo 2: Suponhamos que já temos um arquivo menu.php e que nele contém o seguinte código:
+
+<?php
+echo '<a href="/default.asp">Home</a> -
+<a href="/html/default.asp">HTML Tutorial</a> -
+<a href="/css/default.asp">CSS Tutorial</a> -
+<a href="/js/default.asp">JavaScript Tutorial</a> -
+<a href="default.asp">PHP Tutorial</a>';
+?>
+
+e um arquivo html com o seguinte conteudo:
+
+<html>
+<body>
+       <div class="menu">
+<?php
+include 'teste55.php'
+?>
+
+    </div>
+     <h1>teste</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates obcaecati sit aspernatur consequuntur omnis sapiente, dolore excepturi corporis est corrupti amet, assumenda deleniti atque. Quis voluptatum vel qui necessitatibus!</p>
+
+</body>
+</html>
+
+Após a include, o arquivo será disponibilizado no nosso formulário, e seu conteudo será executado na página
+
+exemplo 3: 
+seguinte codigo php:
+<?php
+$cor = "vermelho";
+$carro = "bmw";
+?>
+
+e o seguinte documento html:
+<html>
+<h1>bem vindo a essa página</h1>
+<?php
+include 'teste57.php';
+echo "eu tenho uma $carro $cor";
+?>
+
+
+</html>
+
+INCLUDE VS REQUIRE: 
+A instrução require também é usada para incluir um arquivo no código fonte PHP.
+no entanto, há uma grande diferença entre incluir e exigir; quando um arquivo é incluido com a instrução include, e o php não consegue localizá-lo, o script continuara a ser executado, Use require quando o arquivo for exigido pelo aplicativo. Use incluir quando o arquivo não for necessário e o aplicativo deve continuar quando o arquivo não for encontrado.

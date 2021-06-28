@@ -1,0 +1,14 @@
+Controllers resources: Nas ultimas aulas criamos as rotas para fazer gestão do CRUD dos produtos porém podemos fazer de uma forma mais facil utilizado o laravel em si, não precisando assim fazer todo esse código podemos declarar uma rota com tipo resource, exemplo:
+
+Uma rota resource é definida da seguinte maneira:   
+
+route::resource('products', 'ProductController')
+
+A rota referencia somente o controler, sem função (metodo) nenhum, e o proprio laravel se encarrega do resto, dessa forma temo todas as rotas do metodo CRUD.
+
+O laravel também cria pra gente o controler com todas as definições já prontas, somente utilizando o composer, o comando é o seguinte: php artisan make:controller ProductController --resource.
+
+O composer cria toda a estrutura pronta e pré documentada, somente precisamos fazer as funções (metodos).
+
+conseguimos criar controles com essa estrutura de resource para criar um CRUD, após isso basta implementar nossos metodos para fazer as ações que devem ser feitas.
+Resource é muito utilizado para Apis, pois já temos a estrutura pré definida.

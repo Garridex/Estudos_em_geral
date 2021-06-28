@@ -1,0 +1,65 @@
+Agora veremos estruturas de controle no blade: Podemos inserir estruturas condicionais no nosso código utilizando o @, por exemplo:
+
+@if ($teste === 123)
+        é igual
+    @elseif ($teste == 123)
+        é igual a 123
+    @else
+        é diferente
+@endif
+
+__________________________________________________________________________________
+Podemos utilizar todo os tipos de estruturas e funções nas nossas blades somente colocando na frente um @. Dessa forma podemos fazer toda a lógica da nossa aplicação somente utilizando essas estruturas.
+
+__________________________________________________________________________________
+Exemplo: 
+@extends('admin.layout.app')
+@section('title', 'Vitor')
+@section('content')
+<h1>teste</h1>
+
+@if ($teste === 123)
+        é igual
+    @elseif ($teste == 123)
+        é igual a 123
+    @else
+        é diferente
+@endif
+
+@unless ($teste === '123')
+        sadasdada
+  
+    @else
+        
+@endunless
+
+    @isset($teste2)
+        <p>{{$teste2}}</p>   
+    @endisset
+
+
+    @empty($teste3)
+        <p>vazio...</p>
+    @endempty
+
+    @auth
+     <p>autenticado</p>
+         
+     @else
+      <p>não autenticado</p>
+    @endauth
+    
+    @guest
+       <p>não autenticado</p>     
+    @endguest
+    @switch($teste)
+        @case(1)
+            igual a 1
+            @break
+        @case(2)
+            
+            @break
+        @default
+           default 
+    @endswitch
+@endsection

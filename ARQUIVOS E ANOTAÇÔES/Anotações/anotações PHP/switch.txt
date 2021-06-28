@@ -1,0 +1,24 @@
+O switch é utilizado para fazer diferentes coisas em diferentes casos.
+
+Usamos o switch para selecionar um bloco de código a ser executado.
+
+SINTAXE:
+
+switch (n){
+case label1:
+código a ser executado if n =label1;
+break;
+
+case label2:
+codigo a ser executado if n=label2;
+break;
+
+case label3:
+codigo a ser executado if n=label3;
+break;
+
+...
+default: 
+codigo a ser executado caso n seja diferente de todos os labels;
+
+}

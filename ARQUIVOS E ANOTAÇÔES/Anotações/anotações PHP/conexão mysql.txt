@@ -1,0 +1,121 @@
+Conexão PHP com o mysql -> a partir do PHP 5, já podemos fazer conexão com o banco de dados MYSQL usando 
+
+°Mysqli extension (O i significa melhorado)
+
+°Objetos de data PHP (data objects PHP)
+
+QUAL UTILIZAR? :
+Se você precisar de uma resposta curta, seria "O que você quiser". Ambos MySQLi e PDO têm suas vantagens: PDO funcionará em 12 sistemas de banco de dados diferentes, enquanto o MySQLi funcionará apenas com bancos de dados MySQL. Portanto, se você tiver que mudar seu projeto para usar outro banco de dados, o PDO facilita o processo. Você só precisa alterar a string de conexão e algumas consultas. Com o MySQLi, você precisará reescrever todo o código - consultas incluídas. Ambos são orientados a objetos, mas o MySQLi também oferece uma API procedural. Ambos suportam declarações preparadas. As instruções preparadas protegem contra injeção de SQL e são muito importantes para a segurança de aplicativos da web. 
+__________________________________________________________________________________
+Script para inciar uma conexão: 
+
+<?php
+$servername = "localhost";
+$usuario = "root";
+$senha = "egos123";
+
+$sconn = mysqli_connect($servername, $usuario, $senha);
+          
+if(!$sconn){
+    die ("Conexão falhou");
+}
+echo "Conexão realizada";
+?>
+
+script para fechar a conexão: mysqli_close($conn);
+
+__________________________________________________________________________________
+Criando um banco de dados -> para criar um banco utilizando o MySQLi precedural, utilizamos a seguinte sintaxe:
+
+<?php
+$server = "localhost";
+$user = "root";
+$senha = "egos123";
+$conn = mysqli_connect($server,$user,$senha);
+//criando uma query para passar ao mysql
+$query = "CREATE DATABASE vitor";
+if(mysqli_query($conn,$query)){
+    echo "criada com sucesso";
+}else{
+    echo "não consegui criar";
+}
+
+?>
+
+__________________________________________________________________________________
+criando uma tabela -> Criaremos a seguinte tabela
+
+CREATE TABLE pessoas(
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+
+O CÓDIGO FICA ASSIM:
+<?php
+$server = "localhost";
+$user = "root";
+$senha = "egos123";
+$db = "vitor";
+$sconn = mysqli_connect($server,$user,$senha, $db);
+    if (!$sconn){
+        echo "não consegui realizar a conexão";
+    }
+$query = "
+CREATE TABLE pessoas(
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+mysqli_query($sconn, $query);
+?>
+__________________________________________________________________________________
+Para inserirmos os dados, seguimos a mesma lógica do script anterior, utilizamos a $query com o comando mysqli_query. Exemplo:
+
+<?php
+$server = "localhost";
+$user = "root";
+$senha = "egos123";
+$db = "vitor";
+$sconn = mysqli_connect($server,$user,$senha, $db);
+    if (!$sconn){
+        echo "não consegui realizar a conexão";
+    }
+$query = "INSERT INTO pessoas (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+if (mysqli_query($sconn, $query)) {
+    echo "Novos dados foram inseridos";
+  } else {
+    echo "Erro: " . $query . "<br>" . mysqli_error($sconn);
+  }
+mysqli_close($sconn);
+
+__________________________________________________________________________________
+Obtendo dados do ultimo Id cadastrado -> podemos obter os dados do ultimo IP cadastrado da seguinte forma: 
+
+<?php
+$server = "localhost";
+$user = "root";
+$senha = "egos123";
+$db = "vitor";
+$sconn = mysqli_connect($server,$user,$senha, $db);
+    if (!$sconn){
+        echo "não consegui realizar a conexão";
+    }
+$query = "INSERT INTO pessoas (firstname, lastname, email)
+VALUES ('Vitor', 'Garrido', 'john@example.com')";
+if (mysqli_query($sconn, $query)) {
+    $ultimo_id = mysqli_insert_id($sconn);
+    echo "Novos dados foram inseridos, o ultimo Id é" .$ultimo_id;
+  } else {
+    echo "Erro: " . $query . "<br>" . mysqli_error($sconn);
+  }
+mysqli_close($sconn);
+
+__________________________________________________________________________________
+Inserindo multiplos dados de uma só vez: para inserirmos multiplos dados de uma vez só, utilizamos a função mysqli_multi_query, Exemplo:
+

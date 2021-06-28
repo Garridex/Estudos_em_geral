@@ -1,0 +1,115 @@
+Váriaveis em php começam com $, seguida do nome da váriavel. 
+
+$var = "texto"; //toda váriavel de texto, tem que ter seu valor entre aspas
+$var1 = 1;
+$var2 = 10.5; 	
+
+° Algumas regras sobre os nomes das váriaveis: Devem começas com uma letra ou um sublinhado, só pode conter caracteres alfanúmericos e sublinhados, os nomes das váriaveis são case-sensitive.
+
+VARIAVEIS DE SAIDA:
+
+A instrução php echo é frequentemente usada para enviar dados a tela, por exemplo:
+
+<?php
+$txt = "lindo";
+echo "Vitor é muito $txt";
+?>
+
+A instrução abaixo fará a mesma coisa, porém com uma sintaxe diferente:
+
+<?php
+$txt = "lindo";
+echo "Vitor é muito" . $txt . "!";
+?>
+
+O exemplo abaixo nós mostra a soma das duas váriaveis:
+<?php
+$x = 5;
+$y = 4;
+echo $x + $y
+?>
+
+° O php não necessita da definição de tipo da váriavel, ele associa automaticamente o tipo da váriavel dependendo do seu valor. Como os tipos de dados não são definidos estritamente, você pode fazer coisas como adicionar uma string a um inteiro sem causar erros. No php 7, declaração de tipos foram adicionadas, isso dá uma opção para especificar o tipo de dados esperado ao declarar uma função e, ao habilitar o requisito estrito, lançará um "Fatal error" com incompatibilidade de tipo. 
+
+
+ESCOPO E VÁRIAVEL:
+
+No php, variaveis podem ser declaradas em qualquer lugar no script. O escopo da variavel é onde ele pode ser referenciada/usada.
+O php tem três diferentes escopos de váriaveis:
+°local (local)
+°global (global)
+°estatica (estatic)
+
+GLOBAL: 
+Uma variavel declarada fora da função tem um escopo global e so pode ser acessada fora da função, Exemplo:
+
+<?php
+$x = 5; //escopo global
+function myTeste(){
+    echo "<p> Variavel x dentro da função é : $x </p>";
+}
+myTeste();
+
+echo "<p>Variavel fora da função é : $x</p>";
+?>
+
+LOCAL: 
+Uma variavel declarada dentro da função tem escopo local e não pode ser usada fora dela, Exemplo:
+
+<?php
+
+function myTeste(){
+    $x = 5; //escopo local
+    echo "<p> Variavel x dentro da função é : $x </p>";
+//essa váriavel x não pode ser usada aqui dentro
+}
+myTeste();
+
+echo "<p>Variavel fora da função é : $x</p>";
+?>
+
+° Podemos ter váriaveis locais com o mesmo nome em diferentes funções, as váriaveis locais somente são reconhecidas na função que estão declaradas.
+
+CHAVES GLOBAIS: As chaves globais são usadas para acessar uma variavel global dentro da função, para fazermos isso, basta usar global antes das váriaveis (dentro da função), Exemplo:
+
+<?php
+$x = 5;
+$y = 10;
+function myTeste(){
+    global $x, $y;
+    $y = $x + $y;
+}
+MyTeste();
+echo "O resultado da soma feita na função é: " .$y; //retorna 15
+?>
+
+° O php também armazena todas as váriaveis globais dentro de um arry chamado $GLOBALS[index]. O indice contém o nome da váriavel, Este array também é acessivel a partir de funções e pode ser usado para atualizar váriaveis globais diretamente. O exemplo acima pode ser reescrito assim: 
+
+<?php
+$x = 5;
+$y = 10;
+function myTeste(){
+$GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];  
+
+}
+MyTeste();
+echo "O resultado da função soma utilizando array é :" .$y;
+?>
+
+
+CHAVE ESTATICA (STATIC): Normalmente, após a função ser completamente executada, todas as suas váriaveos são deletadas, Contudo, as vezes queremos que uma váriavel local não seja deletada para usarmos em trabalhos futuros. Pra isso utilizamos a chave estatica na primeira declaração da váriavel, por exemplo:
+
+<?php
+function myTeste(){
+static $x = 0;
+echo $x;
+$x++;
+}
+MyTeste();
+MyTeste();
+MyTeste();
+?>
+°Então, cada vez que a função é chamada, essa variável ainda terá as informações que continha da última vez que a função foi chamada. o resultado de retorno é esse: 012
+
+
+

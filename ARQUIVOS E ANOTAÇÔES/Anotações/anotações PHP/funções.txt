@@ -1,0 +1,80 @@
+O verdadeiro poder do PHP vem das suas funções, o PHP tem mais de 1000 funções já prontas, e podemos adicionar mais ainda, criando especificas para aquela tarefa.
+
+Como já dito além das funções especificas podemos criar nossas próprias funções, e para criarmos utilizamos a seguinte função: 
+
+function nomedafunca(){
+o codigo a ser executado;
+}
+
+ARGUMENTOS DAS FUNÇÕES: Argumentos podem ser passados para funções, um argumento é como uma váriavel. Os argumentos são especificados após o nome da função, entre parenteses. Podemos adicionar quantos argumentos quisermos, apenas separando com virgulas. O exemplo a seguir tem uma função com um argumento ($ fname). Quando a função familyName () é chamada, também passamos um nome (por exemplo, Jani), e o nome é usado dentro da função, que produz vários resultados diferentes primeiro
+
+<?php
+function nfamilia($nome){
+echo "$nome Garrido <br>"; 
+}
+
+nfamilia("Vitor");
+nfamilia("Pedro");
+nfamilia("teste");
+
+
+?>
+
+DOIS ARGUMENTOS NA FUNÇÃO: 
+<?php
+function nomefamilia($nome, $ano){
+echo "$nome Garrido. Nascido em $ano <br>";
+}
+nomefamilia("Vitor", "2002");
+nomefamilia("Pedro", "2015");
+nomefamilia("Gustavo", "2001");
+?>
+
+
+O php associa automaticamente um tipo de dado a váriavel, dependendo do seu valor.Como os tipos de dados não são definidos estritamente, você pode fazer coisas como adicionar uma string a um inteiro sem causar um erro. No PHP 7, declarações de tipo foram adicionadas. Isso nos dá a opção de especificar o tipo de dados esperado ao declarar uma função e, ao adicionar a declaração estrita, será lançado um "Erro fatal" se o tipo de dados não corresponder.No exemplo a seguir, tentamos enviar um número e uma string para a função sem usau strict:
+
+VALOR DE ARGUMENTO PADRÃO:
+O exemplo a seguir mostra como usar o parametro padrão. Se chamarmos a função meupeso() sem argumentos, ela tomará o valor padrão como argumento:
+
+<?php declare(strict_types=1);
+function setHeight(int $meupeso = 50){
+echo "Meu peso é: $meupeso <br>";
+}
+setHeight(92);
+setHeight(); //retorna para o valor padrão 50
+setHeight(93);
+setHeight(85);
+?>
+
+RETURN: Para permitir que uma função retorne um valor, usamos return, por exemplo:
+
+<?php declare(strict_types = 1);
+function soma(int $x, int $y){
+    $z = $x + $y;
+    return $z;
+}
+echo soma(5,1) . "<br>";
+echo soma(5,12) . "<br>";
+echo soma(6,1) . "<br>";
+?>
+
+DECLARAÇÃO DE TIPOS: Para declarar um tipo para o retorno da função, adicione dois pontos (:) e o tipo logo antes do colchete ({) de abertura ao declarar a função.  a função a seguir especifica o retorno da função:
+<?php declare(strict_types=1); // strict requirement
+function addnumero(float $a, float $b) : float {
+    return $a+$b;
+}
+echo addnumero(1.5,1.5);
+?>
+
+° Você pode especificar um tipo de retorno diferente dos tipos de argumento, mas certifique-se de que o retorno seja do tipo correto:
+
+PASSANDO ARGUMENTOS POR REFERENCIA: No PHP, os argumentos geralmente são passados ​​por valor, o que significa que uma cópia do valor é usada na função e a variável que foi passada para a função não pode ser alterada.Quando um argumento de função é passado por referência, as mudanças no argumento também mudam a variável que foi passada. Para transformar um argumento de função em uma referência, o operador & é usado:
+<?php
+function add_cinco(&$valor){
+    $valor += 5; 
+}
+$nume = 2;
+echo "$nume <br>"; 
+add_cinco($nume);
+echo $nume;
+?>

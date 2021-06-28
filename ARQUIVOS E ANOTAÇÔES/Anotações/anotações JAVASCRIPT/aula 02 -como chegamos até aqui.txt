@@ -1,0 +1,19 @@
+*em 1970 surgiu a arpanet, a antecessora da internet. oriunda da guerra fria e feita para comunicações de dados entre quartéis militares
+*em 1993 surgiu a world wide web (www), surgiu também o html e o primeiro naveagador web o moisac
+*em 1994 surgiu uma empresa chamada netscape futura mozilla
+*em 1995 surgiu a mooca a linguagem que daria mais funcionalidades ao html (mooca é o javascript)
+* o nome javascript veio graças ao java que estavá sendo muito falado pela midia nessa epoca
+* java e javascript foram baseados em C
+* em 1997 a netscap padronizou a linguagem javascript na ecma (como se fosse uma iso europeia)
+* Ecmascript é uma versão padronizada da linguagem javascript
+* Em 2002 surgiu a fundação mozilla e dela surgiu o navegador firefox
+* Em 2008 o google criou o chrome que é o navegador mais usado no mundo
+* o google chrome tem um motor que roda javascript (open source)
+* em 2010 surgiu o nodejs que surgiu graças ao motor do google chrome o v8 (uma maquina que roda javascript fora do navegador)
+*graças ao nodejs podemos usar javascript no servidor
+
+*** ECMASCRIPT***
+a versão mais recente é a ES2018
+* 
+
+

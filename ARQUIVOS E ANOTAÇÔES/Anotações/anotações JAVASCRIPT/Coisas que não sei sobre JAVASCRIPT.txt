@@ -1,0 +1,8 @@
+Coisa que o javascritp pode fazer:
+
+° Javascript pode alterar o conteudo HTML -> Podemos utilizar o getElement para selecionar algumas tags alterar seu conteudo.
+
+
+° Javascript pode alterar as propriedades de um elemento HTML. Podemos selecionar também o elemento e alterar suas propriedades utilizando.
+
+° Javascript também pode alterar o estilo (CSS) dos seus elementos 

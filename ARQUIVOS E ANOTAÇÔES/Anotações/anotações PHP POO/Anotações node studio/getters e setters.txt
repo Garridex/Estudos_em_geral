@@ -1,0 +1,42 @@
+Getters e Setters -> são funções utilizadas para pegar o valor dos atributos sem adicionar valor a eles diretamente, atribuimos o valor as variaveis de controle das funções de retorno.
+
+*** -> esse sinal serve para acessar propriedades ou metodos de um objeto  ***
+
+para definir um getter basta definirmos uma função da seguinte forma: 
+
+public function Get (){
+	return $this->email;
+}
+dessa forma o valor de retorno da função é o acesso ao conteudo de email.
+__________________________________________________________________________________
+E para definirmos uma função setters: 
+
+public function Set($senha){
+  $this->senha = $senha;
+}
+Dessa forma estamos acessando o valor de senha dentro da classe e atribuindo a variavel senha declarada na função.
+__________________________________________________________________________________
+Atribuindo valor ao nosso objeto:
+Para atribuir valor ao nosso objeto, ao inves de referenciarmos nossos atributos nós iremos referenciar as funções (metodos). Exemplo:
+
+$logar = new login(); -> criando o objeto
+$logar->setSenha("1234"); -> atribuimos o valor a função
+$logar->setEmail("teste"); -> atribuimos o valor a função
+$logar-> logar() -> chamamos a função que faz o login
+
+Como estamos setando um valor, e o metodo está esperando parametro pois definimos uma variavel de controle, então o valor que passarmos será alocado na função.
+
+
+Para retornarmos o valor salvo dentro da função, a sintaxe é a seguinte:
+
+echo $logar->getEmail();
+Dessa forma acessamos a propriedade email do objeto logar, pois ela foi definida como uma função.
+__________________________________________________________________________________
+POR QUE UTILIZAR OS METODOS GET E SET: Pois dessa forma podemos tratar os dados e filtrar a entrada. E para fazermos isso, dentro da função de setar email, nós utilizamos a função do php de filtro e a função de sanitização, exemplo:
+
+Public function setEmail($e){
+$email = filter_var($e, FILTER_SANITIZE_EMAIL);
+$this->email = $email;
+}
+
+Dessa forma, ao inves de atribuirmos o this a variavel de parametro da função, atribuimos ele a variavel com o filtro.

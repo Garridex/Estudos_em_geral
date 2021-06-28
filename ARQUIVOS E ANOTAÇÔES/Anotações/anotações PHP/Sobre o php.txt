@@ -1,0 +1,7 @@
+PHP é uma linguagem de scripts para sevidores,PHP é a abreviação de hypertext preprocessor. é uma linguagem amplamente popular e muito utilizada por toda internet.
+
+O que é um arquivo php? é um arquivo que pode conter texto, html, css, javascript e codigo php.
+
+Php é executado no servidor, e o resultado é retornado no navegador como simples html.
+
+O que o php é capaz de fazer? Ele pode gerar paginas dinamicas, criar, abrir, ler, escrever, deletar, e fechar arquivos no servidor. Pode também pegar arquivos de dados do formulário, gerenciar cookies, modificar dados no banco de dados, pode ser usado também para controlar o acesso de usuarios e criptografar dados.

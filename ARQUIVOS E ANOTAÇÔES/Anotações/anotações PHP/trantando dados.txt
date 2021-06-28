@@ -1,0 +1,15 @@
+o que é a variavel $_SERVER["PHP_SELF"] -> essa super global retorna o nome do arquivo do script atual em execução. Portanto essa variavel envia os dados do formulario para a propria página, ao inves de pular para uma outra página. Dessa forma o usuario obtera mensagens de erro na mesma página do formulário.
+
+° O que é a função htmlspecialchars() -> A função htmlspecialchars () converte caracteres especiais em entidades HTML. Isso significa que ele substituirá os caracteres HTML como <e> por & lt; e & gt ;. Isso evita que invasores explorem o código injetando código HTML ou Javascript (ataques de script entre sites) em formulários.
+
+Nota importante para segurança do PHP: o $_SERVER["PHP_SELF"] pode ser utilizado por hackers. Se ele for usado na página, o usuario pode inserir uma barra (/) e, em seguida alguns comandos xss para executar.
+
+XSS -> Cross-site scripting (XSS) é um tipo de vulnerabilidade de segurança de computador normalmente encontrada em aplicativos da web. O XSS permite que os invasores injetem script do lado do cliente em páginas da Web visualizadas por outros usuários.
+
+VALIDANDO FORMULÁRIOS COM O PHP: A primeira coisa a se fazer é passar todas as variaveis por meio da função htmlspecialchars(). Também faremos mais duas coisas quando formos enviar o formulário:
+
+1° Retirar os caracteres desnecessários (espaço, tabulação, etc) dos dados de entrada do usuario (utilizando a função php trim()) )
+
+2° Remover as barras invertidas (\) dos dados de entrada (Função striplashes()).
+
+O proximo passo é criar uma função que fará toda a verificação para nós (o que é muito mais conveniente do que escrever o mesmo código repetidamente)

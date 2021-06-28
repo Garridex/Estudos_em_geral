@@ -1,0 +1,39 @@
+O php contém várias funções matemáticas que permitem realizar contas mais fáceis.
+
+° pi() -> retorna o valor de pi
+<?php
+echo(pi()); // returns 3.1415926535898
+?>
+
+° min () e max() -> serve para retornar o valor mais alto e o mais baixo na lista de argumentos
+
+<?php
+echo(min(0, 150, 30, 20, -8, -200));  // returns -200
+echo(max(0, 150, 30, 20, -8, -200));  // returns 150
+?>
+
+° abs() -> retorna o valor absoluto (positivo) de um número
+
+<?php
+echo(abs(-6.7));  // returns 6.7
+?>
+
+° sqrt() -> retorna a raiz quadrada de um número
+
+<?php
+echo(sqrt(64));  // returns 8
+?>
+
+° round() -> a função round arredonda um número de ponto flutuante para inteiro para o número mais proximo
+
+<?php
+echo(round(0.60));  // returns 1
+echo(round(0.49));  // returns 0
+?>
+
+° rand() -> gera números aleatorios
+
+<?php
+echo(rand());
+?>
+

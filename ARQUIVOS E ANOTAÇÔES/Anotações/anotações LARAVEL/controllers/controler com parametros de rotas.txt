@@ -1,0 +1,26 @@
+Suponhamos que queremos criar uma controller para passar um parametro para uma url contendo um id para mostrar algum produto. Esse metodo é muito parecido com o que já tinhamos utilizado nas rotas, porém a diferença é que agora a lógica da operação será feita no controller ao invés da rota.
+
+O código da rota é o mesmo padrão de referenciação dos controllers: 
+
+route::get('/products/{id}', 'ProductController@show')->name('products.show');
+
+° Passamos na url o id, referenciamos o controller e a função (metodo) que queremos executar. Também atribuimos um name para essa rota
+
+Agora o script da rota:
+
+ public function show($id){
+        return "Exbindino produto de id: {$id}";
+    }
+°Criamos a função (metodo) show e na variavel de controle passamos o id para selecionar o parametro que passarmos na url.
+
+Podemos passar esse parametro também como opcional, podendo dessa forma ser utilizado para retornar todos os produtos ou somente um, ou até mesmo um filtro para os produtos. Para isso utilizamos a mesma lógica de alteração das rotas:
+
+route::get('/products/{id?}', 'ProductController@show')->name('products.show');
+
+Definimos o id que é nosso parametro como não obrigatorio 
+ 
+Já no nosso controller setamos a variavel de controle pra um valor default:
+public function show($id = ""){
+        return "Exbindino produto de id: {$id}";
+    }
+dessa forma o parametro passa a ser não obrigatorio

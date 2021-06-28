@@ -1,0 +1,1 @@
+Uma função de retorno de chamda (muitas vezes referida como "retorno de chamda") é uma função que é passada como um argumento para outra função.Qualquer função existente pode ser usada como função de retorno de chamada. Para usar uma função como função de retorno de chamada, passe uma string contendo o nome da função como o argumento de outra função:

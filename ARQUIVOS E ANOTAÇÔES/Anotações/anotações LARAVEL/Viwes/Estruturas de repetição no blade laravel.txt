@@ -1,0 +1,23 @@
+Podemos utilizar estruturas de repetição no Blade Laravel, utilizando as seguintes sintaxes: 
+
+Foreach: 
+
+@if (isset($products))
+    @foreach ($products as $product)
+       <p>{{ $product}}</p>  
+    @endforeach
+@endif
+
+forelse:
+
+@forelse ($products as $product)
+    <p>{{$product}}</p>
+@empty
+    <p>Não existem produtos cadastrados</p>
+@endforelse
+
+
+***Podemos inserir lógica dentro das tags html das nossas blades, por exemplo ->
+
+    <p  class="@if($loop->last) last @endif">{{$product}}</p>
+Essa sintaxe nos diz que se for o ultimo elemento do array, a cor será alterada pela classe e ficará vermelho.

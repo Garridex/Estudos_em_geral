@@ -1,0 +1,11 @@
+°Em CSS todo final de marcação tem ponto e virgula
+
+°O código javascript fica um pouco acima da tag Body que fecha o documento, pra que o javascript seja carregue após o documento HTML carregar. o código javascript geralmente fica dentro da tag script.
+
+*COMANDOS EM JAVASCRIPT:Tudo em minusculo, pois tem diferença.
+   °PRIMEIRO COMANDO: window.alert('') serve para nos mostrar aquela caixa de alerta das paginas, esse comando pode também ser simplificado para somente alert('')
+
+   °SEGUNDO COMANDO: window.confirm('') serve para a a pagina fazer uma solicitação de confirmação
+   °TERCEIRO COMANDO: window.prompt('') serve para a pessoa inserir um texto (string)
+ 
+° Todos esse comandos podem ter o window retirado da sua sintaxe, assim tornando mais faceis os comandos.

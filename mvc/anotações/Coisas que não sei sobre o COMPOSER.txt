@@ -1,0 +1,44 @@
+				DESCRIÇÃO
+
+O composer é uma ferramenta para gerenciamento de dependencias para o PHP que vem ganhando espaço e se tornando cada vez mais indispensavel. Com algumas poucas linhas de configurações você define todas as bibliotecas de terceiros ou mesmo suas que deseja/precisa utilizar em seu projeto, o composer encarrega-se de baixa-las e criar um autoloader deixando-as prontas para o uso.
+
+O composer facilita o gerenciamento das dependencias em seus projetos, com isso houve a necessidadede uma padronização para a interoperabiliade entre os mais diversos frameworks PHP do mercado. Mas detalhe que com o composer não precisamos utilizar somente os frameworks, podemos utiliza-lo para trabalhar com php puro. 
+__________________________________________________________________________________				PRIMEIROS PASSOS 
+O composer basicamente trabalha com um arquivo chamado composer.json, na raiz do nosso projeto deve ter esse arquivo para que possamos começar a utiliza-lo. Podemos criar manualmente ou criar através to terminal utilizando o comando -> composer init.
+
+° O “name” é o nome de sua aplicação. Esta marcação é opcional mas recomendada.
+
+° O “description” é uma breve descrição do que sua aplicação se propõe a fazer. Também opcional.
+
+° Em “authors” aparecem os créditos de desenvolvedores que contribuiram com o projeto.
+
+° O “require” basicamente deixa claro quais são as dependências de sua aplicação. 
+
+O arquivo final ficou exatamente assim: 
+
+{
+    "name": "egos/composer-php",
+    "description": "composer curso de php",
+    "authors": [
+        {
+            "name": "Vitor Garrido",
+            "email": "eki00vitor@gmail.com"
+        }
+    ],
+    "require": {}
+}
+
+__________________________________________________________________________________
+			COMPOSER UPDATE E COMPOSER INSTALL
+
+° Com nosso arquivo composer.json criado, podemos dar inicio a aplicação. Para fazermos isso utilizaremos o arquivo .json iremos até o terminal no diretorio que consta o arquivo e dar o comando: composer install ou o comando composer update.
+
+o composer install irá fazer a instalação da nossa aplicação como um todo e o composer update irá verificar se houve alterações no arquivo e irá atualizar o projeto com base nas alterações do arquivo.
+
+
+Se abrirmos o projeto agora veremos que ele criou uma pasta chamada vendor e sobre o que ele se trata? Essa pasta é onde fica os pacotes de terceiros, por exemplo se instalarmos um pacote do paypal, ele irá ficar dentro do vendor, se instalarmos um pacote de gerenciamento de logs, também ficará dentro do vendor. Em vendor é onde fica todos os pacotes de terceiros.
+
+O Composer também criou outro arquivo fundamental que é o autoload.php e nesse arquivo é onde acontece o autoload automatico de tudo, inves de quando formos trabalhar com uma classe nova ter que fazer o require dele e criar a instancia, ele já faz o require automatico dela a partir do momento que criarmos a instancia.
+
+Dentro do diretorio composer, que ele também cria automaticamente para nós, temos algumas classes que ele irá utilizar o autoload.
+

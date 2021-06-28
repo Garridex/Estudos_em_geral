@@ -1,0 +1,96 @@
+Um array armazena multiplos valores em uma váriavel. Exemplo:
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "Eu gosto de" . $cars[0] . ", " . $cars[1] . " e " . $cars[2] . ".";
+?>
+
+° Array é uma váriavel especial que armazena mais de um valor por vez. Se tivermos uma lista com 3 itens, podemos adicionar em váriaveis, porém se forem 300 itens é melhor usarmos um array.
+
+CRIANDO UM ARRAY EM PHP: No php a função array(); é utilizada para criar um array.
+existem 3 tipos de arrays: 
+° indexados -> arrays com um número de indexação.
+° arrays associativos -> arrays com chaves nomedas.
+° Multidimensional -> um array que contém mais de um array.
+
+FUNÇÃO PARA SABER O TAMANHO DO ARRAY: count()
+<?php
+$car = array("honda", "bmw", "meca");
+echo count($car);
+?>
+
+ARRAY INDEXADO: Tem duas maneiras de se criar esse tipo de array, a primeira maneira é o index sendo designado automaticamente e a segunda maneira é manualmente, exeplos:
+
+° Automaticamente -> $car = array ("Volvo", "bmw", "meca");
+
+° Manualmente ->  $car [0] = "Volvo";
+		  $car [1] = "Bmw";
+		  $car [2] = "meca"; 
+
+Os exemplos a seguir criam um array indexado chamdo $carros, atribui 3 elementos a ele e, em seguida imprime um texto contendo os valores do array:
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "Eu gosto de " . $cars[0] . ", " . $cars[1] . " e " . $cars[2] . ".";
+?>
+
+° podemos imprimir todos os valores do array indexado da seguinte forma: 
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+$arrlength = count($cars);
+
+for($x = 0; $x < $arrlength; $x++) {
+  echo $cars[$x];
+  echo "<br>";
+}
+?>
+
+ARRAY ASSOCIATIVO: Esse tipo de array usam chaves nomeadas que atribuimos a ele, por exemplo: 
+° $idade = array("Pedro" => "35", "jose"=> "12", "pietro"=> "15");
+			ou
+$idade['Pedro'] = "35";
+$idade['jose'] = "12";
+$idade['pietro'] = "15";
+
+° As chaves nomeadas podem ser utilizadas no script: 
+<?php
+$idade = array("Pedro" => "35", "jose"=> "12", "pietro"=> "15");
+echo "Pedro tem " .$idade['Pedro'];
+?>
+
+° Podemos imprimir todos os valores do array associado da seguinte forma:
+
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($age as $x => $x_value) {
+  echo "Key=" . $x . ", Value=" . $x_value;
+  echo "<br>";
+}
+?>
+
+ARRAYS MULTIDIMENSIONAIS: Os arrays multidirecionais são os que contém um ou mais arrays,o php suporta arrays com 2, 3, 4,5 ou mais arrays integrados. A dimensão de um array indica o número de indices que você precisa para selecionar um elemento.
+
+° Para duas dimensões, precisamos de dois indices para selecionar um elemento
+° Para três dimensões, precisamos de três indices para selecionar um elemento
+
+DUAS DIMENSÕES:
+<?php
+$carros = array(
+array("Volvo", 18,22),
+array("Tesla", 15,13),
+array("Volkswagem", 5,2),
+array("Landa rover", 17,15),
+);
+?>
+Agora nosso array de duas dimensões contém quatro arrays dentro dele, e tem dois indices, linha e coluna. Para acessarmos os elementos dessa váriavel, precisamos declarar os dois indices (linha e coluna). Exemplo:
+
+echo $carros[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+echo $carros[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
+echo $carros[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
+echo $carros[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
+
+FUNÇÃO DE ORGANIZAÇÃO DE ARRAYS: 
+sort() - classifica as matrizes em ordem crescente
+rsort() - classificar matrizes em ordem decrescente
+asort() - classificar matrizes associativas em ordem crescente, de acordo com o valor
+ksort() - classificar matrizes associativas em ordem crescente, de acordo com a chave
+arsort() - classificar matrizes associativas em ordem decrescente, de acordo com o valor
+krsort() -  sort associative arrays in descending order, according to the key

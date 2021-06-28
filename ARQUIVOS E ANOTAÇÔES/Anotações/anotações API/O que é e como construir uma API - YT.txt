@@ -1,0 +1,25 @@
+Comunicação do VB com o E-Plus: Precisamos fazer a comunicação do desktop com o eplus, para isso precisamos de uma API
+
+° Api é um conjunto de requisições que permite a comunicação de dados entre aplicações. Para isso, a API utiliza requisições HTTP responsaveis pelas operações básicas necessárias para a manipulação dos dados. As principais requisições são:
+
+* POST -> Criar dados no servidor 
+
+* GET -> Leitura de dados no Host
+
+* DELETE -> Excluir informações
+
+* PUT -> Atualizações de registros
+
+__________________________________________________________________________________
+° O que é uma api ->  Api é um software que provem rotinas para acesso á dados de um Software. Basicamente é um software que fica recebendo requisições e manda respostas. A resposta é muito utilizada como arquivo json. A api processa um request e retorna um response
+
+° REST -> Significa Representational State Transfer, é uma abordagem de desing estrutural para criação de aplicações baseadas em requisições HTTP. é uma arquitetura que representa o estado de uma transferencia dentro de um estado HTTP.
+
+° Comunicação entre aplicações -> é a capacidade de sistemas de trocarem informações entre eles utilizando web service. 
+
+° O que é Webservice -> é uma solução utilizada na integração de sistemas e na comunicação entre aplicativos diferentes. Um serviço da web é um pacote de software usado para a comunicação entre dois dipositivos ou entidades da Web na rede. Eles envolvem prover serviços junto com um solicitante de serviços, ou seja, o clinte. Como os serviços da Web são vantajosos por serem transparente a linguagem, não há problema se o sistema fundamental está fornecendo o serviço desenvolvido em java, php ou qualquer outra linguagem. 
+
+__________________________________________________________________________________
+
+O arquivo .htaccess -> 
+

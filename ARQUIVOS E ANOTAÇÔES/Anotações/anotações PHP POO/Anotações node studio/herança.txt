@@ -1,0 +1,34 @@
+Herança é um recurso que permite que classes compartilhem recursos e metodos.
+Isso significa que podemos utilizar uma classe para instanciar quantas outras quisermos. A sintaxe é a seguinte:
+
+Primeiro definimos uma classe com os atributos e metodos que desejamos -> 
+
+class veiculos {
+	public $modelo;
+	public $cor;
+	public $ano;
+
+public functio Andar(){
+
+}
+
+public function Parar(){
+
+}
+
+
+Agora que temos essa classe com esses atributos e metodos definidos, queremos que outras classes tenham os mesmos atributos e metodos, então para fazermos isso a sintaxe é a seguinte:
+
+class carro extends Veiculo{
+
+}
+
+
+class moto extends Veiculo{
+
+}
+
+Dessa forma as classes carro e moto estão herdando os atributos e metodos da classe veiculo
+
+
+Numa situação real, a classe que irá extender atributos e metodos de outras classes, terá um atributo e metodo especifico. E as funções e atributos serão considerados genericos para aquela classe.

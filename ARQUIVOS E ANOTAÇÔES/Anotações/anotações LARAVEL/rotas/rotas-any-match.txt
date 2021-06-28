@@ -1,0 +1,16 @@
+Existem dois tipos de rotas bem interessantes que são as rotas any e match.
+
+A rota any é uma rota que aceita todos os tipos de acessos de verbo htpp, por exemplo, se a acessarmos com get ela funciona, com post também funciona, put também é aceito. A sua sintaxe é bem parecida com a declaração de outras rotas:
+
+route::any('/any', function(){
+return 'any';
+});
+
+Já a rota match, é onde podemos especificar quais verbos http nós quremos que seja aceito, sua sintaxe é diferente das outras rotas:
+
+route::match(['get', 'post'],'/match', function(){
+    return 'match';
+    });
+
+° Quando acessarmos uma rota definida como match com o verbo errado, O laravel nos dá o seguinte retorno: Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException
+The GET method is not supported for this route. Supported methods: POST.

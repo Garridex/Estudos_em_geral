@@ -1,0 +1,1 @@
+Para entendermos sobre URLs amigaveis, precisamos primeiro entender sobre query string

@@ -1,0 +1,22 @@
+DI -> dependence injection: todas as classes criadas através do artisan podem trabalhar com injeção de dependencia. 
+
+No nosso controller criado utilizando o composer, nós temos no metodo store a seguinte sintaxe: 
+
+public function store(Request $request)
+    {
+        //
+    }
+
+° Estamos utilizando a classe request, e o nosso metodo (função) store está criando um objeto da classe request e instanciando ela dentro da variavel $request. Isso pode ser lido da seguinte forma também:
+
+public function store(){
+	$Request = new Request;
+}
+Para trabalharmos com a injeção, usamos a seguinte sintaxe no metodo construtor:
+
+public function __construct(request $request){
+	$this-> request = $request;
+}
+Com esse código não precisamos injetar mais as dependencias, onde quisermos utilizar a objeto, não precisamos injetar a dependencia, basta refereciarmos da seguinte maneira:
+
+	$this->request

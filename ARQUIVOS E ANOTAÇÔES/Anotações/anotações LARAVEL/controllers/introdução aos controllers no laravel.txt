@@ -1,0 +1,57 @@
+O que é um controller? -> O laravel controller é onde manipulamos a lógica de tratamento das requisições recebendo os dados do model e transmitindo-os para a view. É ele que abstrairá toda a complexidade da rota que, como já diz o nome, apenas roteará a Requeste feita para sua devida lógica.
+
+° Dentro do cenario do mvc (Um dos padrões para o desenvolvimento dos projetos) temos o controller, hoje se avaliarmos o modelo que trabalhamos até agora, fizemos toda a parte de processamento nas rotas, é uma coisa disponivel, mas o ideal é direcionar a requisição para a ação de um controller e ele faz toda o direcionamento e a lógica dos recursos para quem tiver que direcionar, e ele faz toda a delegação da aplicação.
+
+Criaremos um controller, que por padrão ficam dentro da pasta app/http/controllers
+Eles ficam dentro dessa pasta por default, porém podemos alterar o diretorio.
+Para criar um controller utilizaremos o composer, o comando para criar é o make e sua sintaxe é essa aqui:
+
+php artisan make:controller ~nome do controller~
+
+° É recomendado criar os controllers sempre atribuindo nomes no singular e colocando o prefixo controller no nome.
+
+° Outra observação é que podemos definir uma pasta nova para o controller e a sua sintaxe é a seguinte:
+
+php artisan make:controller Dir\~nome do controler~. Dir é representado pelo nome da pasta que queremos utilizar.
+__________________________________________________________________________________
+Após a criação do controller, dentro dele temos o seguinte código:
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+    //
+}
+
+
+° O namespace é onde o controller se encontra, então no nosso caso ele se encontra na pasta app, na subpasta Http e o nome dele é controller.
+
+° use -> isso são as classes de requests, são requisições que vem da url e requisições http.
+
+° extends controler: é uma classe do arquivo controller.
+
+Dentro desse controller faremos uma função de retorno de produtos com o seguinte código: 
+
+class ProductController extends Controller
+{
+public function index()
+{
+    return 'listagem dos produtos';
+}
+}
+
+Agora iremos referenciar esse controller na nossa rota da seguinte maneira:
+
+no arquivo de rotas criamos uma rota nova 
+route::get('/products', 'ProductController@index');
+
+ProductController é o nome do nosso controller
+O @ nos diz qual metodo (função da classe) estamos chamando, nessa caso é o metodo index.
+
+Ao acessar a rota que criamos, o controller faz a logica que inserimos e delega as operações. 
+
+Algumas boas práticas são: nome do controller no singular, sempre começando com a letra maiscula e o prefixo controler. Quando fazer listagem de produtos utilizar o metodo index. 

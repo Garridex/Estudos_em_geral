@@ -1,0 +1,58 @@
+Para pegarmos um valor de uma tag de entrada html (input) devemos colocar na atribuição da nossa variavel .value
+----------------------------------------------------------------------------------
+° Devemos ir testanto parte a parte da nossa aplicação, dessa forma garantimos que não teremos problemas a encontrar possiveis erros
+----------------------------------------------------------------------------------
+° Podemos utilizar qualquer propriedade CSS que quisermos com o javascript com a seguinte sintaxe: 
+
+var res = window.document.getElementsById('res') -> nossa variavel res está atribuida a tag <div> do nosso html.
+
+Agora faremos a alteração do estilo (CSS) dessa tag com a seguinte sintaxe:
+
+res.style.textAling = 'center' 
+
+style é a propriedade da tag que queremos alterar e textAling é a propriedade CSS que queremos alterar. Depois do igual fica o valor que passaremos para a propriedade CSS.
+----------------------------------------------------------------------------------
+° Quando selecionamos uma tag por nome e temos que passar o index da tag, podemos utilizar toda as funções de alteração do javascript, porém para selecionarmos a tag devemos passar o index dela dentro dos colchetes, exemplo:
+
+  if(fsex[0].checked){
+            genero = 'Homem'
+        }else if (fsex[1].checked){
+            genero = 'Mulher'
+}
+
+Aqui atribuimos a variavel genero o index com valor 0 caso o item selecionado (.checked) for igual ao index 0. dessa forma podemos fazer o controle da seleção dos formulários que utilizam o input type radio
+----------------------------------------------------------------------------------
+° Agora iremos criar as imagens de forma dinamica no javascript, lembrando que não contem nenhuma tag imagem no html dess projeto. O código para criar as imagens pelo javascript é o seguinte:
+
+var img = document.createElement('img')
+
+Com o codigo acima estamos informando ao javascript que queremos criar no nosso documento um elemento img.
+
+Podemos também criar atributos para essa tag img com a seguinte sintaxe:
+
+img.setAttribute('id', 'foto') -> isso aqui informa ao documento html que queremos criar um atributo id na tag <img> e que o valor atribuido a ele é 'foto'
+
+° Para atribuirmos a imagem de forma dinamica com o javascript, utilizamos a seguinte sintaxe: 
+
+img.setAttribute('src', 'bb-homem.png')
+
+Aqui estamos setando um atributo a tag <img> e nesse caso é o atributo src e apontando qual a imagem que nós estamos querendo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

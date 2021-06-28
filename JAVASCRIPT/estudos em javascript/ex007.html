@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/calculadora.css">
+    <title>Somando números</title>
+</head>
+<body>
+    <header><h1>Somando valores</h1>
+    <div class="container">
+        <p>insira o primeiro valor</p>
+    <input type="number" name="number" id="number_id">
+    <p>insira o segundo valor</p>
+    <input type="number" name="number2" id="number_id2">
+    <br>
+    <input type="button" value="somar" onclick="somar()">
+    <div id="resul">Resultado: <p id="p_resul"></p></div>
+    </div></header>
+    <script>
+        function somar(){
+            
+        var nume1 = window.document.getElementById('number_id') 
+        var nume2 = window.document.getElementById('number_id2')
+        var resultado = window.document.getElementById('resul')
+     
+        var n1 = Number(nume1.value) 
+        var n2 = Number(nume2.value)
+        var s = n1 + n2
+        resultado.style.color = '#8B0000'
+        resultado.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}`
+        
+        
+}
+    </script>
+</body>
+</html>

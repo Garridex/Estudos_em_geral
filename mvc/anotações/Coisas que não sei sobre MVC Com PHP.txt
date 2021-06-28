@@ -1,0 +1,70 @@
+° MVC é acronimo para Model View Controller e representa um padrão de arquitetura de software e com essa arquitetura olhamos para a estrutura do aplicativo em relação a como o fluxo de dados do nosso aplicativo funciona
+
+ 
+ Mvc é uma arquitetura de software que separa dominio/aplicatvo/negocios/logica do resto da interface do usuario. Ele faz isso separando o aplicativo em tres partes: O model, a view e o controller.
+
+ O model gerencia comportamentos e dados fundamentais do aplicativo. Ele pode responder a solicitações de informações, respoder a instruções para alterar o estado de suas informações e até mesmo notificar observadores em sistemas orientados a eventos quando as informações mudarem. Pode ser um banco de dados ou qualquer número de estruturas de dados ou sistemas de armazenamento. Em suma, são os dados e o gerenciamento de dados do aplicativo.
+
+ A view fornece efetivamente o elemento de interface do usuario do aplicativo. Ele renderizará todos os dados do modelo em um formato adequado para a interface do usuario. 
+
+ O controller recebe a entrada do usuario e faz chamadas para os objetos do modelo e a view para realizar as ações apropriadas.
+
+ Ao todo, esses tres componentes trabalham juntos para criar os tres componentes basicos do MVC.
+   
+EXEMPLO -> Se formos num ecommerce, as diferentes páginas que você vê são fornecidos pela camada view. Quando clicamos em um determinado produto para ver mais, a camada controller processa a ação do usuario. Isso pode envolver a obtenção de dados de uma fonte de dados usando a camada model. Os dados então são agrupados e organizados em uma camada view e exibidos ao usuario. 
+
+
+	POR QUE USAR O MVC?
+° Ao construir aplicativos php, pode ser normal ter muitos arquivos circulando em projetos muito pequenos. No entanto, quando o projeto se torna um pouco maior do que cinco arquivos ou pontos de entrada, com uma estrutura podem melhorar drasticamente a capacidade de manuntenção.
+
+° Quando você tem que trabalhar com bases de codigo que não tem arquitetura, será extremamente cansativo, especialmente se o projeto for grande e você tiver que lidar com código não estruturado em todos os lugares. Usar MVC pode dar ao seu código alguma estrutura e torná-lo mais facil de trabalhar. 
+
+
+__________________________________________________________________________________
+
+				MVC EM PHP
+
+°  Utilizando o composer, criamos o arquivo composer.json e colocamos todas as dependencias do projeto lá dentro com a seguinte estrutura:
+
+{
+    "name": "wdev/mvc",
+    "autoload":{
+"psr-4": {
+    "App\\":"app/"
+       }
+    }
+}
+
+----------------------------------------------------------------------------------
+A estrutura acima nos criou as pastas padrões do composer e criamos então um arquivo index.php e demos um require no arquivo autoload.php para carregarmos as classes e instanciamentos automaticamente.
+
+Criamos também a nossa pasta APP e dentro dela contendo os seguinte diretorios, controller, pages. Dentro da pasta pages é onde estamos criando os nossos controllers.
+
+Criamos o nosso primeiro controller chamado de home.php e essa classe contida nesse arquivo vai gerenciar as requisições que vão chegar até a home do nosso site, as requisições da paginas inicial do nosso site.
+
+Criaremos dentro da classe home um metodo que irá nos retornar o conteudo dentro da home, o controlador irá receber uma ação de consulta, e irá executar o model para obter os dados necessarios para exibir pro usuario e passar para a view para a view ser reponsavel em imprimir os dados para o usuario.
+__________________________________________________________________________________
+			MVC NA PRATICA
+° Após a criação do nosso controller o arquivo ficou da seguinte maneira:
+
+<?php
+namespace app\controller\pages;
+
+class home{
+    /**
+ * metodo responsavel por retornar o conteudo de home
+ * @return string
+ */
+    public static function getHome(){
+        return 'olá mundo';
+    }
+} 
+
+?>
+
+Utilizamos o namespace para evitar um possivel conflito de classes.
+Criamos a classe home (dentro de app->controller->pages) e dentro dela criamos o metodo (função) que nos retornará a nossa view, nesse momento só está retornando um Olá mundo para testes.
+
+° Agora criaremos a nossa view que é o documento HTML da nossa aplicação, e foi inserido dentro de uma nova pasta (resource->view->pages). Aqui ira conter os códigos html, css e javascript da nossa aplicação
+	
+° Agora iremos criar uma classe para gerenciar o acesso as Viwes para o conteudo ficar mais dinamico e criaremos ela dentro de uma pasta nova chamada utils (app->utils). Dentro da classe view iremos criar alguns metodos de renderização das viwes e do conteudo dinamico. 

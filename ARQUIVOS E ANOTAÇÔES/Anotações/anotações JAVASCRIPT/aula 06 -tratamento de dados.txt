@@ -1,0 +1,49 @@
+		TRATAMENTO DE DADOS EM JAVASCRIPT (MANIPULAÇÃO DE DADOS)
+
+O JAVASCRIPT É CASE-SENSITIVE SEU ANIMAL
+
+OS DOIS PRINCIPAIS TIPOS PRIMITIVOS: Number e String 
+
+*Para atribuir num texto o nome guardado dentro da váriavel, precisamos retirar ela de dentro das aspas, e para concatenar a palavra utilizamos o +
+
+* O COMANDO window.prompt trata os dados como strings, então mesmo que sejam numeros são tratos como string.
+pra isso precisamos converter de string para numero.
+
+*PARA A CONVERSÃO DE STRING PARA NÚMERO EXISTEM ALGUMAS FORMAS:
+
+1° Number.parseInt(n) = serve para números inteiros
+
+2° Number.parseFloat(n) = serve para números com virgula ou ponto
+
+3° Number(n) = a propria linguagem identifica se é real ou inteiro
+
+*PARA CONVERSÃO DE NÚMERO PARA STRING:
+1° String(n) = converte de Número pra string
+2° n.toString() // n = variavel a ser convertida
+	
+COMO FORMATAR STRINGS UTILIZANDO TEMPLATES STRINGS:
+var s ='javascript'
+´eu estou aprendendo ${s}´
+$ = placeholder
+° Dessa forma podemos concatenar o texto com qualquer tipo de váriavel que quisermos, sem termos que utilizar de vários + entre as aspas.
+//FORMATANDO STRINGS
+var s = 'javascript'
+'eu estou aprendendo s' // não faz interpolação
+'eu esotu aprendendo' + s // usa concatenação
+`eu estou aprendendo ${s}` // usa template string
+
+//ALGUMAS FUNÇÕES
+var s = 'javascript'
+s.lenght // Quantas caracteres a string tem
+s.toUpperCase() // tudo para "MAiÙSCULAS"
+s.to LowerCase() // tudo para 'minusculas'
+
+*Comando document.write escreve na tela -> esse comando funciona de forma muito parecida com o print em outras linguagens, ele escreve na tela.
+
+//FORMATANDO NÚMEROS
+var n1 = 1543.5
+n1.toFixed(2) // método para selecionar quantos números serão escritos depois da virgula
+n1.toLocaleString('pt-BR', {Style: 'currency', currency: 'BRL'}) // transforma o número em dinheiro 
+° A formatação de números javascript é muito parecida com a formatação do vb, porém ao invés de utilizarmos um format, o comando é a variavel (n1 por exemplo)
+n1.toFixed(N).replace('.',',')
+n-> número de casa que desejamos

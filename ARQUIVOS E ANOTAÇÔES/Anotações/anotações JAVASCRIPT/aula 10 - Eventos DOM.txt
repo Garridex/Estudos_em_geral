@@ -1,0 +1,105 @@
+DOM ->  Document Object Model, é um facilitador que existe dentro do navegador e do HTML5 que serve para termos acesso aos elementos da página diretamente ao javascript
+
+A arvore DOM é montada através do fluxo da página, ou seja as tags tem a hierarquia de pai e filho.
+
+<div class="Essa tag é pai da Tag p"> 
+<p>Essa tag é filha da tag DIV</p>
+</div>
+
+° As tags que ficam dentro de outras tag são consideradas childs e as tags que são as que contém as tags são consideradas parents.
+
+
+
+ENVENTOS DOM: Evento é tudo aquilo que possa acontecer com o elemento, o mais comum são eventos de mouse, tais como ir com o mouse em cima, mover o mouse por cima e clicarmos e segurar, soltar o botão do mouse, clicar e soltar, mover o mouse para fora e etc... 	
+isso significa que só com o mouse temos uma infinidade de eventos, a documentação oficial do javascript lista mais uma infinidade de eventos que podem ser utiliados.
+
+Resumindo o que são os eventos -> eventos são coisas que podem ser feitos utilizando os elementos. Para tratar os eventos utilizamos funções com gatilhos nos eventos.
+
+Os eventos podem ser configurados tanto na parte de definição HTML quanto na parte de definição do javascript
+__________________________________________________________________________________
+° disparando os enventos no html -> suponhamos que o elemento é div e queremos definir ele para fazer uma função ao clicar, tal como alterar o conteudo de um paragrafo, então a sintaxe da declaração da tag é a seguinte: 
+
+ <div id="area" onclick="clicar()"> e 
+<script>
+var a = window.document.getElementByid('area')
+a.innerText = "teste"
+a.style.background = 'red'
+</script>
+
+Com esse script, ao clicarmos na nossa div, o texto dela será alterado para clicou e sua cor também será alterada.
+Com esse tipo de script passando funções podemos realizar diversas ações. Essa interatividade pode ser feita em qualquer elemento HTML.
+__________________________________________________________________________________
+° Disparando os eventos por javascript -> podemos inserir listeners que são ouvidores que ficam atentos ao que ocorre no nosso documento HTML.
+
+Para adicionarmos um listener, como já utilizamos a alteração da arvore dom atribuindo o elemento que queremos altererar a variaveis, também atribuimos o listener a uma váriavel:
+
+a.addEventListener('click', clicar) -> aqui nós definimos entre aspas o qual o evento que estamos querendo a após a virgula definimos qual função iremos executar. nesse caso ao clicar a função definida irá alterar o texto para clicou! e alterar a cor para vermelho.
+
+__________________________________________________________________________________
+Com base nesses conhecimentos, fizemos uma calcularadora com javascript e html, ó código é esse aqui:
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/calculadora.css">
+    <title>Somando números</title>
+</head>
+<body>
+    <header><h1>Somando valores</h1>
+    <div class="container">
+        <p>insira o primeiro valor</p>
+    <input type="number" name="number" id="number_id">
+    <p>insira o segundo valor</p>
+    <input type="number" name="number2" id="number_id2">
+    <br>
+    <input type="button" value="somar" onclick="somar()">
+    <div id="resul">Resultado: <p id="p_resul"></p></div>
+    </div></header>
+    <script>
+        function somar(){
+            
+        var nume1 = window.document.getElementById('number_id')
+        var nume2 = window.document.getElementById('number_id2')
+        var resultado = window.document.getElementById('resul')
+     
+        var n1 = Number(nume1.value) 
+        var n2 = Number(nume2.value)
+        var s = n1 + n2
+        resultado.style.color = '#8B0000'
+        resultado.innerText = "A soma entre os números é " + s 
+        
+        
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

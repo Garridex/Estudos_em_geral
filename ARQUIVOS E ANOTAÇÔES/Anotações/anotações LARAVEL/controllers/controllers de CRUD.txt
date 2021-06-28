@@ -1,0 +1,67 @@
+CRUD -> Create, Read, Update e Delete. são as quatro operações básicas utilizadas em bases de dados fornecidas aos utilizadores do sistema.
+
+
+Criamos mais rotas para realizar as funcionalidades descritas acima. As rotas referenciando o controller Product. O codigo pode ser conferido abaixo: 
+
+route::get('/products','ProductController@index')->name('products.index'); 
+route::get('/products/{id}', 'ProductController@show')->name('products.show');
+route::get('/products/create', 'ProductController@create')->name('products.create');     
+route::get('/products/{id}/edit', 'ProductController@edit')->name('product.edit');
+
+já nosso controler ficou da seguinte maneira:
+
+ public function index(){
+    $products = ['produto 1', 'produto 2', 'produto 3'];
+   
+    return $products;
+   
+    }   
+    
+
+    public function show($id){
+        return "Exbindo produto de id: {$id}";
+    }
+    public function create(){
+        return 'Exibindo o form de cadastro de produtos';
+    }
+    public function edit($id){
+        return "Tela de edição do produto {$id}";
+    }
+}
+fazendo todos as funções (metodos) do site. 
+
+
+***não tem problema a url ser a mesma desde que seja diferentes verbos htpp***
+
+Criaremos agora o cadastro do produto em si, que tem algumas diferenciações:
+
+route::post('/products', 'ProductController@store')->name('product.store');
+
+° quando formos fazer um registro no sistema ele dever ser do metodo post.
+***não tem problema a url ser a mesma desde que seja diferentes verbos htpp***
+
+Agora criaremos a rota e o controller para editar o produto em si:
+
+route::put('products/{id}', 'ProductController@update')->name('product.update');
+
+A rota utiliza o verbo put para fazer as alterações.
+
+O função (metodo) contém o seguinte código: 
+
+public function update($id){
+        return "Editando o produto {$id}";
+    }
+
+Agora faremos a rota e controller para fazer o delete de um dado:
+
+A rota utiliza o metodo delete:
+route::delete('products/{id}', 'ProductController@destroy')->name('product.destroy');
+
+Já o controller é semelhante aos outros:
+
+
+    public function destroy($id){
+        return "Deletando o produto {$id}";
+    }
+
+__________________________________________________________________________________
