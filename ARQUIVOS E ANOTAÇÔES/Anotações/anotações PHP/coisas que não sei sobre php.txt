@@ -1,0 +1,5 @@
+° explode() -> serve para separar uma string em um array
+
+° array_shift() -> remove a primeira posição de um array
+
+° try{} -> serve para tratar excessões, caso não consiga executar ele cai no catch e captura todas as excessões que podem ser geradas e tratadas
