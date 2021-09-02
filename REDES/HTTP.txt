@@ -1,0 +1,120 @@
+				HTPP
+
+°  DENTRO DO HTTP NÓS TEMOS
+	- Protocolo
+	crowsec.com.br 80
+	
+	 TCP(
+	 
+	   -> HTTP Request (navegador -> servidor)
+	   	HEADER - cabeçalho da requisição
+	   	BODY - corpo da requisição
+           -> HTTP Response (servidor -> navegador)
+           	HEADER	- cabeçalho da resposta
+           	BODY  - corpo da resposta
+	)
+	
+                      	***°REQUEST HEADER:°***
+
+GET /async/newtab_ogb?hl=pt-BR&async=fixed:0 HTTP/1.1
+Host: www.google.com
+Connection: close
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: empty
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+Accept-Encoding: gzip, deflate
+Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+			 ***°RESPONSE HEADER°***
+HTTP/1.1 302 Found
+Location: https://www.google.com/?gws_rd=ssl
+Cache-Control: private
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 30 Apr 2021 17:20:58 GMT
+Server: gws
+Content-Length: 231
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: 1P_JAR=2021-04-30-17; expires=Sun, 30-May-2021 17:20:58 GMT; path=/; domain=.google.com; Secure; SameSite=none
+Connection: close
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>302 Moved</TITLE></HEAD><BODY>
+<H1>302 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/?gws_rd=ssl">here</A>.
+</BODY></HTML>
+
+-----------------------------------------------------------------------------------
+
+*** No request tem duas linhas em branco no final do Header, é onde começa o body, essa linha é necessaria pois faz parte do protocolo em si.
+
+-----------------------------------------------------------------------------------
+*** A resolução de DNS ocorre antes da requisição HTTP
+-----------------------------------------------------------------------------------
+
+
+				METODOS HTTP
+					
+° GET (pegar informações do servidor)
+
+° POST (enviar informações para o servidor)
+
+° PUT (enviar informações para o servidor, serve para atualizar uma informação que já existe no servidor, ou criar uma)
+
+° DELETE (deletar informações do servidor)	
+
+° PATCH (Atualizar informações no backend, normalmente não é utilizado para criar)
+		
+° OPTIONS (Pergunta pro sevidor quais são os metodos aceitos)	
+		
+-----------------------------------------------------------------------------------
+	 		     PADRÃO DO METODO GET
+
+PATH -> Pode ser um arquivo no sevidor, uma pasta, uma rota de API, uma rota de servidor
+
+
+° REQUEST
+protocolo | PATH | Versão
+
+GET          /     HTTP/1.1
+
+POST      |  /   | HTTP/1.1
+
+
+ 
+
+° RESPONSE
+VERSÃO      | STATUS CODE
+
+HTTP/1.1      200 OK
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+

@@ -1,0 +1,40 @@
+TCP -> Trasnmission control protocol ou protocolo de controle de transmisão, Esse protocolo necessita que se estabeleça uma conexão entre o cliente e o servidor. a comunicação TCP/IP sempre se inicia com o cliente enviando um pacote SYN e o servidor responde com um pacote SYN, ACK. Quando falamos de pacotes SYN e ACK, estamos falando que é um pacote TCP com a Flag SYN e SYN,ACK marcada. Por fim o cliente responde ACK. Com essas tres etapes se estabelece a conexão.
+A comunicação se dá em perguntas e respostas entre clientes e servidor, até que uma das partes resolva encerrar a comunicação. No protocolo TCP, tanto cliente quanto servidor precisam encerar a comunicação para que ela seja encerrada por completo e a iniciativa pode ser tanto do cliente quanto do servidor. O encerramento da conexão TCP se dá em quatro etapas, supondo que o cliente vai requisitar o fim da comunicação, então ele envia um pacote FIN e o servidor responde com um pacote ACK avisando que pode encerrar a comunicação, após isso o servidor envia uma flag FIN para o cliente avisando que vai encerrar a comunicação e o cliente envia de volta um ACK confirmando o pedido do servidor
+
+CLIENTE				SERVIDOR
+
+SYN 
+->				 SYN,ACK	
+					<-
+					
+ACK
+->
+A partir daqui a conexão foi estabelecida e está pronta para a troca de dados. Após isso o fim da conexão é solicitado da seguinte maneira:
+
+CLIENTE				SERVIDOR
+
+FIN
+->	
+				ACK
+				 <-
+				FIN
+				 <-
+ACK
+->
+Dessa forma a conexão terminou.
+
+___________________________________________________________________________________
+CONFIABILIDADE: Saber se o destino e a origem 
+
+O protocolo TCP também se resposabiliza pelo confibilidade dos pacotes, e isso ocorre da seguinte maneira -> o protocolo TCP tem origem e destino e os dados, além disso também tem um número de verificação. O TCP pega esses dados e faz uma conta, quando chega no destino o TCP pega o número e compara, se for igual significa que o pacote da origem tá igual ao do destino, portanto é confiavel. Se não tiver igual vem uma resposta pedindo para que o pacote seja retransmitido
+
+-----------------------------------------------------------------------------------
+FULL DUPLEX -> Estabelecida a conexão a comunicação se da por dois lados, do cliente pro servidor e do servido pro cliente e pode ser ao mesmo tempo, isso é possivel pois a entrega pode ser ordenada, cada pacote TCP vai com um número sequencial. O caminho dos pacotes podem ser diferentes, então a ordem que eles chegam pode ser diferente da ordem com que foram enviados então, o TCP controla para que lá no destino eles sejam remotandos da forma corretam, garantido assim que toda informação que saiu da origem chegue ao destino
+-----------------------------------------------------------------------------------
+CONTROLE DE FLUXO -> O equipamento enviou o pacote e fica aguardando a resposta do destino para que ele confirme que recebeu, se a resposta não vier, ele irá enviar o pacote de novo e de novo até o destino confirmar o recebimento. Toda informação qeu sair da origem deve chegar ao destino, por isso o TCP se torna tão importante para algumas aplicações
+-----------------------------------------------------------------------------------
+UDP -> Esse protocolo é bastante simples é chamado de protocolo sem conexão por não haver necessidade de estabelecer a conexão entre a origem e o desitno. Por essas e outras ele é chamado de um protocolo não confiavel, pois não há verificação de integridade entre a origem e o destino. 
+
+O UDP serve para os tipos de serviço em que a perda de pacotes não irá comprometer o conteudo.
+
+O UDP pode servir de 1 -> N ou seja, uma estação pode enviar pacotes simultaneamente a diversas outras, podendo transmitir grandes quantidades de dados muito rapidos

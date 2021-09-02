@@ -1,0 +1,74 @@
+				DNS
+
+° A primeira coisa que o navegador faz quando acessa um site é uma resolução DNS. Temos por padrão um Servidor DNS Local, um root servers, TLD server (TOP LEVEL DOMAIN) e o servidor autoritativo.
+
+° Quando eu for fazer uma solicitão de resolução DNS, eu pergunto pro roteador da rede, faço o envio de um solicitação DNS pro servidor da rede local, meu computador sabe quem é pois quando eu recebo o DHCP, o DCHP me informa o endereço do DNS, toda vez que eu for fazer esse tipo de requisição o computador sabe que estou me comunicando com o DNS.
+
+° O processo de resolução de DNS começa de trás pra frente: Temos um dominio de exemplo, o www.crowsec.com.br, o roteador pega o ".br" e pergunta pro root server que tem os endereços IPS fixos e entradas DNS que apontam pros servidores. Eles tem todos os top level domains e a partir dai eles sabem que o ".br" que é gerenciado pela CGI, uma agencia que cuida do dominio.
+
+° A partir dai, o Root server volta a informação de quem é o dono do ".br" que é um servidor brasileiro, o nosso roteador se comunica com o servidor do brasil e pergunta quem é o dono de www.crowsec.com.br
+
+		TUDO ISSO ACIMA É O FLUXO DE RESOLUÇÃO DE DNS
+
+***********************************************************************************
+***O comando para as consultas DNS é: dig [parametro] [dominio] ***
+
+*** Cloudflare é um proxy reverso, todas as solicitações passam por ele antes de chegar ao servidor que hospeda o site ***
+
+*** O QUE É UMA QUERY: Uma query é um pedido de uma informação ou de um dado. Esse pedido também pode ser entendido como uma consulta, uma solicitação ou, ainda, uma requisição.***
+
+*** O comando ping não faz nada menos que uma resolução de DNS ***
+
+***********************************************************************************
+Dentro do servidor DNS, existe uma tabela de entradas DNS, consiste em:
+
+Servidor DNS (Crowsec.com.br) #Estamos especificando somente o subdominio
+	
+ENTRADA            		 TIPO				VALOR
+-----------------------------------------------------------------------------------
+@                                 A                             192.168.1.11 
+
+www                               A	                        192.168.1.10
+
+portal                            AAAA                    fe80::a00:27ff:fe35:ed11
+	
+bases                             CNAME                   google.com	
+	
+@                                 MX                      10 mxa.mailgun.org.
+
+@                                 MX                      20 mxb.mailgun.org.
+
+@                                 TXT                     "google-site-dadasdadad"
+
+@                                 TXT                     "spf" -----------------------------------------------------------------------------------		
+			TIPOS DE ENTRADA DNS
+			
+° A -> Aponta diretamente para um endereço Ip.
+
+° AAAA -> Executa a mesma função do A, porém utilizando IPv6.
+
+° CNAME -> Apontam pra outro endereço, por exemplo (dominio.com.br). O servidor resposavel pela hospedagem do endereço deve ser configurado para identificar as solicitações de entrada CNNAME.
+
+° MX -> Esse entrada é especifica para servidores de emails. É ele que garante que uma mensagem seja entregue quando alguem preenche um formulario de contrato de um site, por exemplo. Também é o que possibilita  a criação de uma lista de prioridades para que haja alternativas para as entragas.
+
+° TXT -> Um registro que forne informações de texto para fontes fora do seu dominio que podem ser usadas para diversas finalidades arbitrarias.
+
+° NS -> Os registros de servidor de nomes (NS) determinam quais servidores comunicam informações do DNS para um dominio. Geralmente, um dominio tem registros de servidor de nomes principais e secundarios. 
+
+° SOA -> Uma consulta autoritativa pra saber se aquele servidor pertence a aquele dominio
+
+-----------------------------------------------------------------------------------
+° MX: quando queremos enviar um email, o meu provedor de emails, faz uma consulta MX no servidor DNS do destino do email. A primeira coisa que o provedor de email vai fazer é pegar o endereço, fazer a consulta, ver qual o servidor dns e pra onde ele tem que enviar o email pra caixa de entrada. Os números representam o peso, quando menor maior a prioridade do servidor de email.
+
+° TXT: O google usa esse dominio para comprovar que o servidor DNS é seu, através de uma consulta que os robos fazem e com o texto que ele te dá para você usar aqui. Também tem como fazermos anotações de segurança que podemos fazer, podemos colocar uma anotação no meu servidor DNS de um padrão de segurança pra emails, criando uma entrada spf de quais servidores estão autorizados a enviar emails em nome do meu dominio.
+
+° NS: A entrada NS representa os servidores DNS daquele dominio, se fizermos a consulta ele nos devolve os servidores DNS resposaveis pelo dominio
+
+° Podemos tentar resolver um dominio especifico dentro de um servidor dns utilizando a seguinte sintaxe -> dig @-endereço do servidor- -endereço do site-
+
+
+
+
+			
+-----------------------------------------------------------------------------------
+Caso queiramos criar um registro para crowsec.com.br, para não precisarmos inserir www.crowsec.com.br, para fazermos isso, devemos utilizar no subdominio o @ (representa o dominio raiz)
